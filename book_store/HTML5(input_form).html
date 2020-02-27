@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>覆盖表单属性</title>
+</head>
+<body>
+<form action="HTML5(form_action).html" method="get" id="forml">
+    <label>姓名：<input type="text" name="name" id="name"></label><br>
+    <label>单位：<input type="text" name="unit" id="unit" autocomplete="off"></label><br>
+    <label>Email:<input type="email" name="email" id="email"></label><br>
+    <input type="submit" value="提交">
+    <input type="submit" formaction="HTML5(form_action)admin.html" formmethod="post" value="向管理员提交">
+</form>
+<form action="" method="get" id="form2">
+    <label>昵称：<input type="text" name="name1" id="name1"></label><br>
+    <input type="submit" value="提交">
+</form>
+<label>年龄：<input type="number" name="age" form="form2" min="10" max="99"></label>
+</body>
+</html>

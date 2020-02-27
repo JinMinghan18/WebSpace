@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta http-equiv="refresh" content="5;url=http://www.baidu.com/" />-->
+    <meta name="auther" content="jmh">
+    <meta name="keywords" content="书店，叮叮书店，图书">
+    <meta name="description" content="叮叮书店是一个网上销售书籍的书店">
+    <meta name="robots" content="index,nofollow">
+    <title>👴的第一个网页</title>
+</head>
+<body>
+<!--   页眉-->
+<div id="header-wrapper">
+<!--    网站logo-->
+    <header class="container">
+        <div id="logo" >
+            <a href="index.html"><h1>十八书店</h1></a>
+        </div>
+        <div id="search">
+            <form action="index.html" method="get">
+                <input type="search" placeholder="站内搜索"><input type="submit" value="搜索">
+            </form>
+        </div>
+    </header>
+<!--    导航菜单-->
+    <div id="nav">
+        <nav class="container">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="category.html">书籍分类</a></li>
+                <li><a href="specials.html">特刊降价</a></li>
+                <li><a href="contact1.html">联系我们</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <div id="menu-logo">
+                <a href="cart1.html">购物车</a>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div id="content-wrapper" class="container">
+<!--左边内容区-->
+    <article>
+        <!--图片切换广告-->
+        <div id="adv"></div>
+        <!--本周推荐-->
+        <section>
+            <h2 id="title1">本周推荐</h2>
+            <section class="recommend">
+                <h3>《HTML5权威指南》</h3>
+                <a href="#"><img src="image/prod2.jpg" alt="HTML5权威指南"></a>
+                <div class="recommend-content">
+                    <p>作为下一代Web标准，
+                    <mark>HTML5</mark>
+                    致力于为互联网开发者搭建更加便捷、开放的沟通平台。业界普遍认为，在未来几年内，
+                    <mark>HTML5</mark>
+                    无疑将成为移动互联网领域的住在这。本书是系统学习网页设计和移动设计的参考图书。
+                    </p>
+                    <p>Adam Freeman,曾在多家名企担任高级职务，闲杂畅销技术图书作家，著有多部C#、.NET
+                        和JAVA方面的大部头作品。其中《ASP.NET 4高级程序设计(第四版)》、《精通ASP.NET
+                        MVC3框架(第3版)销量均在同品种中名列前茅，倍受读者推崇。Freeman专门为网页开发
+                        新手和网页设计师打造的经典参考书，这本书秉承作者的一贯风格，幽默风趣、简约凝练、
+                        逻辑性强，是广大Web开发人员的必读经。</p>
+                </div>
+                <div class="cartmore">
+                    <a class="cart" href="cart.html">加入购物车</a>
+                    <a class="more" href="details.html">详细内容</a>
+                </div>
+            </section>
+            <section class="recommend">
+                <h3>《JavaScript权威指南》</h3>
+                <a href="#"><img src="image/prod3.jpg" alt="JavaScript权威指南"></a>
+                <div class="recommend-content">
+                    <p>经典的JavaScript工具书，从1996年来，本书已经成为JavaScript程序员心中的圣经</p>
+                    <p>David Flanagan,是一名程序员，也是一名作者。他在O'Reilly出版的其他畅销
+                    书还包括《JavaScript Pocket Reference》、《The Ruby
+                        Programming Language》、以及《Java in a
+                        Nutshell》。Davi毕业于麻省理工学院，获得计算机科学与工程学位。他和妻子和孩
+                        子一起生活在西雅图和温哥华之间的美国太平洋西北海岸。</p>
+                </div>
+                <div class="cartmore">
+                    <a class="cart" href="cart.html">加入购物车</a>
+                    <a class="cart" href="cart.html">详细内容</a>
+                </div>
+            </section>
+        </section>
+        <!--最近新书-->
+        <section class="article-section">
+            <h2 id="title2">最近新书</h2>
+            <section>
+                <h3>《HTML5+CSS3从入门到精通》</h3>
+                <img src="image/prod4.jpg" alt="HTML5+CSS3从入门到精通">
+                <div class="effect-1">
+                    <div class="image-box">
+                    </div>
+                    <div class="text-desc">
+                        <h3>《HTML5+CSS3从入门到精通》</h3>
+                        <p>《
+                        <mark>HTML5</mark>
+                        +CSS3从入门到精通》通过基础知识+中小实例+综合案例的方式，讲述了用
+                        <mark>HTML5</mark>
+                        +CSS3设计构建网站的必备知识，相对于权威指南、高级程序设计、开发指南同类
+                        图书，本书是一本适合快速入手的自学教程
+                        </p>
+                        <a class="btn" href="cart.html">加入购物车</a>
+                        <a class="btn" href="details.html">详细内容</a>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>《响应式Web设计》</h3>
+                <img src="image/prod5.jpg" alt="响应式Web设计">
+                <div class="effect-1">
+                    <div class="image-box">
+                    </div>
+                    <div class="text-desc">
+                        <h3>《响应式Web设计》</h3>
+                        <p>《响应式Web设计:
+                            <mark>HTML5</mark>和CSS3实战》将当前Web设计中热门的响应式设计技术与
+                            <mark>HTML5</mark>
+                        和CSS3结合起来，为读者全面深入地讲解了针对各种屏幕大小设计和开发现代
+                            网站的各种技术。《响应式Web设计：
+                            <mark>HTMl5</mark>
+                            和CSS实战》适合各个层次的Web开发和设计人员阅读。
+                        </p>
+                        <a class="btn" href="cart.html">加入购物车</a>
+                        <a class="btn" href="cart.html">详细内容</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- 最近促销-->
+        <section class="article-section">
+            <h2 id="title3">最近促销</h2>
+            <section>
+                <h3>《HTML5和CSS3实例教程》</h3>
+                <a href="#"><img class="promotion" src="image/prod1.jpg" alt="HTML5和CSS3实例教程"></a>
+                <div>加入购物车 详细内容</div>
+            </section>
+            <section>
+                <h3>《JavaScript权威指南》</h3>
+                <a href="#"><img class="promotion" src="image/prod3.jpg" alt="JavaScript权威指南"></a>
+                <div>
+                    <a class="cart" href="cart.html">加入购物车</a>
+                    <a class="cart" href="cart.html">详细内容</a>
+                </div>
+            </section>
+        </section>
+    </article>
+    <aside>
+        <!--广告区-->
+        <section id="advert">
+            <a href="#"><img src="image/ad1.jpg" alt="广告"></a>
+            <a href="#"><img src="image/ad2.jpg" alt="广告"></a>
+            <a href="#"><img src="image/ad3.jpg" alt="广告"></a>
+
+        </section>
+        <div class="border"><img src="image/border.gif" alt="分隔线"></div>
+        <!--畅销图书-->
+        <section id="best-selling">
+            <h2 id="title7">畅销图书</h2>
+            <ul>
+                <li><a class="selling" href="#">查令十字街84号(珍藏版)(汤唯、吴秀波主演北京遇上西雅图2)</a>
+                    <div class="curr">
+                        <div class="p-img">
+                            <a title="查令十字街84号(珍藏版)(汤唯、吴秀波主演北京遇上西雅图2)" href="#"><img
+                                    width="80" height="80" src="image/selling1.jpg"></a>
+                        </div>
+                        <div class="p-name">
+                            <a class="selling" href="#">查令十字街84号(珍藏版)(汤唯 、吴秀波主演北京遇上西雅图2)</a>
+                            <strong>￥43.50</strong>
+                            <del>￥52.00</del>
+                        </div>
+                    </div>
+                </li>
+                <li><a class="selling" href="#">分享经济 供给侧改革的新经济方案</a>
+                    <div class="currr">
+                        <div class="p-img">
+                            <a title="分享经济 供给侧改革的新经济方案" href="#"><img width="80" height="80"
+                                                                      src="image/selling2.jpg"></a>
+                        </div>
+                        <div class="p-name">
+                            <a title="分享经济 供给侧改革的新经济方案" href="#">分享经济 供给侧改革的新经济方案</a>
+                            <strong>￥43.50</strong>
+                            <del>￥52.00</del>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <div class="border"><img src="image/border.gif" alt="分隔线"></div>
+        <!--图书分类-->
+        <section class="aside-section">
+            <h2 id="title4">图书分类</h2>
+            <ul>
+                <li><a href="category.html">编程语言</a></li>
+                <li><a href="category.html">数据库</a></li>
+                <li><a href="category.html">图形图像</a></li>
+                <li><a href="category.html">网页制作</a></li>
+                <li><a href="category.html">考试认证</a></li>
+            </ul>
+        </section>
+        <!--合作伙伴-->
+        <section class="aside-section">
+            <h2 id="title5">合作伙伴</h2>
+            <ul>
+                <li><a href="#">中国电子商务研究中心</a></li>
+                <li><a href="#">清华大学出版社</a></li>
+                <li><a href="#">中国人民大学出版社</a></li>
+                <li><a href="#">中国社会科学出版社</a></li>
+            </ul>
+        </section>
+        <div class="border"><img src="image/border.gif" alt="分隔线"></div>
+        <!--关于书店-->
+        <img src="image/about.gif" alt="十八书店">
+        <section class="about">
+            <h2 id="title6">关于书店</h2>
+            <p>十八书店成立于2020年1月，是由教育部主管、浙江工业大学主办的综合出版单位。根植于“工大”
+            这座久负盛名的高等学府，秉承工大人“取精用弘，厚德载物”的人文精神。</p>
+        </section>
+    </aside>
+</div>
+<!--页脚导航-->
+<div id="footer-wrapper">
+    <footer class="container">
+        <section>
+            <a href="index.html">首页</a>
+            <a href="about.html">关于我们</a>
+            <a href="#">服务条款</a>
+            <a href="#">隐私策略</a>
+            <a href="contact.html">联系我们</a>
+        </section>
+
+    </footer>
+</div>
+<section id="copyright" class="container">
+    Copyright （C） <a href="index.html">十八书店</a> 2020-2022, All rights Reserved | 浙ICP证000001号音像制品经营许可证
+    <address>通讯地址：浙江工业大学家和东苑14号楼 读者服务部&nbsp;&nbsp;电话：（0577）
+        15858238365&nbsp;&nbsp;网管邮箱:201806062407@zjut.edu.cn
+    </address>
+</section>
+
+</body>
+</html>

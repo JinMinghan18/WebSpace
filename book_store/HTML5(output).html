@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>output标签</title>
+</head>
+<body>
+<form oninput="out.value=parseInt(num1.value)+parseInt(num2.value)">
+    <input type="number" id="num1" value="50">
+    +<input type="number" id="num2" value="50">
+    =<output name="out" for="num1 num2"></output>
+</form>
+</body>
+</html>

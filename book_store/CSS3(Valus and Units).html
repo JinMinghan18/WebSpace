@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3属性值和单位</title>
+    <style type="text/css">
+        html{font-size: 10px;}
+        div{width: 130px;height: 40px;border: 1px solid;margin-top: 10px;}
+        #div1{color: #3444ff;background-color: rgba(0,0,0,.2);}
+        #div2{background-color: hsla(120,50%,50%,.5);}
+        #div3{width: 10ch;overflow: hidden;}
+        #div4{font-size: 1.6rem;}
+        #div5{transform: rotate(20deg);background-color: #bbbbbb;}
+        #p1{
+            position:absolute;overflow: hidden;width: 100px;border: 1px solid;
+            transition-property: width;
+            transition-duration: 1s;
+            transition-timing-function:
+        ease-in;
+        }
+        #p1:hover{width: 10px;}
+    </style>
+</head>
+<body>
+<div id="div1">CSS3颜色值和单位</div>
+<div id="div2">CSS3颜色值和单位</div>
+<div id="div3">0000000000AA</div>
+<div id="div4">CSS3颜色值和单位</div>
+<div id="div5">CSS3颜色值和单位</div>
+<p id="p1">时间值和单位，1s内宽度变小</p>
+</body>
+</html>

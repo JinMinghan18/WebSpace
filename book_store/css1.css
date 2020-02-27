@@ -1,0 +1,5 @@
+@charset "utf-8";
+/*CSS Document*/
+hr{border: solid 1px #FF0000;}
+p{margin-left: 20px;}
+body{background-image: url(images/bg.gif);}

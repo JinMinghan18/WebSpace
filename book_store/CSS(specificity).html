@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS specificity</title>
+    <style type="text/css">
+        *{color: #F90;}
+        div{color: orange;}
+        body div{color: green;}
+        #div-id{color: red;}
+        .div-class{color: blue;}
+        div#div-id{color: #ccc;}
+        div.div-class{color: #39c;}
+    </style>
+</head>
+<body>
+<div id="div-id" class="div-class" >CSS specificity 规则示例</div>
+</body>
+</html>
