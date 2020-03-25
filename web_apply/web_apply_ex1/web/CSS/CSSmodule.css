@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+body{
+    background-size: cover;
+}
+a{
+    color: ivory;
+    text-decoration: none;
+}
+.header-name{
+    color: ivory;
+    margin-right: 20px;
+    margin-left: 100px;
+    margin-top: 15px;
+    width: 600px;
+    float: left;
+}
+#nav1{
+    float: right;
+    margin-top: 15px;
+    margin-right: 50px;
+}
+
+.link-line{
+    margin-right:25px;
+    font-size: 25px;
+}
+.main-area{
+    position: absolute;
+    width: 100%;
+    height: 693.49px;
+    left:0px;
+    top:66.51px;
+}
+.main-area-1{
+    background-color: ivory;
+    position: relative;
+    width:620px;
+    height:400px;
+    top:100px;
+    left:730px
+}
+.text-header{
+    color: #3396FB;
+    font-style: italic;
+    text-align: center;
+    font-size: 70px;
+}
+.text-header2{
+    color: #3396FB;
+    font-style: italic;
+    text-align: center;
+    font-size: 40px;
+}
+#id1{
+    border: 1px solid white;
+    width: 200px;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+}
+.main-area-2{
+    position: relative;
+    width: 100%;
+    height:80px;
+    text-align: center;
+    top:220px;
+}
+.next-page{
+    width: 70px;
+    height: 70px;
+    border-radius:100%;
+    border:none;
+}
+.image-style1{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border:none;
+}
+#tip1{
+    position: relative;
+    float: right;
+    color: ivory;
+    top:165px;
+}
+.second-page{
+    width: 100%;
+    height: 760px;
+    position: absolute;
+    top:760px;
+    left:0px;
+    border-top: black 2px solid;
+    border-bottom: black 2px solid;
+}
+
+.article-style{
+    position: relative;
+    background: #eef1f3;
+    left:150px;
+    top:30px;
+    width: 60%;
+    float: left;
+    height:600px;
+    overflow: auto;
+}
+.article-style::-webkit-scrollbar{
+    width: 10px;
+}
+.article-style::-webkit-scrollbar-track{
+    background-color: #f2f2f2;
+    border-radius: 2px;
+}
+.article-style::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 10px;
+}
+.article-style::-webkit-scrollbar-thumb:hover{
+    background: #f2f2f2;
+}
+.article-style::-webkit-scrollbar-corner{
+    background: #a4a4a4;
+}
+#articlelist{
+    position: relative;
+    background: #eef1f3;
+    left:160px;
+    top:30px;
+    width: 10%;
+    float: left;
+    height:600px;
+    overflow: auto;
+}

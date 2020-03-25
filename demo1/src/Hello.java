@@ -13,9 +13,10 @@ public class Hello extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
-        out.println("<h1>Servlet后台</h1>");
+        out.println("<h1>Servlet服务</h1>");
     }
 }

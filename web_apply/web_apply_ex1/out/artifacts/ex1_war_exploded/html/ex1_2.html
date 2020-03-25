@@ -1,0 +1,93 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ex1_2</title>
+        <script type="text/javascript" src="../jsp/fill_Check.js"></script>
+    </head>
+    <body>
+        <form action="welcome.html" method="post" onsubmit="return fillcheck()" style="margin: 0px auto;background-color: #f2f2f2;width: 373px;height: 1050px">
+    <!--        首部图片-->
+            <div>
+                <img src="../images/HZ_Health_Code.png" />
+            </div>
+            <br/>
+    <!--        您最近十四天是否离开过杭州或当前所在城市-->
+            <div style="background-color: white">
+                <span>&nbsp;您最近十四天是否离开过杭州或当前所在城市？</span><br>
+                &nbsp;<img src="../images/single_select.jpg"  style="width: 30px;height: 15px" />
+                <table style="height: 80px">
+                    <tr >
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);width: 373px"><input type="radio" name="leave" value="yes">是</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="leave" value="no">否</td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+    <!--        您最近十四天是否接触过新冠病人或疑似确诊病例-->
+            <div style="background-color: white">
+                <span>&nbsp;您最近十四天是否接触过新冠病人或疑似确诊病例？</span><br/>
+                &nbsp;<img src="../images/single_select.jpg"  style="width: 30px;height: 15px" />
+                <table style="height: 80px">
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);width: 373px"><input type="radio" name="touch" value="yes">是</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="touch" value="no">否</td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+    <!--        当前健康状况     复选-->
+            <div style="background-color: white">
+                <span>&nbsp;当前健康情况(若有以下情况，请在方框中勾选)</span><br/>
+                &nbsp;<img src="../images/multi_select.jpg" style="width: 30px;height: 15px;">
+                <table style="height: 280px">
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);width: 373px"><input type="checkbox" name="situation" value="nothing_wrong">无异常</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);width: 373px"><input type="checkbox" name="situation" value="weak">乏力 </td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);width: 373px"><input type="checkbox" name="situation" value="cough">干咳</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);width: 373px"><input type="checkbox" name="situation" value="nasal_obstration">鼻塞</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);width: 373px"><input type="checkbox" name="situation" value="shed_tears">流涕</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);width: 373px"><input type="checkbox" name="situation" value="sore_throat">咽痛</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);width: 373px"><input type="checkbox" name="situation" value="lax">腹泻</td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+    <!--        本人郑重承诺    复选-->
+            <div style="background-color: white">
+                <span>&nbsp;本人郑重承诺:</span><br/>
+                <table style="height: 120px">
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);"><input type="checkbox" name="promise" value="promise1"></td>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);">为疫情监控，本人同意以上信息依法提交所在辖区疫情防控部门统筹管理</td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);"><input type="checkbox" name="promise" value="promise2"></td>
+                        <td style="border-bottom: 1px solid rgba(0,0,0,0.08);">上述信息是由我本人填写，本人对信息内容的真实性和完整性负责。如果信息有误或缺失，本人愿承担相应的法律责任。同时，本人保证遵守疫情管控的各项规定，配合并听从各项措施和要求。</td>
+
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div>
+                <tr><td><div style="text-align:center"><input type="submit" name="submit" value="提交" style="width: 90%;background-color: #3396FB;border-radius:15px;border: none"></div></td></tr>
+            </div>
+        </form>
+    </body>
+    </html>
