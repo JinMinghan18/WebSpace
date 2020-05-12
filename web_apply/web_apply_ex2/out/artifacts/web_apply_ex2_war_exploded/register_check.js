@@ -46,9 +46,5 @@ function register_check() {
         alert("姓名必须为中文!");
         return false;
     }
-    // else{
-    //     var form = document.forms[0];
-    //     form.action="register.do?param=post";
-    //     form.submit();
-    // }
+
 }
