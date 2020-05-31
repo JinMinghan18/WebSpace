@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Context reloadable = "true">
+    <Resource
+        name="jdbc/sampleDS"
+        type="javax.sql.DataSource"
+        driverClassName="com.mysql.cj.jdbc.Driver"
+        url="jdbc:mysql://127.0.0.1:3306/webstore?serverTimezone=GMT%2B8"
+        username="root"
+        password="123456"
+        maxActive="4"
+        maxIdle="2"
+        maxWait="5000"
+        />
+    <Resource
+        name="jdbc/sampleDS2"
+        type="javax.sql.DataSource"
+        driverClassName="com.mysql.cj.jdbc.Driver"
+        url="jdbc:mysql://127.0.0.1:3306/HealthCodeSystem?serverTimezone=GMT%2B8"
+        username="root"
+        password="123456"
+        maxActive="4"
+        maxIdle="2"
+        maxWait="5000"
+        />
+</Context>
