@@ -28,18 +28,40 @@
             }
         }
     </script>
+    <link rel="stylesheet" type="text/css" href="../CSS/HealthCodeLoginCSS.css">
 </head>
-<body style="background: #999">
-<form action="login.do" method="post" onsubmit="return check_form();">
-    <table align="center" style="border:1px solid #0aa8ff;">
-        <tbody>
-        <tr><td colspan="2"><h3 style="color: #0aa8ff;text-align: center">师生打卡登录</h3></td></tr>
-        <tr><td>姓 &nbsp;名:</td><td><input type="text" placeholder="请输入用户名" id="name" name="name"></td></tr>
-        <tr><td>学 &nbsp;号:</td><td><input type="text" id="school_id" placeholder="请输入密码" name="school_id"></td></tr>
-        <tr><td>身份证:</td><td><input type="text" name="id" id="id" placeholder="请输入身份证号码后八位"></td></tr>
-        <tr><td colspan="2" style="text-align: center"><input type="submit" style="background-color: #0aa8ff;width: 95%;"></td></tr>
-        </tbody>
-    </table>
-</form>
+<body style="background: #444444">
+
+    <div class="login">
+        <div class="account">
+            <form action="login.do" method="post" onsubmit="return check_form();">
+                <div class="logo">师生登录界面</div>
+                <div class="line">
+                    <input class="inputtxt" value name="name" datatype="*"
+                           nullmsg="请填写账号" placeholder="姓名" type="text">
+                </div>
+                <div class="line">
+                    <input class="inputtxt" name="school_id" type="text" placeholder="学号"
+                           nullmsg="请输入学号" datatype="*">
+                </div>
+                <div class="line">
+                    <input class="inputtxt" name="id" type="text" placeholder="身份证后八位"
+                           nullmsg="请输入身份证" datatype="*">
+                </div>
+                <div class="login_btn">
+                    <input id="login-button" value="登录" type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+<%--        <tbody>--%>
+<%--        <tr><td colspan="2"><h3 style="color: #0aa8ff;text-align: center">师生打卡登录</h3></td></tr>--%>
+<%--        <tr><td>姓 &nbsp;名:</td><td><input type="text" placeholder="请输入用户名" id="name" name="name"></td></tr>--%>
+<%--        <tr><td>学 &nbsp;号:</td><td><input type="text" id="school_id" placeholder="请输入密码" name="school_id"></td></tr>--%>
+<%--        <tr><td>身份证:</td><td><input type="text" name="id" id="id" placeholder="请输入身份证号码后八位"></td></tr>--%>
+<%--        <tr><td colspan="2" style="text-align: center"><input type="submit" style="background-color: #0aa8ff;width: 95%;"></td></tr>--%>
+<%--        </tbody>--%>
+<%--    </table>--%>
+
 </body>
 </html>
