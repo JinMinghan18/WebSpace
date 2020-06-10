@@ -36,15 +36,15 @@
             <form action="#" method="post" onsubmit="return check_form();">
                 <div class="logo">师生登录界面</div>
                 <div class="line">
-                    <input class="inputtxt" value name="name" datatype="*"
+                    <input class="inputtxt" value name="name" id="name" datatype="*"
                            nullmsg="请填写账号" placeholder="姓名" type="text">
                 </div>
                 <div class="line">
-                    <input class="inputtxt" name="school_id" type="text" placeholder="学号"
+                    <input class="inputtxt" name="school_id" id="school_id" type="text" placeholder="学号"
                            nullmsg="请输入学号" datatype="*">
                 </div>
                 <div class="line">
-                    <input class="inputtxt" name="id" type="text" placeholder="身份证后八位"
+                    <input class="inputtxt" name="id" id="id" type="text" placeholder="身份证后八位"
                            nullmsg="请输入身份证" datatype="*">
                 </div>
                 <div class="login_btn">

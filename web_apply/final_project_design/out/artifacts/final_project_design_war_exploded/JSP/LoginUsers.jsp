@@ -31,21 +31,20 @@
     <link rel="stylesheet" type="text/css" href="../CSS/HealthCodeLoginCSS.css">
 </head>
 <body style="background: #444444">
-
     <div class="login">
         <div class="account">
-            <form action="login.do" method="post" onsubmit="return check_form();">
+            <form action="#" method="post" onsubmit="return check_form();">
                 <div class="logo">师生登录界面</div>
                 <div class="line">
-                    <input class="inputtxt" value name="name" datatype="*"
+                    <input class="inputtxt" value name="name" id="name" datatype="*"
                            nullmsg="请填写账号" placeholder="姓名" type="text">
                 </div>
                 <div class="line">
-                    <input class="inputtxt" name="school_id" type="text" placeholder="学号"
+                    <input class="inputtxt" name="school_id" id="school_id" type="text" placeholder="学号"
                            nullmsg="请输入学号" datatype="*">
                 </div>
                 <div class="line">
-                    <input class="inputtxt" name="id" type="text" placeholder="身份证后八位"
+                    <input class="inputtxt" name="id" id="id" type="text" placeholder="身份证后八位"
                            nullmsg="请输入身份证" datatype="*">
                 </div>
                 <div class="login_btn">
@@ -54,14 +53,5 @@
             </form>
         </div>
     </div>
-<%--        <tbody>--%>
-<%--        <tr><td colspan="2"><h3 style="color: #0aa8ff;text-align: center">师生打卡登录</h3></td></tr>--%>
-<%--        <tr><td>姓 &nbsp;名:</td><td><input type="text" placeholder="请输入用户名" id="name" name="name"></td></tr>--%>
-<%--        <tr><td>学 &nbsp;号:</td><td><input type="text" id="school_id" placeholder="请输入密码" name="school_id"></td></tr>--%>
-<%--        <tr><td>身份证:</td><td><input type="text" name="id" id="id" placeholder="请输入身份证号码后八位"></td></tr>--%>
-<%--        <tr><td colspan="2" style="text-align: center"><input type="submit" style="background-color: #0aa8ff;width: 95%;"></td></tr>--%>
-<%--        </tbody>--%>
-<%--    </table>--%>
-
 </body>
 </html>

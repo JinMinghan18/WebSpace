@@ -11,6 +11,18 @@
     top: 40%;
     width: 340px;
 }
+.login2{
+    background: white;
+    border-radius: 4px;
+    height: 290px;
+    left: 50%;
+    margin-left: -220px;
+    margin-top: -180px;
+    padding:35px 40px 50px;
+    position: absolute;
+    top: 40%;
+    width: 340px;
+}
 .account{
     color: rgb(51,51,51);
     display: block;
@@ -71,6 +83,9 @@
 .login .line .codemsg{background:#e53451;border-radius:3px;color:#fff;font-size:12px;height:21px;line-height:22px;overflow:hidden;padding:0 6px;position:absolute;right:127px;text-align:right;top:5px;z-index:0}
 .inputtxt:focus{border-bottom: #3457ec 3px solid;box-shadow:0 0 50px #eee}
 .login .yzm .inputtxt{width:64%}
+.login_btn{
+    padding-top: 20px;
+}
 .login_btn input{
     width:94%;
     height:44px;
