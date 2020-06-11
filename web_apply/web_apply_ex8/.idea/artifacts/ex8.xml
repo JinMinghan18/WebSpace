@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ex8">
+    <output-path>$PROJECT_DIR$/out/artifacts/ex8</output-path>
+    <root id="archive" name="ex8.war">
+      <element id="artifact" artifact-name="web_apply_ex8:war exploded" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../javaProject/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
