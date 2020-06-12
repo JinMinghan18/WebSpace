@@ -15,7 +15,7 @@
 <body style="background: #444444">
 <div class="login">
     <div class="account">
-        <form action="#" method="post" onsubmit="return check_form();">
+        <form action="../StudentQueryServlet" method="post" onsubmit="return check_form();">
             <div class="logo">系统管理员信息管理界面</div>
             <div class="line">
                 <input class="inputtxt" value name="college" id="college" datatype="*"

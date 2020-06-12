@@ -8,9 +8,19 @@ public class Teacher {
     private String role;//系统管理员、校级管理员、院级管理员、普通教师
     private String attendenceRecord;//打卡天数
     private String password;//各类管理员密码
+    private int healthday;
+    private String healthcode;
+
+    public String getHealthcode() {
+        return healthcode;
+    }
 
     public String getPassword() {
         return password;
+    }
+
+    public int getHealthday() {
+        return healthday;
     }
 
     public String getAttendenceRecord() {
@@ -34,6 +44,14 @@ public class Teacher {
 
     public String getRole() {
         return role;
+    }
+
+    public void setHealthcode(String healthcode) {
+        this.healthcode = healthcode;
+    }
+
+    public void setHealthday(int healthday) {
+        this.healthday = healthday;
     }
 
     public void setPassword(String password) {

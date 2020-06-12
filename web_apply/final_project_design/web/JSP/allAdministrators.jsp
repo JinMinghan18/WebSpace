@@ -16,7 +16,7 @@
 <div class="login2">
     <div class="account">
         <div class="logo">系统管理员管理界面</div>
-        <form action="<%=path%>/JSP/SystemInfoManage.jsp" method="post">
+        <form action="<%=path%>/JSP/StudentInfoManage.jsp" method="post">
             <div class="login_btn">
                 <input id="manageStudent" value="学生信息管理" type="submit">
             </div>
@@ -28,7 +28,7 @@
         </form>
         <form action="#" method="post">
             <div class="login_btn">
-                <input id="数据查询" value="师生数据查询" type="submit">
+                <input id="data_statistics" value="师生打卡数据统计" type="submit">
             </div>
         </form>
     </div>

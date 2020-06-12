@@ -5,6 +5,7 @@ import com.model.Teacher;
 import com.sun.org.apache.xml.internal.utils.StringToStringTable;
 import com.sun.xml.internal.ws.api.ha.StickyFeature;
 
+import javax.servlet.ServletRequestListener;
 import javax.sound.midi.Soundbank;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -63,4 +64,37 @@ public class HealthCodeDao extends Basedao{
         }
     }
     //检索学生信息
+    public ArrayList<Student> studentInfoQuery(String college, String major, String class1){
+        ArrayList<Student>stuList = new ArrayList<Student>();
+
+        String sql = "SELECT * FROM students WHERE college=? AND major=? AND class1=?";
+        try(Connection conn = dataSource.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,college);
+            pstmt.setString(2,major);
+            pstmt.setString(3,class1);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Student student = new Student();
+                    student.setMajor(rst.getString("major"));
+                    student.setCollege(rst.getString("college"));
+                    student.setClass1(rst.getString("class1"));
+                    student.setName(rst.getString("name"));
+                    System.out.println(rst.getString("name"));
+                    student.setId(rst.getString("id"));
+                    student.setSchool_id(rst.getString("school_id"));
+                    student.setAttendenceRecord(rst.getString("attendenceRecord"));
+                    student.setHealthcode(rst.getString("healthcode"));
+                    stuList.add(student);
+                }
+            }
+            System.out.println(stuList.get(1).getName()+"dao");
+            return stuList;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return null;
+        }
+    }
+    //检索老师信息
+
 }

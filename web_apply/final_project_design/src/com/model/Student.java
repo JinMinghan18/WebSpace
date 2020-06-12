@@ -8,6 +8,18 @@ public class Student {
     private String major;//专业
     private String class1;
     private String attendenceRecord;//打卡天数
+    private int healthday;//健康天数
+    private String healthcode;//健康码颜色
+    public Student() {
+    }
+
+    public String getHealthcode() {
+        return healthcode;
+    }
+
+    public int getHealthday() {
+        return healthday;
+    }
 
     public String getName() {
         return name;
@@ -24,13 +36,20 @@ public class Student {
     public String getCollege() {
         return college;
     }
-
     public String getMajor() {
         return major;
     }
 
     public String getSchool_id() {
         return school_id;
+    }
+
+    public void setHealthcode(String healthcode) {
+        this.healthcode = healthcode;
+    }
+
+    public void setHealthday(int healthday) {
+        this.healthday = healthday;
     }
 
     public void setId(String id) {
