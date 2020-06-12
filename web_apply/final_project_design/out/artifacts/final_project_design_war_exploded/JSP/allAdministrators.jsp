@@ -18,12 +18,12 @@
         <div class="logo">系统管理员管理界面</div>
         <form action="<%=path%>/JSP/SystemInfoManage.jsp" method="post">
             <div class="login_btn">
-                <input id="manage" value="信息管理" type="submit">
+                <input id="manageStudent" value="学生信息管理" type="submit">
             </div>
         </form>
         <form action="#" method="post">
             <div class="login_btn">
-                <input id="" value="导入师生数据" type="submit">
+                <input id="manageTeacher" value="老师信息管理" type="submit">
             </div>
         </form>
         <form action="#" method="post">

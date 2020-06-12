@@ -23,6 +23,18 @@
     top: 50%;
     width: 340px;
 }
+.login_faild{
+    background: white;
+    border-radius: 4px;
+    height: 190px;
+    left: 50%;
+    margin-left: -220px;
+    margin-top: -180px;
+    padding:35px 40px 50px;
+    position: absolute;
+    top: 50%;
+    width: 340px;
+}
 .account{
     color: rgb(51,51,51);
     display: block;
