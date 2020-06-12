@@ -1,3 +1,5 @@
+package com.listener;
+
 import com.dao.VisiterDao;
 import com.model.IP;
 
@@ -8,6 +10,8 @@ import javax.servlet.ServletRequestListener;
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.*;
 import javax.servlet.jsp.PageContext;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebListener
 public class MyRequestListener
@@ -28,10 +32,11 @@ public class MyRequestListener
                 count++;
                 sre.getServletContext().setAttribute("count",new Integer(count));
                 String IP = request.getRemoteHost();
-                sre.getServletContext().setAttribute("ip",IP);
-
+                String time = null;
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                time = df.format(new Date());
+                boolean is = dao.addnewIP(IP,time);
             }
-
         }
     }
 

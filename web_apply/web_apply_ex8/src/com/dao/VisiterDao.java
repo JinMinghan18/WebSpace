@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
 
 public class VisiterDao extends Basedao {
     //查询ip是否存在
@@ -33,6 +34,20 @@ public class VisiterDao extends Basedao {
         return false;
     }
     //存入数据
-    public 
+    public boolean addnewIP(String ip,String time){
+        String sql = "INSERT INTO ip_info(ip,visit_time)VALUES(?,?)";
+        try (Connection conn = dataSource.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,ip);
+            pstmt.setString(2,time);
+            pstmt.executeUpdate();
+            return true;
+
+        }catch(SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+
+    }
 
 }
