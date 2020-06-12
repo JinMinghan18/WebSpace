@@ -7,6 +7,11 @@ public class Teacher {
     private String college;//学院
     private String role;//系统管理员、校级管理员、院级管理员、普通教师
     private String attendenceRecord;//打卡天数
+    private String password;//各类管理员密码
+
+    public String getPassword() {
+        return password;
+    }
 
     public String getAttendenceRecord() {
         return attendenceRecord;
@@ -29,6 +34,10 @@ public class Teacher {
 
     public String getRole() {
         return role;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setAttendenceRecord(String attendenceRecord) {
