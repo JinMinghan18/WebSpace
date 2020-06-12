@@ -19,6 +19,7 @@
         <form action="<%=path%>/JSP/SystemInfoManage.jsp" method="post">
             <div class="login_btn">
                 <input id="manage" value="信息管理" type="submit">
+
             </div>
         </form>
         <form action="#" method="post">
