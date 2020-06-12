@@ -5,12 +5,13 @@
   Time: 17:46
   To change this template use File | Settings | File Templates.
 --%>
+<%String path = request.getContextPath();%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>健康码申请</title>
-    <script type="text/javascript" src="../JS/checkform.js"></script>
+    <script type="text/javascript" src="<%=path%>/JS/checkform.js"></script>
 </head>
 <body>
 <form action="../CheckformServlet" method="post" name="form" onsubmit="return check_form()" style="margin: 0px auto;background-color: #f2f2f2;width: 373px;height: 1200px">
@@ -18,13 +19,13 @@
     <div style="background-color: white">
         <table  style="background-color: white">
             <tr>
-                <td>姓名:</td><td><input type="text" name="name"  value="${student.name+teacher.name}" readonly style="width: 200px;border-radius: 4px"></td>
+                <td>姓名:</td><td><input type="text" name="name"  value="${student.name}${teacher.name}" readonly style="width: 200px;border-radius: 4px"></td>
             </tr>
             <tr>
-                <td>身份证号:</td><td><input type="text" name="id" value="${student.id+teacher.id}" readonly style="width: 200px;border-radius: 4px"></td>
+                <td>身份证号:</td><td><input type="text" name="id" value="${student.id}${teacher.id}" readonly style="width: 200px;border-radius: 4px"></td>
             </tr>
             <tr>
-                <td>请输入学号(工号):</td><td><input type="text" name="stuId" value="${student.school_id+teacher.school_id}" readonly style="width: 200px;border-radius: 4px"></td>
+                <td>请输入学号(工号):</td><td><input type="text" name="stuId" value="${student.school_id}${teacher.school_id}" readonly style="width: 200px;border-radius: 4px"></td>
             </tr>
             <tr>
                 <td>请输入手机号:</td><td><input type="tel" name="tel" placeholder="请输入手机号" style="width: 200px;border-radius: 4px"></td>
@@ -37,7 +38,7 @@
     <div style="background-color: white">
 
         <span>近期（14天内）是否去过湖北省或重点疫区</span><br>
-        <img src="/final_project_design_war_exploded/images/single_select.png" style="width: 30px;height: 15px;">
+        <img src="<%=path%>/images/single_select.png" style="width: 30px;height: 15px;">
         <table>
             <tr>
                 <td width="305px"><input type="radio" name="q1" value="yes"></td><td style="width: 95%;border-bottom: 1px solid rgba(0,0,0,0.15)">是</td>
@@ -49,7 +50,7 @@
     </div><br>
     <div style="background-color: white">
         <span style="width: 305px">近期（14天内）是否去过国外</span><br>
-        <img src="/final_project_design_war_exploded/images/single_select.png" style="width: 30px;height: 15px;">
+        <img src="<%=path%>/images/single_select.png" style="width: 30px;height: 15px;">
         <table>
             <tr>
                 <td width="305px"><input type="radio" name="q2" value="yes"></td><td style="width: 95%;border-bottom: 1px solid rgba(0,0,0,0.15)">是</td>
@@ -61,7 +62,7 @@
     </div><br>
     <div style="background-color: white">
         <span style="width: 305px">近期（14天内）是否接触过新冠确诊病人或疑似病人</span><br>
-        <img src="/final_project_design_war_exploded/images/single_select.png" style="width: 30px;height: 15px;">
+        <img src="<%=path%>/images/single_select.png" style="width: 30px;height: 15px;">
         <table>
             <tr>
                 <td width="305px"><input type="radio" name="q3" value="yes"></td><td style="width: 95%;border-bottom: 1px solid rgba(0,0,0,0.15)">是</td>
@@ -73,7 +74,7 @@
     </div><br>
     <div style="background-color: white">
         <span style="width: 305px">是否被卫生部门确认为新冠肺炎确诊病例或疑似病例</span><br>
-        <img src="/final_project_design_war_exploded/images/single_select.png" style="width: 30px;height: 15px;">
+        <img src="<%=path%>/images/single_select.png" style="width: 30px;height: 15px;">
         <table>
             <tr>
                 <td width="305px"><input type="radio" name="q4" value="yes"></td><td style="width: 95%;border-bottom: 1px solid rgba(0,0,0,0.15)">是</td>
@@ -85,7 +86,7 @@
     </div><br>
     <div style="background-color: white">
         <span>&nbsp;当前健康情况(若有以下情况，请在方框中勾选)</span><br/>
-        &nbsp;<img src="/final_project_design_war_exploded/images/multi_select.png" style="width: 30px;height: 15px;">
+        &nbsp;<img src="<%=path%>/images/multi_select.png" style="width: 30px;height: 15px;">
         <table style="height: 280px">
             <tr>
                 <td style="border-bottom: 1px solid rgba(0,0,0,0.15);width: 373px"><input type="checkbox" name="situation" value="nothing_wrong">无异常</td>
