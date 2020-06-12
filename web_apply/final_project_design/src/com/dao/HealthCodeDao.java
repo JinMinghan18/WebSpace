@@ -76,19 +76,25 @@ public class HealthCodeDao extends Basedao{
             try(ResultSet rst = pstmt.executeQuery()){
                 while (rst.next()){
                     Student student = new Student();
+                    String daysum = rst.getString("attendenceRecord");
+                    int count = 0;
+                    for(int i = 0;i < daysum.length();i++){
+                        if(daysum.charAt(i)!='0')
+                            count++;
+                    }
                     student.setMajor(rst.getString("major"));
                     student.setCollege(rst.getString("college"));
                     student.setClass1(rst.getString("class1"));
                     student.setName(rst.getString("name"));
-                    System.out.println(rst.getString("name"));
+//                    System.out.println(rst.getString("name"));
                     student.setId(rst.getString("id"));
                     student.setSchool_id(rst.getString("school_id"));
-                    student.setAttendenceRecord(rst.getString("attendenceRecord"));
+                    student.setAttendenceRecord(""+count);
                     student.setHealthcode(rst.getString("healthcode"));
                     stuList.add(student);
                 }
             }
-            System.out.println(stuList.get(1).getName()+"dao");
+//            System.out.println(stuList.get(1).getName()+"dao");
             return stuList;
         }catch (SQLException se){
             se.printStackTrace();
