@@ -25,29 +25,33 @@ public class LoginUsersServlet extends HttpServlet {
         System.out.println(id);
         HealthCodeDao dao = new HealthCodeDao();
         Student student = dao.findStudentInfo(name);
-        Teacher teacher = dao.findTeacherInfo(name);
+        Teacher teacher = dao.findTeacherInfo(school_id);
         System.out.println("studentinfo"+student.getName());
         System.out.println(student.getId());
         System.out.println(student.getSchool_id());
-        System.out.println("teacberinfo"+teacher.getName());
+        System.out.println("teacherinfo"+teacher.getName());
         System.out.println(teacher.getId());
         System.out.println(teacher.getSchool_id());
         request.setAttribute("student",student);
         request.setAttribute("teacher",teacher);
         if(student==null && teacher==null){
+            System.out.println("s1");
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/error.jsp");
             rd.forward(request,response);
         }
-        else if(student!=null && (!school_id.equals(student.getSchool_id()) || !id.equals(student.getId()))){
-            RequestDispatcher rd = request.getRequestDispatcher("/JSP/error.jsp");
+        else if(student!=null && (school_id.equals(student.getSchool_id()) || id.equals(student.getId()))){
+            System.out.println("s2");
+            RequestDispatcher rd = request.getRequestDispatcher("/JSP/HealthCode.jsp");
             rd.forward(request,response);
         }
-        else if(teacher!=null && (!school_id.equals(teacher.getSchool_id()) || !id.equals(teacher.getId()))){
-            RequestDispatcher rd = request.getRequestDispatcher("/JSP/error.jsp");
+        else if(teacher!=null && (name.equals(teacher.getName()) || id.equals(teacher.getId()))){
+            System.out.println("s3");
+            RequestDispatcher rd = request.getRequestDispatcher("/JSP/HealthCode.jsp");
             rd.forward(request,response);
         }
         else{
-            RequestDispatcher rd = request.getRequestDispatcher("/JSP/HealthCode.jsp");
+            System.out.println("s4");
+            RequestDispatcher rd = request.getRequestDispatcher("/JSP/error.jsp");
             rd.forward(request,response);
         }
     }

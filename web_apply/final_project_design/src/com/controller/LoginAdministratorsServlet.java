@@ -24,8 +24,8 @@ public class LoginAdministratorsServlet extends HttpServlet {
         String password = request.getParameter("password");
 //        System.out.println(password);
         teacher = dao.findTeacherInfo(school_id);
-        System.out.println(teacher.getSchool_id());
-        System.out.println(teacher.getPassword());
+//        System.out.println(teacher.getSchool_id());
+//        System.out.println(teacher.getPassword());
         if(teacher==null){
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/error2.jsp");
             rd.forward(request,response);

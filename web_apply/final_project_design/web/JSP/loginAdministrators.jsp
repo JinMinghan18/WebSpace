@@ -5,11 +5,12 @@
   Time: 18:37
   To change this template use File | Settings | File Templates.
 --%>
+<%String path = request.getContextPath();%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>管理员登录</title>
-    <link rel="stylesheet" href="../CSS/HealthCodeLoginCSS.css">
+    <link rel="stylesheet" href="<%=path%>/CSS/HealthCodeLoginCSS.css">
 </head>
 <body>
 <body style="background: #444444">
