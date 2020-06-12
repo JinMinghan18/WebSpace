@@ -39,12 +39,12 @@ public class LoginUsersServlet extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/error.jsp");
             rd.forward(request,response);
         }
-        else if(student!=null && (school_id.equals(student.getSchool_id()) || id.equals(student.getId()))){
+        else if(student!=null && school_id.equals(student.getSchool_id()) && id.equals(student.getId())){
             System.out.println("s2");
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/HealthCode.jsp");
             rd.forward(request,response);
         }
-        else if(teacher!=null && (name.equals(teacher.getName()) || id.equals(teacher.getId()))){
+        else if(teacher!=null && name.equals(teacher.getName()) && id.equals(teacher.getId())){
             System.out.println("s3");
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/HealthCode.jsp");
             rd.forward(request,response);

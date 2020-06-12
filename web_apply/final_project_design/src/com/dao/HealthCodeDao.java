@@ -62,4 +62,5 @@ public class HealthCodeDao extends Basedao{
             return null;
         }
     }
+    //检索学生信息
 }
