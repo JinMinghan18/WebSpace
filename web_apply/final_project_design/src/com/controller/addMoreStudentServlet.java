@@ -10,24 +10,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.stream.StreamSupport;
 
-@WebServlet({"/StudentQueryServlet"})
-public class StudentQueryServlet extends HttpServlet {
+@WebServlet({"/addMoreStudentServlet"})
+public class addMoreStudentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         HealthCodeDao dao = new HealthCodeDao();
-        ArrayList<Student> student = new ArrayList<Student>();
-        String college = request.getParameter("college");
-        String major = request.getParameter("major");
-        String class1 = request.getParameter("class1");
-//        System.out.println(college+major+class1);
-        student = dao.studentInfoQuery(college,major,class1);
-//        System.out.println(student.get(1).getName());
-        request.setAttribute("student",student);
-        RequestDispatcher rd = request.getRequestDispatcher("/JSP/ShowQueryStudentInfo.jsp");
+        Student student = new Student();
+        String message = null;
+        try{
+            String str = request.getParameter("added");
+            System.out.println(str);
+            boolean success = dao.addMoreStudent(str);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        request.setAttribute("result",message);
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/JSP/AddStudentInfo.jsp");
         rd.forward(request,response);
     }
 

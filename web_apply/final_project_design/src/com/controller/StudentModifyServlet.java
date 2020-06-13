@@ -1,7 +1,6 @@
 package com.controller;
 
 import com.dao.HealthCodeDao;
-import com.model.Student;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,24 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.stream.StreamSupport;
 
-@WebServlet({"/StudentQueryServlet"})
-public class StudentQueryServlet extends HttpServlet {
+@WebServlet({"/StudentModifyServlet"})
+public class StudentModifyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         HealthCodeDao dao = new HealthCodeDao();
-        ArrayList<Student> student = new ArrayList<Student>();
+        String name = request.getParameter("name");
+        String id = request.getParameter("id");
+        String school_id = request.getParameter("school_id");
         String college = request.getParameter("college");
         String major = request.getParameter("major");
         String class1 = request.getParameter("class1");
-//        System.out.println(college+major+class1);
-        student = dao.studentInfoQuery(college,major,class1);
-//        System.out.println(student.get(1).getName());
-        request.setAttribute("student",student);
-        RequestDispatcher rd = request.getRequestDispatcher("/JSP/ShowQueryStudentInfo.jsp");
+        String healthcode = request.getParameter("healthcode");
+        System.out.println(healthcode);
+        Boolean success = dao.ModifyStudentInfo(name,id,school_id,college,major,class1,healthcode);
+        RequestDispatcher rd = request.getRequestDispatcher("/StudentQueryServlet?college="+college+"&major="+major+"&class1="+class1+"");
         rd.forward(request,response);
     }
 

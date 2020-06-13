@@ -11,12 +11,13 @@
 <head>
     <title>信息管理</title>
     <link rel="stylesheet" href="<%=path%>/CSS/HealthCodeLoginCSS.css">
+
 </head>
 <body style="background: #444444">
 <div class="login">
     <div class="account">
-        <form action="../StudentQueryServlet" method="post" onsubmit="return check_form();">
-            <div class="logo">系统管理员信息管理界面</div>
+        <form action="../StudentQueryServlet" method="post" >
+            <div class="logo">学生信息查询管理界面</div>
             <div class="line">
                 <input class="inputtxt" value name="college" id="college" datatype="*"
                        nullmsg="请填写学院" placeholder="学院" type="text">
