@@ -415,14 +415,12 @@ public class HealthCodeDao extends Basedao{
             try(ResultSet rst = pstmt.executeQuery()){
                 while (rst.next()){
                     sum++;
-                    Teacher teacher = new Teacher();
-
                     Date d1 = new Date();
                     SimpleDateFormat dfd = new SimpleDateFormat("dd");
                     String date = dfd.format(d1);
                     int date2 = Integer.parseInt(date);//获取日期
 
-                    if(teacher.getAttendenceRecord().charAt(date2)!='0'){
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
                         finished++;
                     }
                 }
@@ -443,14 +441,13 @@ public class HealthCodeDao extends Basedao{
             try(ResultSet rst = pstmt.executeQuery()){
                 while (rst.next()){
                     sum++;
-                    Student student = new Student();
 
                     Date d1 = new Date();
                     SimpleDateFormat dfd = new SimpleDateFormat("dd");
                     String date = dfd.format(d1);
                     int date2 = Integer.parseInt(date);//获取日期
 
-                    if(student.getAttendenceRecord().charAt(date2)!='0'){
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
                         finished++;
                     }
                 }
