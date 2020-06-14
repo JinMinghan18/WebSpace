@@ -22,7 +22,7 @@ public class dataStatisticsServlet extends HttpServlet {
         HealthCodeDao dao = new HealthCodeDao();
 
         Double unfinishedTeacher = dao.teacherDailyAttendence();
-        System.out.println(unfinishedTeacher);
+//        System.out.println(unfinishedTeacher);
         Double unfinishedStudent = dao.studentDailyAttendence();
         request.setAttribute("teacherAttendence",unfinishedTeacher);
         request.setAttribute("studentAttendence",unfinishedStudent);
