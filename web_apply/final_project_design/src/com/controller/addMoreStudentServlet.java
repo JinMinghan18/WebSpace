@@ -26,7 +26,6 @@ public class addMoreStudentServlet extends HttpServlet {
         }catch (Exception e){
             e.printStackTrace();
         }
-        request.setAttribute("result",message);
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/JSP/AddStudentInfo.jsp");
         rd.forward(request,response);
     }

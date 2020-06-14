@@ -33,7 +33,19 @@
     padding:35px 40px 50px;
     position: absolute;
     top: 30%;
-    width:420px;
+    width:350px;
+}
+.modifytea{
+    background: white;
+    border-radius: 4px;
+    height: 600px;
+    left: 50%;
+    margin-left: -220px;
+    margin-top: -180px;
+    padding:35px 40px 50px;
+    position: absolute;
+    top: 30%;
+    width:350px;
 }
 .login_faild{
     background: white;

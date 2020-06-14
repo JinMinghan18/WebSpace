@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>信息管理</title>
+    <title>学生信息管理</title>
     <link rel="stylesheet" href="<%=path%>/CSS/HealthCodeLoginCSS.css">
 
 </head>

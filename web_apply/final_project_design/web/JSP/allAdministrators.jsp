@@ -21,7 +21,7 @@
                 <input id="manageStudent" value="学生信息管理" type="submit">
             </div>
         </form>
-        <form action="#" method="post">
+        <form action="<%=path%>/JSP/TeacherInfoManage.jsp" method="post">
             <div class="login_btn">
                 <input id="manageTeacher" value="老师信息管理" type="submit">
             </div>

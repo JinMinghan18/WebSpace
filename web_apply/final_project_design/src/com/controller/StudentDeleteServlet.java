@@ -20,7 +20,7 @@ public class StudentDeleteServlet extends HttpServlet {
         String college = request.getParameter("college");
         String major = request.getParameter("major");
         String class1 = request.getParameter("class1");
-        boolean success = dao.deleteStudentInfo(name);
+        boolean success = dao.deleteStudent(name);
         RequestDispatcher rd = request.getRequestDispatcher("/StudentQueryServlet?college="+college+"&major="+major+"&class1="+class1+"");
         rd.forward(request,response);
     }
