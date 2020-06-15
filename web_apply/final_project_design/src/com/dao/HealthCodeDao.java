@@ -24,6 +24,99 @@ import java.util.Date;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class HealthCodeDao extends Basedao{
+    //列出所有学生
+    public ArrayList<Student> allStudentInfo(){
+        String sql = "SELECT * FROM students";
+        ArrayList<Student>stuList = new ArrayList<Student>();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            double sum = 0;//总计老师数
+            double finished = 0;//完成打卡的老师
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Student student = new Student();
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)=='0'){
+                        student.setName(rst.getString("name"));
+                        student.setId(rst.getString("id"));
+                        student.setSchool_id(rst.getString("school_id"));
+                        student.setCollege(rst.getString("college"));
+                        student.setMajor(rst.getString("major"));
+                        student.setClass1(rst.getString("class1"));
+                        student.setAttendenceRecord("未打卡");
+                        student.setHealthcode(rst.getString("healthcode"));
+                        stuList.add(student);
+                    }
+                    else if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        student.setName(rst.getString("name"));
+                        student.setId(rst.getString("id"));
+                        student.setSchool_id(rst.getString("school_id"));
+                        student.setCollege(rst.getString("college"));
+                        student.setMajor(rst.getString("major"));
+                        student.setClass1(rst.getString("class1"));
+                        student.setAttendenceRecord("已打卡");
+                        student.setHealthcode(rst.getString("healthcode"));
+                        stuList.add(student);
+                    }
+
+                }
+            }
+            return stuList;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return null;
+        }
+    }
+
+    //列出所有老师
+    public ArrayList<Teacher> allTeacherInfo(){
+        String sql = "SELECT * FROM teachers";
+        ArrayList<Teacher>teaList = new ArrayList<Teacher>();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            double sum = 0;//总计老师数
+            double finished = 0;//完成打卡的老师
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Teacher teacher = new Teacher();
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)=='0'){
+                        teacher.setName(rst.getString("name"));
+                        teacher.setId(rst.getString("id"));
+                        teacher.setSchool_id(rst.getString("school_id"));
+                        teacher.setCollege(rst.getString("college"));
+                        teacher.setRole(rst.getString("role"));
+                        teacher.setAttendenceRecord("未打卡");
+                        teacher.setHealthcode(rst.getString("healthcode"));
+                        teaList.add(teacher);
+                    }
+                    else if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        teacher.setName(rst.getString("name"));
+                        teacher.setId(rst.getString("id"));
+                        teacher.setSchool_id(rst.getString("school_id"));
+                        teacher.setCollege(rst.getString("college"));
+                        teacher.setRole(rst.getString("role"));
+                        teacher.setAttendenceRecord("已打卡");
+                        teacher.setHealthcode(rst.getString("healthcode"));
+                        teaList.add(teacher);
+                    }
+                }
+            }
+            return teaList;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return null;
+        }
+    }
+
     //查找学生信息
     public Student findStudentInfo(String name){
         Student student = new Student();

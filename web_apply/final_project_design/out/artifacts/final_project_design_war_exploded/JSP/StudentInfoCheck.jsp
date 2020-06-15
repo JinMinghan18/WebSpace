@@ -1,3 +1,6 @@
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -5,6 +8,11 @@
   Time: 21:15
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    Date d1 = new Date();
+    SimpleDateFormat dfd = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+    String date = dfd.format(d1);
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,6 +24,53 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </head>
 <body>
-
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <h1 class="text-center">
+                全校学生打卡情况汇总
+            </h1>
+            <h6>截至<%=date%></h6><br>
+            <h3>
+                学生打卡情况汇总
+            </h3>
+            <h4>学生打卡率：<%=request.getAttribute("studentAttendence")%></h4>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>身份证号</th>
+                    <th>学号</th>
+                    <th>学院</th>
+                    <th>专业</th>
+                    <th>班级</th>
+                    <th>打卡情况</th>
+                    <th>健康码</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="teacher" items="${requestScope.student}"
+                           varStatus="status">
+                    <c:if test="${status.count%2==0}">
+                        <tr style="background: #eeeeff">
+                    </c:if>
+                    <c:if test="${status.count%2!=0}">
+                        <tr style="background: #dedeff">
+                    </c:if>
+                    <td>${teacher.name}</td>
+                    <td>${teacher.id}</td>
+                    <td>${teacher.school_id}</td>
+                    <td>${teacher.college}</td>
+                    <td>${teacher.major}</td>
+                    <td>${teacher.class1}</td>
+                    <td>${teacher.attendenceRecord}</td>
+                    <td>${teacher.healthcode}</td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>

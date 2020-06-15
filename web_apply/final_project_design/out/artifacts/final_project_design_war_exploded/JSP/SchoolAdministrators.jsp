@@ -21,14 +21,14 @@
                 <input id="data_statistics" value="师生打卡数据统计" type="submit">
             </div>
         </form>
-        <form action="<%=path%>/JSP/StudentInfoCheck.jsp" method="post">
+        <form action="StudentInfoCheckServlet" method="post">
             <div class="login_btn">
                 <input id="manageStudent" value="全校学生信息查看" type="submit">
             </div>
         </form>
-        <form action="<%=path%>/JSP/TeacherInfoManage.jsp" method="post">
+        <form action="TeacherInfoCheckServlet" method="post">
             <div class="login_btn">
-                <input id="manageTeacher" value="全校老师信息查看" type="submit">
+                <input id="manageTeacher" value="全校老师信息管理" type="submit">
             </div>
         </form>
     </div>
