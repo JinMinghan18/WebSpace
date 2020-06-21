@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referer" content="never" />
+    <meta name="renderer" content="webkit">
+    <title>宝塔Linux面板</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/site.css?20191127=7.1.0" rel="stylesheet" />
+    <link href="codemirror/lib/codemirror.css?20191127=7.1.0" rel="stylesheet" />
+    <!--[if lte IE 9]>
+    	<script src="/static/js/requestAnimationFrame.js"></script>
+    <![endif]-->
+    <style>
+		.top-tips {
+			height: 50px;
+			width: 100%;
+			color: red;
+			position: fixed;
+			top: 0;
+			z-index: 999;
+			background-color: white;
+			text-align: center;
+			line-height: 50px;
+			font-size: 20px;
+			border-bottom: 1px solid #f0f0f0;
+			font-weight: bold;
+			display: none;
+		}
+		.contextmenu {
+			position: absolute;
+			width: 120px;
+			background: #FFFFFF;
+			border-radius: 5px;
+			overflow: hidden;
+			z-index: 99999999;
+		}
+		.contextmenu li {
+			border-left: 3px solid transparent;
+			transition: ease 0.3s;
+		}
+		.contextmenu li:hover {
+			background: #707070;
+			border-left: 3px solid #333;
+		}
+		.contextmenu li a {
+			display: block;
+			padding: 5px 10px;
+			color: #000000;
+			text-decoration: none;
+			transition: ease 0.3s;
+			cursor:default;
+		}
+		.contextmenu li:hover a {
+			color: #fff;
+		}
+    </style>
+</head>
+<body>
+    <div class="bt-warp bge6">
+        <div class="top-tips">当前IE浏览器版本过低,部分功能无法展示,请更换至其他浏览器，国产浏览器请使用极速模式！</div>
+        <a style="display:none;" id="request_token_head" token="bR03d4rKHxt3dqOaX9YSAhcGKTtScEnEcnTjbo5TdNJdvqDx"></a>
+        <div id="container" class="container-fluid">
+            <div class="sidebar-scroll">
+                <div class="sidebar-auto">
+                    <div id="task" class="task cw" onclick="messagebox()">0</div>
+                    <h3 class="mypcip"><span class="f14 cw">39.97.238.64</span></h3>
+                    <ul class="menu">
+                        
+                            
+                            <li id="memuA"> <a class="menu_home" href="/">首页</a></li>
+                            
+                        
+                            
+                            <li id="memuAsite"> <a class="menu_web" href="/site">网站</a></li>
+                            
+                        
+                            
+                            <li id="memuAftp" class="current"> <a class="menu_ftp" href="/ftp">FTP</a></li>
+                            
+                        
+                            
+                            <li id="memuAdatabase"> <a class="menu_data" href="/database">数据库</a></li>
+                            
+                        
+                            
+                            <li id="memuAcontrol"> <a class="menu_control" href="/control">监控</a></li>
+                            
+                        
+                            
+                            <li id="memuAfirewall"> <a class="menu_firewall" href="/firewall">安全</a></li>
+                            
+                        
+                            
+                            <li id="memuAfiles"> <a class="menu_folder" href="/files">文件</a></li>
+                            
+                        
+                            
+                            <li id="memuAcrontab"> <a class="menu_day" href="/crontab">计划任务</a></li>
+                            
+                        
+                            
+                            <li id="memuAsoft"> <a class="menu_soft" href="/soft">软件商店</a></li>
+                            
+                        
+                            
+                            <li id="memuAconfig"> <a class="menu_set" href="/config">面板设置</a></li>
+                            
+                        
+                            
+                            <li id="dologin"> <a class="menu_exit" href="/login?dologin=True">退出</a></li>
+                            
+                        
+                    </ul>
+                    <div id="newbtpc"></div>
+                    <div class="btpc-plus" onclick="bindBTPanel(0,'b')">+</div>
+                </div>
+            </div>
+            <button style="display: none;" id="bt_copys" class="bt_copy" data-clipboard-text=""></button>
+            <a style="display: none;" id="defaultPath">/www/wwwroot</a>
+            
+<div class="main-content pb55">
+    <div class="container-fluid">
+        <div class="pos-box bgw mtb15">
+            <div class="position f14 c9 pull-left">
+                <a class="plr10 c4" href="/">首页</a>/<span class="plr10 c4">FTP管理</span>
+            </div>
+            <div class="search pull-right">
+                <form target="hid" onsubmit='ftp.get_list(1,$("#SearchValue").prop("value"))'>
+                    <input type="text" id="SearchValue" class="ser-text pull-left" placeholder="FTP搜索" />
+                    <button type="button" class="ser-sub pull-left" onclick='ftp.get_list(1,$("#SearchValue").prop("value"))'></button>
+                </form>
+                <iframe name='hid' id="hid" style="display:none"></iframe>
+            </div>
+        </div>
+        <div class="safe bgw mtb15 pd15">
+            <div class="info-title-tips">
+                <p><span class="glyphicon glyphicon-alert" style="color: #f39c12; margin-right: 10px;"></span>当前FTP地址为： ftp://39.97.238.64:21</p>
+            </div>
+            <button onclick="ftp.add_user()" class="btn btn-success btn-sm" type="button">添加FTP</button>
+            <button onclick="ftp.set_port()" class="btn btn-default btn-sm" type="button" style="margin-left:5px">修改FTP端口</button>
+            <span style="float:right">     
+                <button batch="true" style="float: right;display: none;margin-left:10px;" onclick="ftp.batch_ftp('del');" class="btn btn-default btn-sm">删除选中</button>                
+            </span>
+            <div class="divtable mtb10">
+                <div class="tablescroll">
+                    <table id="ftpData" class="table table-hover" style="min-width: 900px;border: 0 none;">                 
+                    </table>
+                </div>
+                <div class="dataTables_paginate paging_bootstrap page">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="footer bgw">宝塔Linux面板 &copy;2014-2020 广东堡塔安全技术有限公司 (bt.cn)<a style="margin-left:20px;color:#20a53a;" href="http://www.bt.cn/bbs" target="_blank">求助|建议请上宝塔论坛</a>
+        </div>
+    </div>
+    <script src="/static/js/jquery-1.10.2.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/language/Simplified_Chinese/lan.js?date=7.1.0"></script>
+    <script src="/static/layer/layer.js?date=7.1.0"></script>
+    <script src="/static/js/public.js?version=7.1.0"></script>
+    <script src="/static/js/public_backup.js?version=7.1.0"></script>
+    <script src="/static/codemirror/lib/codemirror.js?version=7.1.0"></script>
+    
+<script type="text/javascript">
+	var ftp = {
+		get_list:function(page,search){
+            if (page == undefined) page = 1;			
+            if (!search) search = $("#SearchValue").val();
+			bt.ftp.get_list(page,search,function(rdata){
+				$('.dataTables_paginate').html(rdata.page);
+				var _tab =  bt.render({
+					table:'#ftpData',
+					columns:[
+						{ field:'id',type:'checkbox',width:30},
+						{ field: 'name', title: '用户名',width:'20%'},
+						{ field: 'password',width:'15%', title: '密码',templet : function(item){
+							var _html = '<span class="password" data-pw="'+item.password+'">**********</span>';
+							_html += '<span onclick="bt.pub.show_hide_pass(this)" class="glyphicon glyphicon-eye-open cursor pw-ico" style="margin-left:10px"></span>';
+							_html += '<span class="ico-copy cursor btcopy" style="margin-left:10px" title="复制密码" data-pw="'+item.password+'" onclick="bt.pub.copy_pass(\''+item.password+'\')"></span>';
+							return _html;
+						}},
+						{ field: 'status', title: '状态',templet:function(item){
+							var _status = '<a href="javascript:;" title="FTP帐户" ';
+							if(item.status=='1'){
+								_status+=' onclick="ftp.stop_user('+item.id+',\''+item.name+'\') " >';
+								_status+='<span style="color:#5CB85C">已启用 </span><span style="color:#5CB85C" class="glyphicon glyphicon-play"></span>';
+							}
+							else{
+								_status+=' onclick="ftp.start_user('+item.id+',\''+item.name+'\')"';
+									_status+='<span style="color:red">已停用  </span><span style="color:red" class="glyphicon glyphicon-pause"></span>';
+							}
+							return _status;
+						},sort:function(){
+							ftp.get_list();
+						}},
+						{ field: 'path', title: '根目录',templet:function(item){
+							var _path = bt.format_path(item.path);							
+							return '<a class="btlink" title="打开目录" href="javascript:openPath(\''+_path+'\');">'+_path+'</a>';
+						}},
+						{ field: 'ps', title: '备注',templet : function(item){							
+							return "<span class='c9 input-edit' onclick=\"bt.pub.set_data_by_key('ftps','ps',this)\">"+item.ps+ "</span>";
+						}},
+						{ field: 'opt',width:130, title: '操作',align:'right',templet:function(item){
+							var option = "<a href=\"javascript:;\" class=\"btlink\" onclick=\"ftp.set_password("+item.id+",'"+item.name+"','"+item.password+"')\" title=\"修改FTP密码\">改密</a> | ";
+							option += "<a href=\"javascript:;\" class=\"btlink\" onclick=\"ftp.del("+item.id+",'"+item.name+"')\" title=\"删除FTP\">删除</a>";						
+							return option;
+						}},
+					],
+					data:rdata.data
+				})		
+			})			
+		},
+		batch_ftp:function(type,arr,result){
+			if(arr == undefined){
+				arr = [];
+				result = {count:0,error_list:[]};
+				$('input[type="checkbox"].check:checked').each(function(){
+					var _val = $(this).val();						
+					if(!isNaN(_val)) arr.push($(this).parents('tr').data('item'));
+				})	
+				bt.show_confirm(lan.ftp.del_all,"<a style='color:red;'>"+lan.get('del_all_ftp',[arr.length])+"</a>",function(){							
+					bt.closeAll();			
+					ftp.batch_ftp(type,arr,result);
+				});
+				return;
+			}
+			var item = arr[0];
+			switch(type){
+				case 'del':					
+					if(arr.length<1){
+						ftp.get_list();
+						bt.msg({msg:lan.get('del_all_ftp_ok',[result.count]),icon:1,time:5000});						
+						return;
+					}					
+					bt.ftp.del(item.id,item.name,function(rdata){
+						if(rdata.status){
+							result.count+=1;
+						}else{
+							result.error_list.push({name:item.item,err_msg:rdata.msg});
+						}
+						arr.splice(0,1)
+						ftp.batch_ftp(type,arr,result);
+					})
+					break;
+			}
+		},
+		del:function(id,ftp_username){
+			bt.show_confirm(lan.public.del+"["+ftp_username+"]",lan.get('confirm_del',[ftp_username]),function(){
+				bt.ftp.del(id,ftp_username,function(rdata){
+					if(rdata.status) ftp.get_list();
+					bt.msg(rdata);
+				})
+			})
+		},
+		add_user:function(){
+			bt.ftp.add(function(rdata){
+				if(rdata.status) ftp.get_list();	
+			})
+		},
+		set_password:function(id,name,password){
+			var bs = bt.ftp.set_password(function(rdata){
+				if(rdata.status) ftp.get_list();	
+			})
+			$('.id'+bs).val(id);
+			$('.ftp_username'+bs).val(name);
+			$('.new_password'+bs).val(password);
+		},
+		set_port:function(){
+			var bs = bt.ftp.set_port(function(rdata){
+				if(rdata.status) ftp.get_list();	
+			})
+			$('.port'+bs).val('21');
+		},
+		stop_user:function(id,username){
+			bt.confirm({msg:lan.ftp.stop_confirm.replace('{1}',username),title:lan.ftp.stop_title},function(index){			
+				bt.ftp.set_status(id,username,0,function(rdata){
+					if(rdata.status) ftp.get_list();
+				})
+			})
+		},
+		start_user:function(id,username){
+			bt.ftp.set_status(id,username,1,function(rdata){
+				if(rdata.status) ftp.get_list();
+			})
+		}
+
+	}
+	bt.set_cookie('sites_path',"/www/wwwroot");
+    
+    	ftp.get_list();
+    	
+</script>
+
+    <script type="text/javascript">
+	    if (navigator.appName == "Microsoft Internet Explorer" && parseInt(navigator.appVersion.split(";")[1].replace(/[ ]/g, "").replace("MSIE", "")) < 9) {
+	        $(".main-content").css("margin-top", "50px");
+	        $('.top-tips').show();
+	    }
+	    $("#setBox").click(function () {
+	        if ($(this).prop("checked")) {
+	            $("input[name=id]").prop("checked", true);
+	        } else {
+	            $("input[name=id]").prop("checked", false);
+	        }
+	    });
+	    setCookie('order', 'id desc');
+	    var is_files_html = false;
+	    var task_open = 0;
+	    var task_close = false;
+	    if ($(".current").attr("id") == 'memuAfiles') {
+	        is_files_html = true;
+	    }
+	    function task_stat(my_init) {
+	        if (!my_init) {
+	            my_init = 0;
+	            if (task_open) return;
+	        }
+	        if (task_close) return;
+	        $.post('/task?action=get_task_lists', { status: -3 }, function (task_list) {
+	            if (task_list.length == 0) {
+	                if (my_init && is_files_html) GetFiles(getCookie('Path'));
+	                if (task_open) {
+	                    layer.close(task_open);
+	                    task_open = false;
+	                }
+	                return;
+	            }
+	
+	            console.log(task_list.length)
+	            var msg_body = '';
+	            var is_add = false;
+	            for (var i = 0; i < task_list.length; i++) {
+	                if (task_list[i]['status'] == -1) {
+	                    if (!task_open || !$(".message-list").attr("class")) {
+	                        show_task();
+	                    }
+	
+	                    if (task_list[i]['type'] == '1') {
+	                        msg_body += '<div class="mw-con">\
+		                                <ul class="waiting-down-list">\
+			                                <li>\
+				                                <div class="down-filse-name"><span class="fname" style="width:80%;" title="正在下载: '+ task_list[i].shell + '">正在下载: ' + task_list[i].shell + '</span><span style="position: absolute;left: 84%;top: 25px;color: #999;">' + task_list[i].log.pre + '%</span><span class="btlink" onclick="remove_task(' + task_list[i].id + ')" style="position: absolute;top: 25px;right: 20px;">取消</span></div>\
+				                                <div class="down-progress"><div class="done-progress" style="width:'+ task_list[i].log.pre + '%"></div></div>\
+				                                <div class="down-info"><span class="total-size"> '+ task_list[i].log.used + '/' + ToSize(task_list[i].log.total) + '</span><span class="speed-size">' + (task_list[i].log.speed == 0 ? '正在连接..' : task_list[i].log.speed) + '/s</span><span style="margin-left: 20px;">预计还要: ' + task_list[i].log.time +'</span></div>\
+			                                </li>\
+	                                        </ul>\
+	                                    </div>'
+	                    } else {
+	                        msg_body += '<div class="mw-title"><span style="max-width: 88%;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + task_list[i].name + ': ' + task_list[i].shell + '</span><span class="btlink" onclick="remove_task(' + task_list[i].id + ')"  style="position: absolute;top: 10px;right: 15px;">取消</span></div>\
+	                                    <div class="mw-con codebg">\
+		                                    <code>'+ task_list[i].log +'</code>\
+	                                    </div>'
+	
+	                    }
+	
+	                } else {
+	                    if (!is_add) {
+	                        msg_body += '<div class="mw-title">等待执行任务</div><div class="mw-con"><ul class="waiting-list">';
+	                        is_add = true;
+	                    }
+	                    msg_body += '<li><span class="wt-list-name" style="width: 90%;">' + task_list[i].name + ': ' + task_list[i].shell + '</span><span class="mw-cancel" onclick="remove_task(' + task_list[i].id + ')">X</span></li>';
+	                }
+	            }
+	            if (task_open) {
+	                if (is_add) {
+	                    msg_body += '</ul></div>';
+	                }
+	                $(".message-list").html(msg_body);
+	            }
+	
+	                        
+	            if (my_init > 3) {
+	                if (is_files_html) GetFiles(getCookie('Path'));
+	                my_init = 1;
+	            }
+	            my_init +=1
+	            setTimeout(function () { task_stat(my_init); }, 1000);
+	        });
+	    }
+	    function show_task() {
+	        task_open = layer.open({
+	            type: 1,
+	            title: "实时任务队列",
+	            area: '500px',
+	            closeBtn: 2,
+	            shadeClose: false,
+	            shade: false,
+	            offset: 'auto',
+	            content: '<div style="margin: 10px;" class="message-list"></div>',
+	            cancel: function () {
+	                task_close = true;
+	            }
+	        });
+	    }                
+	    function remove_task(id) {
+	        loadT = layer.msg('正在取消任务...', { time: 0, icon: 16, shade: [0.3, '#000'] });
+	        $.post('/task?action=remove_task', { id: id }, function (rdata) {
+	            layer.close(loadT)
+	            layer.msg(rdata.msg);
+	        });
+	    }
+		loadScript([
+			'/static/laydate/laydate.js',
+			'/static/js/jquery.qrcode.min.js',
+			'/static/js/clipboard.min.js'
+		],function(e){
+			
+		});
+	    task_stat();
+	   
+	</script>
+</body>
+</html>
