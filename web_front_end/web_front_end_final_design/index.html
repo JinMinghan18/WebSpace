@@ -6,7 +6,7 @@
     <meta name="referer" content="never" />
     <meta name="renderer" content="webkit">
     <title>学生管理界面</title>
-    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href="bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="codemirror/lib/codemirror.css" rel="stylesheet" />
@@ -65,8 +65,7 @@
         <div id="container" class="container-fluid">
             <div class="sidebar-scroll">
                 <div class="sidebar-auto">
-<!--                    <div id="task" class="task cw" onclick="messagebox()">0</div>-->
-                    <h3 class="mypcip"><span class="f14 cw">学生管理</span></h3>
+                    <h3 class="mypcip"><span class="f14 cw">学生管理系统</span></h3>
                     <ul class="menu">
                         
                             
@@ -74,45 +73,11 @@
                             
                         
                             
-<!--                            <li id="memuAsite"> <a class="menu_web" href="college.html">学院</a></li>-->
-                            
-                        
-                            
+
                             <li id="memuAftp"> <a class="menu_ftp" href="student.html">学生管理</a></li>
                             
                         
                             
-<!--                            <li id="memuAdatabase"> <a class="menu_data" href="/database">老师管理</a></li>-->
-                            
-                        
-                            
-<!--                            <li id="memuAcontrol"> <a class="menu_control" href="/control">监控</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAfirewall"> <a class="menu_firewall" href="/firewall">安全</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAfiles"> <a class="menu_folder" href="/files">文件</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAcrontab"> <a class="menu_day" href="/crontab">计划任务</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAsoft"> <a class="menu_soft" href="/soft">软件商店</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAconfig"> <a class="menu_set" href="/config">面板设置</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="dologin"> <a class="menu_exit" href="/login?dologin=True">退出</a></li>-->
-<!--                            -->
-                        
                     </ul>
                     <div id="newbtpc"></div>
                     <div class="btpc-plus" onclick="bindBTPanel(0,'b')">+</div>
@@ -123,27 +88,6 @@
         </div>
 <div class="main-content">
     <div class="container-fluid" style="padding-bottom: 66px;">
-<!--		<div class="index-pos-box bgw mtb15">-->
-<!--            <div class="position f12 c6 pull-left" style="background:none;padding-left:15px">-->
-<!--                <span class="bind-user c4">-->
-<!--                    <a href="javascript:bt.pub.bind_btname();" class="btlink">宝塔账户</a>-->
-<!--                </span>-->
-
-
-<!--                        <span id="bt-fuli" class="bt-dashi">-->
-<!--                            <a class="btlink ml5" href="https://www.bt.cn/invite" target="_blank">邀请奖励</a>-->
-<!--                        </span>-->
-
-
-<!--                <span class="ico-system">系统:</span><span id="info" style="margin-left:10px;"> 获取中: </span>&#12288;&#12288;已不间断运行:  <span id="running"> 获取中</span>-->
-<!--            </div>-->
-<!--			<span class="pull-right f12 c6" style="line-height:52px; margin-right:15px">-->
-<!--				<span class="btpro-free" onclick="bt.soft.updata_commercial_view()" title="点击升级到商业版">免费版</span> <span id="btversion" style="margin-right:10px"><a onclick="index.open_log()">7.1.0</a></span>-->
-<!--				<span id="toUpdate"><a class="btlink" href="javascript:index.check_update();">更新</a></span>-->
-<!--				<span style="margin:0 10px"><a class="btlink" href="javascript:index.re_panel();">修复</a></span>-->
-<!--				<span style="margin-right:10px"><a class="btlink" href="javascript:index.re_server();">重启</a></span>-->
-<!--			</span>-->
-<!--		</div>-->
         <div class="danger-tips">
             <div class="important-title" id="messageError" style="display: none; margin-top:15px"></div>
         </div>
@@ -164,7 +108,6 @@
                             </div>
                             <div class="occupy"><span>20</span>%</div>
                         </div>
-<!--                        <h4 class="c9 f15">获取中: </h4>-->
                     </li>
                     <li class="col-xs-6 col-sm-3 col-md-3 col-lg-2 mtb20 circle-box text-center cpubox">
                         <h3 class="c9 f15">学生打卡情况</h3>
@@ -177,23 +120,7 @@
                             </div>
                             <div class="occupy"><span>20</span>%</div>
                         </div>
-<!--                        <h4 class="c9 f15">获取中: </h4>-->
                     </li>
-<!--                    <li class="col-xs-6 col-sm-3 col-md-3 col-lg-2 mtb20 circle-box text-center membox">-->
-<!--                        <h3 class="c9 f15">内存使用率</h3>-->
-<!--                        <div class="cicle mem-release">-->
-<!--                            <div class="bar bar-left">-->
-<!--                                <div class="bar-left-an bar-an"></div>-->
-<!--                            </div>-->
-<!--                            <div class="bar bar-right">-->
-<!--                                <div class="bar-right-an bar-an"></div>-->
-<!--                            </div>-->
-<!--                            <div class="occupy"><span>30</span>%</div>-->
-<!--                            <div class="mem-re-min"></div>-->
-<!--                            <div class="mem-re-con" title="$data['lan']['P3']"></div>-->
-<!--                        </div>-->
-<!--                        <h4 class="c9 f15">获取中: </h4>-->
-<!--                    </li>-->
                 </ul>
             </div>
         </div>
@@ -331,17 +258,6 @@
 <script type="text/javascript" src="/js/soft.js?version_20191219=7.1.0"></script>
 <script type="text/javascript" src="/ace/ace.js?date=7.1.0"></script>
 <script type="text/javascript">
-	$(".btpro span").click(function(e){
-        layer.confirm('切换回免费版可通过解绑账号实现', { icon: 3, btn: ['解绑账号'], closeBtn: 2, title: '是否取消授权' }, function () {
-            $.post('/ssl?action=DelToken', {}, function (rdata) {
-                layer.msg(rdata.msg);
-                setTimeout(function () {
-                    window.location.reload();
-                },2000);
-            });
-        });
-        e.stopPropagation();
-	})
 	setCookie('pro_end',-1);
 	setCookie('ltd_end',-1);
 </script>
@@ -455,9 +371,9 @@
 	        });
 	    }
 		loadScript([
-			'/static/laydate/laydate.js',
-			'/static/js/jquery.qrcode.min.js',
-			'/static/js/clipboard.min.js'
+			'laydate/laydate.js',
+			'js/jquery.qrcode.min.js',
+			'js/clipboard.min.js'
 		],function(e){
 		});
 	    task_stat();

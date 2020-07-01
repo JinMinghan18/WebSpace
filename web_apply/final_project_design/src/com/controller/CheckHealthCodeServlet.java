@@ -1,9 +1,11 @@
-package bank.com.model;
+package com.controller;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
+import com.model.HealthCode;
+import com.model.MatrixToImageWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,8 +22,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet({"/CheckformServlet"})
-public class CheckformServlet extends HttpServlet {
+@WebServlet({"/CheckHealthCodeServlet"})
+public class CheckHealthCodeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
@@ -54,6 +56,8 @@ public class CheckformServlet extends HttpServlet {
         else{
             choice = 1;
         }
+
+
         HealthCode healthCode = new HealthCode(name,id,stuId,tel,choice);
         try{
             request.setAttribute("choice",choice);

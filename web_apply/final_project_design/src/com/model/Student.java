@@ -10,7 +10,12 @@ public class Student {
     private String attendenceRecord;//打卡天数
     private int healthday;//健康天数
     private String healthcode;//健康码颜色
+    private int choice;
     public Student() {
+    }
+
+    public int getChoice() {
+        return choice;
     }
 
     public String getHealthcode() {
@@ -42,6 +47,10 @@ public class Student {
 
     public String getSchool_id() {
         return school_id;
+    }
+
+    public void setChoice(int choice) {
+        this.choice = choice;
     }
 
     public void setHealthcode(String healthcode) {

@@ -622,4 +622,9 @@ public class HealthCodeDao extends Basedao{
             return null;
         }
     }
+    //判断是否为老师
+    public boolean isTeacher(String school_id){
+        String sql = "SELECT * FROM teachers WHERE school_id=?";
+
+    }
 }

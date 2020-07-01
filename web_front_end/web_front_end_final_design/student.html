@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referer" content="never" />
     <meta name="renderer" content="webkit">
-    <title></title>
+    <title>学生管理</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link href="bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/site.css?20191127=7.1.0" rel="stylesheet" />
@@ -77,41 +77,6 @@
                             
                         
                             
-<!--                            <li id="memuAftp"> <a class="menu_ftp" href="/ftp">FTP</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAdatabase" class="current"> <a class="menu_data" href="/database">数据库</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAcontrol"> <a class="menu_control" href="/control">监控</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAfirewall"> <a class="menu_firewall" href="/firewall">安全</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAfiles"> <a class="menu_folder" href="/files">文件</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAcrontab"> <a class="menu_day" href="/crontab">计划任务</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAsoft"> <a class="menu_soft" href="/soft">软件商店</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="memuAconfig"> <a class="menu_set" href="/config">面板设置</a></li>-->
-<!--                            -->
-<!--                        -->
-<!--                            -->
-<!--                            <li id="dologin"> <a class="menu_exit" href="/login?dologin=True">退出</a></li>-->
-<!--                            -->
-                        
                     </ul>
                     <div id="newbtpc"></div>
                     <div class="btpc-plus" onclick="bindBTPanel(0,'b')">+</div>
@@ -125,7 +90,7 @@
         <div class="container-fluid">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="/">首页</a>/<span class="plr10 c4">学生管理</span>
+                    <a class="plr10 c4" href="index.html">首页</a>&gt&gt<span class="plr10 c4">学生管理</span>
                 </div>
                 <div class="search pull-right">
                     <form target="hid" onsubmit='database.get_list(1,$("#SearchValue").val())'>
@@ -136,8 +101,51 @@
                 </div>
             </div>
             <div class="safe bgw mtb15 pd15">
-                <button onclick="database.add_database()" title="添加学生信息" class="btn btn-success btn-sm" type="button" style="margin-right: 5px;">添加学生</button>
-                <button onclick="bt.database.set_root()" title="设置MySQL管理员密码" class="btn btn-default btn-sm" type="button" style="margin-right: 5px;">管理员密码</button>
+                <button title="添加学生信息" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#mymodal2" type="button" style="margin-right: 5px;">添加学生</button>
+                    <div class="modal fade" id="mymodal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModal2Label" style="text-align: center">请输入学生信息</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="#" method="post">
+                                        <table class="table table-condensed" contenteditable="true">
+                                            <tbody>
+                                            <tr>
+                                                <td>姓名</td>
+                                                <td><input type="text" name="name"></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="50%">学号</td>
+                                                <td><input type="text" name="sid"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>学院</td>
+                                                <td><input type="text" name="college"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>专业</td>
+                                                <td><input type="text" name="major"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>电话</td>
+                                                <td><input type="text" name="tel"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>
+                                            <audio controls="controls" style="display: none;">&nbsp;</audio>
+                                        </p>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div class="divtable mtb10">
                     <div class="tablescroll">
                         <table id="DataBody" class="table table-hover" width="100%" cellspacing="0" cellpadding="0" border="0" style="border: 0 none;">
@@ -161,7 +169,51 @@
                                     </td>
                                     <td><span class="c9 input-edit" onclick="bt.pub.set_data_by_key('databases','ps',this)">软件工程</span></td>
                                     <td style="text-align:right">
-                                        <a href="#" class="btlink">详情</a>
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">详情</button>
+                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title" id="myModalLabel" style="text-align: center">学生信息</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table class="table table-condensed" contenteditable="true">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>姓名</td>
+                                                                <td>金明瀚</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>学号</td>
+                                                                <td>201806062407</td>
+                                                            </tr>
+                                                            <tr class="success">
+                                                                <td>学院</td>
+                                                                <td>计算机学院</td>
+                                                            </tr>
+                                                            <tr class="error">
+                                                                <td>专业</td>
+                                                                <td>软件工程</td>
+                                                            </tr>
+                                                            <tr class="warning">
+                                                                <td>电话</td>
+                                                                <td>13700000000</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                        <p>
+                                                            <audio controls="controls" style="display: none;">&nbsp;</audio>
+                                                        </p>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -173,7 +225,50 @@
                                     </td>
                                     <td><span class="c9 input-edit" onclick="bt.pub.set_data_by_key('databases','ps',this)">软件工程</span></td>
                                     <td style="text-align:right">
-                                        <a href="#" class="btlink">详情</a>
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">详情</button>
+                                        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title" id="myModal1Label">学生信息</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table class="table table-condensed" contenteditable="true">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td>姓名</td>
+                                                                <td>student1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>学号</td>
+                                                                <td>s10002</td>
+                                                            </tr>
+                                                            <tr class="success">
+                                                                <td>学院</td>
+                                                                <td>计算机学院</td>
+                                                            </tr>
+                                                            <tr class="error">
+                                                                <td>专业</td>
+                                                                <td>软件工程</td>
+                                                            </tr>
+                                                            <tr class="warning">
+                                                                <td>电话</td>
+                                                                <td>13700000001</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                        <p>
+                                                            <audio controls="controls" style="display: none;">&nbsp;</audio>
+                                                        </p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -181,11 +276,6 @@
                     </div>
                     <div id='databasePage' class="dataTables_paginate paging_bootstrap page">
                     </div>
-    <!--                <div class="table_toolbar">-->
-    <!--                    <span class="sync btn btn-default btn-sm" style="margin-right:5px" onclick="database.sync_to_database(1)" title="将选中数据库信息同步到服务器">同步选中</span>-->
-    <!--                    <span class="sync btn btn-default btn-sm" style="margin-right:5px" onclick="database.sync_to_database(0)" title="将所有数据库信息同步到服务器">同步所有</span>-->
-    <!--                    <span class="sync btn btn-default btn-sm" onclick="database.sync_database()" title="从服务器获取数据库列表">从服务器获取</span>-->
-    <!--                </div>-->
                 </div>
             </div>
             <form id="toPHPMyAdmin" action="http://39.97.238.64:888/phpmyadmin_9d6bd9ac44b8d96f/index.php" method="post" style="display: none;" target="_blank">
