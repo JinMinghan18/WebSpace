@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.dao.HealthCodeDao;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
@@ -25,13 +26,15 @@ import java.util.Map;
 @WebServlet({"/CheckHealthCodeServlet"})
 public class CheckHealthCodeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HealthCodeDao dao = new HealthCodeDao();
+
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String name = request.getParameter("name");
         String id = request.getParameter("id");
         request.setAttribute("id",id);
-        String stuId = request.getParameter("stuId");
+        String school_id = request.getParameter("school_id");
         String tel = request.getParameter("tel");
         String q1 = request.getParameter("q1");
         String q2 = request.getParameter("q2");
@@ -58,7 +61,7 @@ public class CheckHealthCodeServlet extends HttpServlet {
         }
 
 
-        HealthCode healthCode = new HealthCode(name,id,stuId,tel,choice);
+        HealthCode healthCode = new HealthCode(name,id,school_id,tel,choice);
         try{
             request.setAttribute("choice",choice);
             Date d = new Date();
@@ -69,9 +72,7 @@ public class CheckHealthCodeServlet extends HttpServlet {
             String aa = "姓名"+name+"\n"+"学号(工号)"+id+"\n"+"生成时间"+time+time2;
             String path2 =  request.getContextPath();
             String path = request.getServletContext().getRealPath("/images/");
-//            System.out.println(path2+"ss");
-//            String path = "D:\\MyStudySpace\\WebSpace\\web_apply\\web_apply_ex3\\web\\images";
-//            String path = path2+"/images";
+
             MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
             Map hint = new HashMap();
             hint.put(EncodeHintType.CHARACTER_SET,"UTF-8");
@@ -84,6 +85,11 @@ public class CheckHealthCodeServlet extends HttpServlet {
         HttpSession session = request.getSession();
         synchronized (session){
             session.setAttribute("healthCode",healthCode);
+
+        }
+        boolean check_teacher = dao.isTeacher(school_id);
+        boolean check_stuednt = dao.isStudent(school_id);
+        if(check_stuednt!=true){
 
         }
         RequestDispatcher rd = request.getRequestDispatcher("/JSP/displayHealthCode.jsp");

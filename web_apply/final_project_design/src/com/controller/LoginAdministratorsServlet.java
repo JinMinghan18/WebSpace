@@ -20,7 +20,7 @@ public class LoginAdministratorsServlet extends HttpServlet {
         HealthCodeDao dao = new HealthCodeDao();
         Teacher teacher = new Teacher();
         String school_id = request.getParameter("school_id");
-//        System.out.println(school_id);
+
         String password = request.getParameter("password");
 //        System.out.println(password);
         teacher = dao.findTeacherInfo(school_id);
@@ -39,6 +39,7 @@ public class LoginAdministratorsServlet extends HttpServlet {
             rd.forward(request,response);
         }
         else if(password.equals((teacher.getPassword())) && teacher.getRole().equals("院级管理员")){
+            request.setAttribute("college",teacher.getCollege());
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/majorAdministrators.jsp");
             rd.forward(request,response);
         }

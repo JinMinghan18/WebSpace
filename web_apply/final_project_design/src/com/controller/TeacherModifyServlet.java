@@ -24,13 +24,6 @@ public class TeacherModifyServlet extends HttpServlet {
         String healthcode = request.getParameter("healthcode");
         String password = request.getParameter("password");
         String role = request.getParameter("role");
-//        Teacher teacher = new Teacher();
-//        teacher.setPassword(password);
-//        teacher.setRole(role);
-//        teacher.setCollege(college);
-//        teacher.setSchool_id(school_id);
-//        teacher.setAttendenceRecord("");
-//        System.out.println(healthcode);
         Boolean success = dao.modifyTeacherInfo(name,id,school_id,college,healthcode,password,role);
         RequestDispatcher rd = request.getRequestDispatcher("/TeacherQueryServlet?college="+college+"");
         rd.forward(request,response);

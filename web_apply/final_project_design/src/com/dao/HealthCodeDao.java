@@ -13,10 +13,7 @@ import javax.management.relation.Role;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletRequestListener;
 import javax.sound.midi.Soundbank;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.text.AttributedCharacterIterator;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -650,4 +647,198 @@ public class HealthCodeDao extends Basedao{
         }
         return false;
     }
+    //上传学生打卡信息到数据库
+    public boolean updateStudent(String name,String id, String school_id, String phonenumber,String attendenceRecord){
+        String sql = "UPDATE students SET attendenceRecord=?,healthday=?,healthcode=?,phonenumber=? WHERE school_id=?";
+        try(Connection conn = dataSource.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql)){
+
+//            pstmt.setString(1,);
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+        return false;
+    }
+
+
+    //院级管理员数据统计——返回未打卡教师
+    public ArrayList<Teacher> majorfindUnfinishedTeacher(String college) {
+        String sql = "SELECT * FROM teachers WHERE college = ?";
+        ArrayList<Teacher>teaList = new ArrayList<Teacher>();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,college);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Teacher teacher = new Teacher();
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)=='0'){
+                        teacher.setName(rst.getString("name"));
+                        teacher.setId(rst.getString("id"));
+                        teacher.setSchool_id(rst.getString("school_id"));
+                        teacher.setCollege(rst.getString("college"));
+                        teacher.setRole(rst.getString("role"));
+                        teacher.setAttendenceRecord("未打卡");
+                        teacher.setHealthcode(rst.getString("healthcode"));
+                        teaList.add(teacher);
+                    }
+                }
+            }
+            return teaList;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return null;
+        }
+    }
+    //院级管理员数据统计——返回未打卡学生
+    public ArrayList<Student> majorfindUnfinishedStudent(String college) {
+        String sql = "SELECT * FROM students WHERE college = ?";
+        ArrayList<Student>stuList = new ArrayList<Student>();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,college);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Student student = new Student();
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)=='0'){
+                        student.setName(rst.getString("name"));
+                        student.setId(rst.getString("id"));
+                        student.setSchool_id(rst.getString("school_id"));
+                        student.setCollege(rst.getString("college"));
+                        student.setMajor(rst.getString("major"));
+                        student.setClass1(rst.getString("class1"));
+                        student.setAttendenceRecord("未打卡");
+                        student.setHealthcode(rst.getString("healthcode"));
+                        stuList.add(student);
+                    }
+
+                }
+            }
+            return stuList;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return null;
+        }
+    }
+    //院级管理员--返回"打卡学生","未打卡学生","打卡教师","未打卡教师"
+    public ArrayList<Integer> majorstatistics(String college) {
+        Integer finishStu =0;
+        Integer unFinishStu=0;
+        Integer finishTea=0;
+        Integer unfinishTea=0;
+        String sql1 = "SELECT * FROM students WHERE college = ?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql1)) {
+            pstmt.setString(1, college);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        finishStu++;
+                    }
+                    else unFinishStu++;
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        String sql2 = "SELECT * FROM teachers WHERE college = ?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql2)) {
+            pstmt.setString(1, college);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        finishTea++;
+                    }
+                    else unfinishTea++;
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        result.add(finishStu);
+        result.add(unFinishStu);
+        result.add(finishTea);
+        result.add(unfinishTea);
+        return result;
+    }
+    //院级管理员数据统计——教师打卡率
+    public Double majorteacherDailyAttendence(String college) {
+        String sql="SELECT * FROM teachers WHERE college= ?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,college);
+            // pstmt.executeUpdate();
+            double sum = 0;//总计老师数
+            double finished = 0;//完成打卡的老师
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    sum++;
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        finished++;
+                    }
+                }
+            }
+            return finished/sum;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return 0.0;
+        }
+    }
+    //院级管理员数据统计——学生打卡率
+    public Double majorstudenttDailyAttendence(String college) {
+        String sql="SELECT * FROM students WHERE college= ?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,college);
+            // pstmt.executeUpdate();
+            double sum = 0;//总计学生数
+            double finished = 0;//完成打卡的学生
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    sum++;
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        finished++;
+                    }
+                }
+            }
+            return finished/sum;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return 0.0;
+        }
+    }
+
 }
+

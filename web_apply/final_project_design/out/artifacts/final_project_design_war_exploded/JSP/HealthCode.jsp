@@ -25,7 +25,7 @@
                 <td>身份证号:</td><td><input type="text" name="id" value="${student.id}${teacher.id}" readonly style="width: 200px;border-radius: 4px"></td>
             </tr>
             <tr>
-                <td>请输入学号(工号):</td><td><input type="text" name="stuId" value="${student.school_id}${teacher.school_id}" readonly style="width: 200px;border-radius: 4px"></td>
+                <td>请输入学号(工号):</td><td><input type="text" name="school_id" value="${student.school_id}${teacher.school_id}" readonly style="width: 200px;border-radius: 4px"></td>
             </tr>
             <tr>
                 <td>请输入手机号:</td><td><input type="tel" name="tel" placeholder="请输入手机号" style="width: 200px;border-radius: 4px"></td>
