@@ -165,7 +165,7 @@ public class HealthCodeDao extends Basedao{
             return null;
         }
     }
-    //检索学生信息
+    //查找学生信息
     public ArrayList<Student> studentInfoQuery(String college, String major, String class1){
         ArrayList<Student>stuList = new ArrayList<Student>();
 
@@ -622,9 +622,32 @@ public class HealthCodeDao extends Basedao{
             return null;
         }
     }
-    //判断是否为老师
+    //判断是否为老师（打卡的时候）
     public boolean isTeacher(String school_id){
         String sql = "SELECT * FROM teachers WHERE school_id=?";
-
+        try(Connection conn = dataSource.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql)){
+            try(ResultSet rst = pstmt.executeQuery()){
+                if(rst!=null)
+                    return true;
+            }
+        }catch (SQLException se){
+            se.printStackTrace();
+        }
+        return false;
+    }
+    //判断是否为学生（打卡的时候）
+    public boolean isStudent(String school_id){
+        String sql = "SELECT * FROM students WHERE school_id=?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            try(ResultSet rst = pstmt.executeQuery()){
+                if(rst!=null)
+                    return true;
+            }
+        }catch (SQLException se){
+            se.printStackTrace();
+        }
+        return false;
     }
 }

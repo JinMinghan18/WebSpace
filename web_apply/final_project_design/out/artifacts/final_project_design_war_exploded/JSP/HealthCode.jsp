@@ -13,8 +13,8 @@
     <title>健康码申请</title>
     <script type="text/javascript" src="<%=path%>/JS/checkform.js"></script>
 </head>
-<body>
-<form action="CheckHealthCodeServlet" method="post" name="form" onsubmit="return check_form()" style="margin: 0px auto;background-color: #f2f2f2;width: 373px;height: 1200px">
+<body style="background-color: #444444;">
+<form action="CheckHealthCodeServlet" method="post" name="form" onsubmit="return check_form()" style=" border-radius: 4px;margin: 0px auto;background-color: #f2f2f2;width: 373px;height: 1150px">
     <h4 align="center">师生健康打卡</h4>
     <div style="background-color: white">
         <table  style="background-color: white">
