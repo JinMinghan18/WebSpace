@@ -106,7 +106,7 @@
                 <ul class="menu">
 
 
-                    <li id="memuA"> <a class="menu_home" href="JSP/SchoolAdministrators2.jsp">首页</a></li>
+                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/SchoolAdministrators2.jsp">首页</a></li>
 
 
 
@@ -116,7 +116,7 @@
                     <li id="memuBsite"> <a class="menu_web" href="TeacherInfoCheckServlet">全校老师信息</a></li>
 
 
-                    <li id="memuCsite"> <a class="menu_web" href="#">师生信息总览</a></li>
+                    <li id="memuCsite"> <a class="menu_web" href="schoolInfoServlet">师生信息总览</a></li>
 
                 </ul>
                 <div id="newbtpc"></div>
@@ -216,7 +216,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="student" items="${requestScope.student}"
+                            <c:forEach var="school_info" items="${requestScope.student}"
                                        varStatus="status">
                                 <c:if test="${status.count%2==0}">
                                     <tr style="background: #eeeeff">
@@ -224,14 +224,14 @@
                                 <c:if test="${status.count%2!=0}">
                                     <tr style="background: #dedeff">
                                 </c:if>
-                                <td>${student.name}</td>
-                                <td>${student.id}</td>
-                                <td>${student.school_id}</td>
-                                <td>${student.college}</td>
-                                <td>${student.major}</td>
-                                <td>${student.class1}</td>
-                                <td>${student.attendenceRecord}</td>
-                                <td>${student.healthcode}</td>
+                                <td>${school_info.name}</td>
+                                <td>${school_info.id}</td>
+                                <td>${school_info.school_id}</td>
+                                <td>${school_info.college}</td>
+                                <td>${school_info.major}</td>
+                                <td>${school_info.class1}</td>
+                                <td>${school_info.attendenceRecord}</td>
+                                <td>${school_info.healthcode}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

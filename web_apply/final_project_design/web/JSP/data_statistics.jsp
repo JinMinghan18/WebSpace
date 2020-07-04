@@ -47,7 +47,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="student" items="${requestScope.teacher}"
+                <c:forEach var="school_info" items="${requestScope.teacher}"
                            varStatus="status">
                     <c:if test="${status.count%2==0}">
                         <tr style="background: #eeeeff">
@@ -55,13 +55,13 @@
                     <c:if test="${status.count%2!=0}">
                         <tr style="background: #dedeff">
                     </c:if>
-                    <td>${student.name}</td>
-                    <td>${student.id}</td>
-                    <td>${student.school_id}</td>
-                    <td>${student.college}</td>
-                    <td>${student.role}</td>
-                    <td>${student.attendenceRecord}</td>
-                    <td>${student.healthcode}</td>
+                    <td>${school_info.name}</td>
+                    <td>${school_info.id}</td>
+                    <td>${school_info.school_id}</td>
+                    <td>${school_info.college}</td>
+                    <td>${school_info.role}</td>
+                    <td>${school_info.attendenceRecord}</td>
+                    <td>${school_info.healthcode}</td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -84,7 +84,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="student" items="${requestScope.student}"
+                <c:forEach var="school_info" items="${requestScope.student}"
                            varStatus="status">
                     <c:if test="${status.count%2==0}">
                         <tr style="background: #eeeeff">
@@ -92,14 +92,14 @@
                     <c:if test="${status.count%2!=0}">
                         <tr style="background: #dedeff">
                     </c:if>
-                    <td>${student.name}</td>
-                    <td>${student.id}</td>
-                    <td>${student.school_id}</td>
-                    <td>${student.college}</td>
-                    <td>${student.major}</td>
-                    <td>${student.class1}</td>
-                    <td>${student.attendenceRecord}</td>
-                    <td>${student.healthcode}</td>
+                    <td>${school_info.name}</td>
+                    <td>${school_info.id}</td>
+                    <td>${school_info.school_id}</td>
+                    <td>${school_info.college}</td>
+                    <td>${school_info.major}</td>
+                    <td>${school_info.class1}</td>
+                    <td>${school_info.attendenceRecord}</td>
+                    <td>${school_info.healthcode}</td>
                     </tr>
                 </c:forEach>
                 </tbody>

@@ -116,14 +116,14 @@
                 <ul class="menu">
 
 
-                    <li id="memuA"> <a class="menu_home" href="SchoolAdministrators2.jsp">首页</a></li>
+                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/SchoolAdministrators2.jsp">首页</a></li>
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="../StudentInfoCheckServlet">学生打卡统计</a></li>
+                    <li id="memuAsite"> <a class="menu_web" href="../StudentInfoCheckServlet">全校学生信息</a></li>
 
 
-                    <li id="memuBsite"> <a class="menu_web" href="../TeacherInfoCheckServlet">教师打卡统计</a></li>
+                    <li id="memuBsite"> <a class="menu_web" href="../TeacherInfoCheckServlet">全校老师信息</a></li>
 
 
                     <li id="memuCsite"> <a class="menu_web" href="#">师生信息总览</a></li>
@@ -228,7 +228,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="student" items="${requestScope.teacher}"
+                            <c:forEach var="school_info" items="${requestScope.teacher}"
                                        varStatus="status">
                                 <c:if test="${status.count%2==0}">
                                     <tr style="background: #eeeeff">
@@ -236,11 +236,11 @@
                                 <c:if test="${status.count%2!=0}">
                                     <tr style="background: #dedeff">
                                 </c:if>
-                                <td>${student.name}</td>
+                                <td>${school_info.name}</td>
 
-                                <td>${student.school_id}</td>
-                                <td>${student.college}</td>
-                                <td>${student.role}</td>
+                                <td>${school_info.school_id}</td>
+                                <td>${school_info.college}</td>
+                                <td>${school_info.role}</td>
                                 </tr>
                             </c:forEach>
 
@@ -263,7 +263,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="student" items="${requestScope.student}"
+                            <c:forEach var="school_info" items="${requestScope.student}"
                                        varStatus="status">
                                 <c:if test="${status.count%2==0}">
                                     <tr style="background: #eeeeff">
@@ -271,10 +271,10 @@
                                 <c:if test="${status.count%2!=0}">
                                     <tr style="background: #dedeff">
                                 </c:if>
-                                <td>${student.name}</td>
-                                <td>${student.school_id}</td>
-                                <td>${student.college}</td>
-                                <td>${student.major}</td>
+                                <td>${school_info.name}</td>
+                                <td>${school_info.school_id}</td>
+                                <td>${school_info.college}</td>
+                                <td>${school_info.major}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

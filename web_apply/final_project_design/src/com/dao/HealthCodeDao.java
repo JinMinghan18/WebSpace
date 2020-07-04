@@ -170,7 +170,7 @@ public class HealthCodeDao extends Basedao{
         }
     }
     //查找所有班级信息
-    public ArrayList<school_info> school_infos(){
+    public ArrayList<school_info> findSchool_infos(){
         ArrayList<school_info> school_infos = new ArrayList<school_info>();
         String sql = "SELECT * FROM school_info";
         try(Connection conn = dataSource.getConnection();
@@ -179,8 +179,8 @@ public class HealthCodeDao extends Basedao{
                 while (rst.next()){
                     school_info school_info = new school_info();
                     school_info.setCollege(rst.getString("college"));
-                    school_info.setCollege(rst.getString("major"));
-                    school_info.setCollege(rst.getString("class1"));
+                    school_info.setMajor(rst.getString("major"));
+                    school_info.setClass1(rst.getString("class1"));
                     school_infos.add(school_info);
                 }
             }
