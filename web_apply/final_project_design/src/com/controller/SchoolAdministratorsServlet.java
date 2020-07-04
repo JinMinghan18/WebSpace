@@ -13,24 +13,25 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet({"/TeacherInfoCheckServlet"})
-public class TeacherInfoCheckServlet extends HttpServlet {
+@WebServlet({"/SchoolAdministratorsServlet"})
+public class SchoolAdministratorsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         HealthCodeDao dao = new HealthCodeDao();
 
-
-
         Double unfinishedTeacher = dao.teacherDailyAttendence();
-
+//        System.out.println(unfinishedTeacher);
+        Double unfinishedStudent = dao.studentDailyAttendence();
         request.setAttribute("teacherAttendence",unfinishedTeacher);
-
-        ArrayList<Teacher> teacher = dao.allTeacherInfo();
+        request.setAttribute("studentAttendence",unfinishedStudent);
+        ArrayList<Teacher> teacher = dao.findUnfinishedTeacher();
+        ArrayList<Student> student = dao.findUnfinishedStudent();
 
         request.setAttribute("teacher",teacher);
+        request.setAttribute("student",student);
 
-        RequestDispatcher rd = request.getRequestDispatcher("JSP/TeacherInfoCheck2.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("JSP/SchoolAdministrators2.jsp");
         rd.forward(request,response);
     }
 

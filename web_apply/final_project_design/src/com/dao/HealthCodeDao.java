@@ -2,6 +2,7 @@ package com.dao;
 
 import com.model.Student;
 import com.model.Teacher;
+import com.model.school_info;
 import com.sun.org.apache.regexp.internal.RE;
 import com.sun.org.apache.xml.internal.utils.StringToStringTable;
 import com.sun.xml.internal.bind.v2.model.core.ID;
@@ -167,6 +168,28 @@ public class HealthCodeDao extends Basedao{
             se.printStackTrace();
             return null;
         }
+    }
+    //查找所有班级信息
+    public ArrayList<school_info> school_infos(){
+        ArrayList<school_info> school_infos = new ArrayList<school_info>();
+        String sql = "SELECT * FROM school_info";
+        try(Connection conn = dataSource.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql)){
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    school_info school_info = new school_info();
+                    school_info.setCollege(rst.getString("college"));
+                    school_info.setCollege(rst.getString("major"));
+                    school_info.setCollege(rst.getString("class1"));
+                    school_infos.add(school_info);
+                }
+            }
+
+        }catch (SQLException se){
+            se.printStackTrace();
+            return null;
+        }
+        return school_infos;
     }
     //查找学生信息
     public ArrayList<Student> studentInfoQuery(String college, String major, String class1){
@@ -527,6 +550,32 @@ public class HealthCodeDao extends Basedao{
             return 0;
         }
     }
+    //统计老师总数
+    public int teachernumber(){
+        String sql = "SELECT * FROM teachers";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            int sum = 0;//总计老师数
+            double finished = 0;//完成打卡的老师
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    sum++;
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        finished++;
+                    }
+                }
+            }
+            return sum;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return 0;
+        }
+    }
     //统计学生打卡率
     public double studentDailyAttendence(){
         String sql = "SELECT * FROM students";
@@ -549,6 +598,33 @@ public class HealthCodeDao extends Basedao{
                 }
             }
             return finished/sum;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return 0;
+        }
+    }
+    //统计学生总数
+    public int studentnumber(){
+        String sql = "SELECT * FROM students";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            int sum = 0;//总计老师数
+            double finished = 0;//完成打卡的老师
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    sum++;
+
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        finished++;
+                    }
+                }
+            }
+            return sum;
         }catch (SQLException se){
             se.printStackTrace();
             return 0;
@@ -1072,6 +1148,60 @@ public class HealthCodeDao extends Basedao{
             return 0.0;
         }
     }
+
+    //校级管理员--返回"打卡学生","未打卡学生","打卡教师","未打卡教师"
+    public ArrayList<Integer> allstatistics() {
+        Integer finishStu =0;
+        Integer unFinishStu=0;
+        Integer finishTea=0;
+        Integer unfinishTea=0;
+        String sql1 = "SELECT * FROM students ";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql1)) {
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        finishStu++;
+                    }
+                    else unFinishStu++;
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        String sql2 = "SELECT * FROM teachers";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql2)) {
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Date d1 = new Date();
+                    SimpleDateFormat dfd = new SimpleDateFormat("dd");
+                    String date = dfd.format(d1);
+                    int date2 = Integer.parseInt(date);//获取日期
+
+                    if(rst.getString("attendenceRecord").charAt(date2)!='0'){
+                        finishTea++;
+                    }
+                    else unfinishTea++;
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        result.add(finishStu);
+        result.add(unFinishStu);
+        result.add(finishTea);
+        result.add(unfinishTea);
+        return result;
+    }
+
+
 
 }
 

@@ -7,134 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d2f763e-1e4a-45cb-b013-082daa3c3900" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/CSS/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/CSS/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/clipboard.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/jquery-1.10.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/jquery.dragsort-0.5.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/jquery.qrcode.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/public.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/public_backup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JS/soft.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JSP/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/ace/ace.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/codemirror/lib/codemirror.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/codemirror/lib/codemirror.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/images/move.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/img/ico/ico-rocket.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/img/ico/rocket_min.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/img/soft_ico/ico-linuxsys.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/img/soft_ico/ico-phpmyadmin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/img/soft_ico/ico-tomcat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/img/soft_ico/ico-webssh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/clipboard.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/jquery-1.10.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/jquery.dragsort-0.5.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/jquery.qrcode.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/public.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/public_backup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/js/soft.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/language/Simplified_Chinese/lan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/laydate/laydate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/laydate/theme/default/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/layer/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/layer/skin/default/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/layer/skin/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/CSS/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/CSS/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/clipboard.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/jquery-1.10.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/jquery.dragsort-0.5.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/jquery.qrcode.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/public.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/public_backup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JS/soft.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/JSP/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/ace/ace.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/bootstrap-3.3.5/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/codemirror/lib/codemirror.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/codemirror/lib/codemirror.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/images/move.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/img/ico/ico-rocket.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/img/ico/rocket_min.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/img/soft_ico/ico-linuxsys.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/img/soft_ico/ico-phpmyadmin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/img/soft_ico/ico-tomcat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/img/soft_ico/ico-webssh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/clipboard.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/jquery-1.10.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/jquery.dragsort-0.5.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/jquery.qrcode.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/public.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/public_backup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/js/soft.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/language/Simplified_Chinese/lan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/laydate/laydate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/laydate/theme/default/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/layer/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/layer/skin/default/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final_project_design/web/static/layer/skin/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/test11_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/test11_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/test11_war_exploded/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/test11_war_exploded/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test11.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/ace/ace.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/bootstrap-3.3.5/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/codemirror/lib/codemirror.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/codemirror/lib/codemirror.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/images/move.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/img/ico/ico-rocket.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/img/ico/rocket_min.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/img/soft_ico/ico-linuxsys.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/img/soft_ico/ico-phpmyadmin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/img/soft_ico/ico-tomcat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/img/soft_ico/ico-webssh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/clipboard.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/jquery-1.10.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/jquery.dragsort-0.5.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/jquery.qrcode.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/public.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/public_backup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/js/soft.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/language/Simplified_Chinese/lan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/laydate/laydate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/laydate/theme/default/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/layer/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/layer/skin/default/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/layer/skin/default/loading-2.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JSP/SchoolAdministrators.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JSP/SchoolAdministrators.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JSP/SchoolAdministrators2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/JSP/SchoolAdministrators2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final_project_design/web/JSP/SchoolAdministrators.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../final_project_design/web/JSP/SchoolAdministrators.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../final_project_design/web/JSP/SchoolAdministrators2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../final_project_design/web/JSP/SchoolAdministrators2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../final_project_design/web/bootstrap-3.3.5/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/bootstrap-3.3.5/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../final_project_design/web/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/../final_project_design/out/artifacts/final_project_design_war_exploded/static/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +154,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593850388549</updated>
-      <workItem from="1593850392258" duration="928000" />
+      <workItem from="1593850392258" duration="1233000" />
     </task>
     <servers />
   </component>
@@ -293,54 +170,54 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="746" y="196" key="FileChooserDialogImpl/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593850549677" />
-    <state width="1024" height="223" key="GridCell.Tab.0.bottom" timestamp="1593851027125">
+    <state width="1024" height="223" key="GridCell.Tab.0.bottom" timestamp="1593853043294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027125" />
-    <state width="1024" height="223" key="GridCell.Tab.0.center" timestamp="1593851027124">
+    <state width="1024" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043294" />
+    <state width="1024" height="223" key="GridCell.Tab.0.center" timestamp="1593853043294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.0.center/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027124" />
-    <state width="1024" height="223" key="GridCell.Tab.0.left" timestamp="1593851027124">
+    <state width="1024" height="223" key="GridCell.Tab.0.center/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043294" />
+    <state width="1024" height="223" key="GridCell.Tab.0.left" timestamp="1593853043294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.0.left/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027124" />
-    <state width="1024" height="223" key="GridCell.Tab.0.right" timestamp="1593851027124">
+    <state width="1024" height="223" key="GridCell.Tab.0.left/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043294" />
+    <state width="1024" height="223" key="GridCell.Tab.0.right" timestamp="1593853043294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.0.right/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027124" />
-    <state width="1024" height="223" key="GridCell.Tab.1.bottom" timestamp="1593851027125">
+    <state width="1024" height="223" key="GridCell.Tab.0.right/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043294" />
+    <state width="1024" height="223" key="GridCell.Tab.1.bottom" timestamp="1593853043294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.1.bottom/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027125" />
-    <state width="1024" height="223" key="GridCell.Tab.1.center" timestamp="1593851027125">
+    <state width="1024" height="223" key="GridCell.Tab.1.bottom/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043294" />
+    <state width="1024" height="223" key="GridCell.Tab.1.center" timestamp="1593853043294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.1.center/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027125" />
-    <state width="1024" height="223" key="GridCell.Tab.1.left" timestamp="1593851027125">
+    <state width="1024" height="223" key="GridCell.Tab.1.center/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043294" />
+    <state width="1024" height="223" key="GridCell.Tab.1.left" timestamp="1593853043294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.1.left/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027125" />
-    <state width="1024" height="223" key="GridCell.Tab.1.right" timestamp="1593851027125">
+    <state width="1024" height="223" key="GridCell.Tab.1.left/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043294" />
+    <state width="1024" height="223" key="GridCell.Tab.1.right" timestamp="1593853043294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.1.right/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027125" />
-    <state width="1024" height="223" key="GridCell.Tab.2.bottom" timestamp="1593851027125">
+    <state width="1024" height="223" key="GridCell.Tab.1.right/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043294" />
+    <state width="1024" height="223" key="GridCell.Tab.2.bottom" timestamp="1593853043295">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.2.bottom/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027125" />
-    <state width="1024" height="223" key="GridCell.Tab.2.center" timestamp="1593851027125">
+    <state width="1024" height="223" key="GridCell.Tab.2.bottom/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043295" />
+    <state width="1024" height="223" key="GridCell.Tab.2.center" timestamp="1593853043295">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.2.center/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027125" />
-    <state width="1024" height="223" key="GridCell.Tab.2.left" timestamp="1593851027125">
+    <state width="1024" height="223" key="GridCell.Tab.2.center/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043295" />
+    <state width="1024" height="223" key="GridCell.Tab.2.left" timestamp="1593853043294">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.2.left/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027125" />
-    <state width="1024" height="223" key="GridCell.Tab.2.right" timestamp="1593851027125">
+    <state width="1024" height="223" key="GridCell.Tab.2.left/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043294" />
+    <state width="1024" height="223" key="GridCell.Tab.2.right" timestamp="1593853043295">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1024" height="223" key="GridCell.Tab.2.right/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593851027125" />
+    <state width="1024" height="223" key="GridCell.Tab.2.right/0.0.1536.864/-2560.-366.2560.1440@0.0.1536.864" timestamp="1593853043295" />
     <state x="446" y="16" key="SettingsEditor" timestamp="1593850556734">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

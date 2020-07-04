@@ -49,7 +49,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="teacher" items="${requestScope.student}"
+                <c:forEach var="student" items="${requestScope.student}"
                            varStatus="status">
                     <c:if test="${status.count%2==0}">
                         <tr style="background: #eeeeff">
@@ -57,14 +57,14 @@
                     <c:if test="${status.count%2!=0}">
                         <tr style="background: #dedeff">
                     </c:if>
-                    <td>${teacher.name}</td>
-                    <td>${teacher.id}</td>
-                    <td>${teacher.school_id}</td>
-                    <td>${teacher.college}</td>
-                    <td>${teacher.major}</td>
-                    <td>${teacher.class1}</td>
-                    <td>${teacher.attendenceRecord}</td>
-                    <td>${teacher.healthcode}</td>
+                    <td>${student.name}</td>
+                    <td>${student.id}</td>
+                    <td>${student.school_id}</td>
+                    <td>${student.college}</td>
+                    <td>${student.major}</td>
+                    <td>${student.class1}</td>
+                    <td>${student.attendenceRecord}</td>
+                    <td>${student.healthcode}</td>
                     </tr>
                 </c:forEach>
                 </tbody>

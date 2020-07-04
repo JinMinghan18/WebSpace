@@ -2,15 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23f485c3-3b35-4f5d-aa38-9f735f92effd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../FirstTry/CSSmodule.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FirstTry/download.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FirstTry/link.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FirstTry/service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstTry/CUG Network resource.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstTry/CUG Network resource.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstTry/ZjutNetwork resource.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstTry/ZjutNetwork resource.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstTry/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstTry/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FirstTry/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FirstTry/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/StudentInfoCheck2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/TeacherInfoCheck2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/controller/SchoolAdministratorsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/model/school_info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/StudentInfoCheck2.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/TeacherInfoCheck2.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/SchoolAdministrators.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/SchoolAdministrators.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/SchoolAdministrators2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/SchoolAdministrators2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/ShowQueryStudentInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/ShowQueryStudentInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/ShowQueryTeacherInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/ShowQueryTeacherInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/StudentInfoCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/StudentInfoCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/TeacherInfoCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/TeacherInfoCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/data_statistics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/data_statistics.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/majorDataStatistics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/majorDataStatistics.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/WEB-INF/classes/com/controller/StudentInfoCheckServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/WEB-INF/classes/com/controller/StudentInfoCheckServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/WEB-INF/classes/com/controller/TeacherInfoCheckServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/WEB-INF/classes/com/controller/TeacherInfoCheckServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/WEB-INF/classes/com/dao/HealthCodeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/WEB-INF/classes/com/dao/HealthCodeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/controller/StudentInfoCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/controller/StudentInfoCheckServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/controller/TeacherInfoCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/controller/TeacherInfoCheckServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/dao/HealthCodeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/dao/HealthCodeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/SchoolAdministrators.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/SchoolAdministrators.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/SchoolAdministrators2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/SchoolAdministrators2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/ShowQueryStudentInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/ShowQueryStudentInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/ShowQueryTeacherInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/ShowQueryTeacherInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/StudentInfoCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/StudentInfoCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/TeacherInfoCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/TeacherInfoCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/data_statistics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/data_statistics.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/majorDataStatistics.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/majorDataStatistics.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/WEB-INF/classes/com/controller/StudentInfoCheckServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/WEB-INF/classes/com/controller/StudentInfoCheckServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/WEB-INF/classes/com/controller/TeacherInfoCheckServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/WEB-INF/classes/com/controller/TeacherInfoCheckServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/WEB-INF/classes/com/dao/HealthCodeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/WEB-INF/classes/com/dao/HealthCodeDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/test11/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/test11/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +72,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FirstTry" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
@@ -99,6 +126,7 @@
       <workItem from="1581483752597" duration="628000" />
       <workItem from="1581960179481" duration="2569000" />
       <workItem from="1582027888186" duration="63000" />
+      <workItem from="1593871253253" duration="9000" />
     </task>
     <servers />
   </component>

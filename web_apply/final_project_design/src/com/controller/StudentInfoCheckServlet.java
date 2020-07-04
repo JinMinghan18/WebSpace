@@ -31,7 +31,7 @@ public class StudentInfoCheckServlet extends HttpServlet {
 
         request.setAttribute("student",student);
 
-        RequestDispatcher rd = request.getRequestDispatcher("JSP/StudentInfoCheck.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("JSP/StudentInfoCheck2.jsp");
         rd.forward(request,response);
     }
 

@@ -48,7 +48,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="teacher" items="${requestScope.teacher}"
+                <c:forEach var="student" items="${requestScope.teacher}"
                            varStatus="status">
                     <c:if test="${status.count%2==0}">
                         <tr style="background: #eeeeff">
@@ -56,14 +56,14 @@
                     <c:if test="${status.count%2!=0}">
                         <tr style="background: #dedeff">
                     </c:if>
-                    <td>${teacher.name}</td>
-                    <td>${teacher.id}</td>
-                    <td>${teacher.school_id}</td>
-                    <td>${teacher.college}</td>
-                    <td>${teacher.role}</td>
-                    <td>${teacher.attendenceRecord}</td>
-                    <td>${teacher.healthcode}</td>
-                    <td><a href="JSP/manageTeacherRole.jsp?name=${teacher.name}&id=${teacher.id}&school_id=${teacher.school_id}&college=${teacher.college}&healthcode=${teacher.healthcode}">职务管理</a></td>
+                    <td>${student.name}</td>
+                    <td>${student.id}</td>
+                    <td>${student.school_id}</td>
+                    <td>${student.college}</td>
+                    <td>${student.role}</td>
+                    <td>${student.attendenceRecord}</td>
+                    <td>${student.healthcode}</td>
+                    <td><a href="JSP/manageTeacherRole.jsp?name=${student.name}&id=${student.id}&school_id=${student.school_id}&college=${student.college}&healthcode=${student.healthcode}">职务管理</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>

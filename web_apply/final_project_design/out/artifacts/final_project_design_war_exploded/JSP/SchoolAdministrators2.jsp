@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -14,12 +15,13 @@
     <meta name="referer" content="never" />
     <meta name="renderer" content="webkit">
     <title>学生管理界面</title>
-    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="<%=path%>/static/image/favicon.ico" type="image/x-icon" />
     <link href="<%=path%>/static/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../CSS/site.css" rel="stylesheet" />
-    <link href="../codemirror/lib/codemirror.css" rel="stylesheet" />
+    <link href="<%=path%>/static/css/site.css" rel="stylesheet" />
+    <link href="<%=path%>/static/codemirror/lib/codemirror.css" rel="stylesheet" />
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
     <!--[if lte IE 9]>
-    <script src="../JS/requestAnimationFrame.js"></script>
+    <script src="<%=path%>/static/js/requestAnimationFrame.js"></script>
     <![endif]-->
     <style>
         .top-tips {
@@ -66,6 +68,43 @@
         }
     </style>
 </head>
+<%@page import="com.dao.HealthCodeDao" %>
+<%@page import="com.model.Student" %>
+<%@page import="com.model.Teacher" %>
+<%@ page import="java.util.ArrayList" %>
+<%
+
+    HealthCodeDao dao = new HealthCodeDao();
+
+    Double unfinishedTeacher = dao.teacherDailyAttendence();
+//        System.out.println(unfinishedTeacher);
+    Double unfinishedStudent = dao.studentDailyAttendence();
+    request.setAttribute("teacherAttendence",unfinishedTeacher);
+    request.setAttribute("studentAttendence",unfinishedStudent);
+    ArrayList<Teacher> teacher = dao.findUnfinishedTeacher();
+    ArrayList<Student> student = dao.findUnfinishedStudent();
+
+    request.setAttribute("teacher",teacher);
+    request.setAttribute("student",student);
+    int stunum = dao.studentnumber();
+    int teanum = dao.teachernumber();
+%>
+
+
+<%
+    //饼图数据
+    ArrayList<Integer> stuTea = dao.allstatistics();
+    Integer fs=stuTea.get(0);
+    Integer ufs=stuTea.get(1);
+    Integer ft=stuTea.get(2);
+    Integer uft=stuTea.get(3);
+%>
+<script language="JavaScript">
+    var fs1="<%=fs%>"
+    var ufs1="<%=ufs%>"
+    var ft1="<%=ft%>"
+    var uft1="<%=uft%>"
+</script>
 <body>
 <div class="bt-warp bge6">
     <div class="top-tips">当前IE浏览器版本过低,部分功能无法展示,请更换至其他浏览器，国产浏览器请使用极速模式！</div>
@@ -73,22 +112,22 @@
     <div id="container" class="container-fluid">
         <div class="sidebar-scroll">
             <div class="sidebar-auto">
-                <h3 class="mypcip"><span class="f14 cw">学生管理系统</span></h3>
+                <h3 class="mypcip"><span class="f14 cw">校级管理员</span></h3>
                 <ul class="menu">
 
 
-                    <li id="memuA" class="current"> <a class="menu_home" href="index.html">首页</a></li>
+                    <li id="memuA"> <a class="menu_home" href="SchoolAdministrators2.jsp">首页</a></li>
 
 
 
-
-                    <li id="memuAftp"> <a class="menu_ftp" href="student.html">学生管理</a></li>
-
+                    <li id="memuAsite"> <a class="menu_web" href="../StudentInfoCheckServlet">学生打卡统计</a></li>
 
 
+                    <li id="memuBsite"> <a class="menu_web" href="../TeacherInfoCheckServlet">教师打卡统计</a></li>
+
+
+                    <li id="memuCsite"> <a class="menu_web" href="#">师生信息总览</a></li>
                 </ul>
-                <div id="newbtpc"></div>
-                <div class="btpc-plus" onclick="bindBTPanel(0,'b')">+</div>
             </div>
         </div>
         <button style="display: none;" id="bt_copys" class="bt_copy" data-clipboard-text=""></button>
@@ -104,32 +143,60 @@
                     <h3 class="c6 f16 pull-left">打卡情况</h3>
                 </div>
                 <div class="server-circle">
-                    <ul class="row" id="systemInfoList">
-                        <li class="col-xs-6 col-sm-3 col-md-3 col-lg-2 mtb20 circle-box text-center loadbox">
-                            <h3 class="c9 f15">教师打卡情况</h3>
-                            <div class="cicle">
-                                <div class="bar bar-left">
-                                    <div class="bar-left-an bar-an"></div>
-                                </div>
-                                <div class="bar bar-right">
-                                    <div class="bar-right-an bar-an"></div>
-                                </div>
-                                <div class="occupy"><span>20</span>%</div>
-                            </div>
-                        </li>
-                        <li class="col-xs-6 col-sm-3 col-md-3 col-lg-2 mtb20 circle-box text-center cpubox">
-                            <h3 class="c9 f15">学生打卡情况</h3>
-                            <div class="cicle">
-                                <div class="bar bar-left">
-                                    <div class="bar-left-an bar-an"></div>
-                                </div>
-                                <div class="bar bar-right">
-                                    <div class="bar-right-an bar-an"></div>
-                                </div>
-                                <div class="occupy"><span>20</span>%</div>
-                            </div>
-                        </li>
-                    </ul>
+
+<%--                    图表 fs1,ufs1,ft1,uft1为数据--%>
+                    <div id="main" style="width: 900px;height:400px;margin:0 auto;text-align:center;"></div>
+                    <script type="text/javascript">
+                        //饼状图的方法
+                        //对应放图片的Id（imageId）
+                        //typeArr:对应名称的数组
+                        //dataArr:对应名称数组的对应数据的数组
+                        var dataArr = [fs1,ufs1,ft1,uft1];
+                        var typeArr = new Array("打卡学生","未打卡学生","打卡教师","未打卡教师");
+                        var ListFirstArr = new Array();
+                        for (var i = 0; i < typeArr.length; i++) {
+                            var item = {
+                                value: dataArr[i],
+                                name: typeArr[i]
+                            };
+                            ListFirstArr.push(item);
+                        }
+                        // 基于准备好的dom，初始化echarts图表
+                        var myChart = echarts.init(document.getElementById('main'));
+                        option = {
+                            title: {
+                                text: '',
+                                subtext: '',
+                                x: 'center'
+                            },
+                            tooltip: {
+                                trigger: 'item',
+                                formatter: "{a} <br/>{b} : {c} ({d}%)"
+                            },
+                            legend: {
+                                orient: 'vertical',
+                                left: 'left',
+                                data: typeArr
+                            },
+                            series: [
+                                {
+                                    name: '今日数据',
+                                    type: 'pie',
+                                    radius: '55%',
+                                    center: ['50%', '60%'],
+                                    data: ListFirstArr,
+                                    itemStyle: {
+                                        emphasis: {
+                                            shadowBlur: 10,
+                                            shadowOffsetX: 0,
+                                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                        }
+                                    }
+                                }
+                            ]
+                        };
+                        myChart.setOption(option);
+                    </script>
                 </div>
             </div>
             <div class="system-info bgw clearfix mtb15">
@@ -137,20 +204,12 @@
                 <div class="system-info-con mtb20">
                     <ul class="clearfix text-center">
                         <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <p class="name f15 c9">校级管理员</p>
-                            <div class="val"><a class="btlink" href="#">1</a></div>
-                        </li>
-                        <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <p class="name f15 c9">院级管理员</p>
-                            <div class="val"><a class="btlink" href="#">13</a></div>
-                        </li>
-                        <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <p class="name f15 c9">教职人员</p>
-                            <div class="val"><a class="btlink" href="#">3213</a></div>
+                            <div class="val"><a class="btlink" href="../TeacherInfoCheckServlet"><%=teanum%></a></div>
                         </li>
                         <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <p class="name f15 c9">学生</p>
-                            <div class="val"><a class="btlink" href="#">23160</a></div>
+                            <div class="val"><a class="btlink" href="../StudentInfoCheckServlet"><%=stunum%></a></div>
                         </li>
                     </ul>
                 </div>
@@ -169,30 +228,21 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>teacher1</td>
-                                <td>t10001</td>
-                                <td>计算机学院</td>
-                                <td>系统管理员</td>
-                            </tr>
-                            <tr>
-                                <td>teacher2</td>
-                                <td>t10002</td>
-                                <td>计算机学院</td>
-                                <td>校级管理员</td>
-                            </tr>
-                            <tr>
-                                <td>teacher3</td>
-                                <td>t10003</td>
-                                <td>计算机学院</td>
-                                <td>院级管理员</td>
-                            </tr>
-                            <tr>
-                                <td>teacher4</td>
-                                <td>t10004</td>
-                                <td>计算机学院</td>
-                                <td>普通教师</td>
-                            </tr>
+                            <c:forEach var="student" items="${requestScope.teacher}"
+                                       varStatus="status">
+                                <c:if test="${status.count%2==0}">
+                                    <tr style="background: #eeeeff">
+                                </c:if>
+                                <c:if test="${status.count%2!=0}">
+                                    <tr style="background: #dedeff">
+                                </c:if>
+                                <td>${student.name}</td>
+
+                                <td>${student.school_id}</td>
+                                <td>${student.college}</td>
+                                <td>${student.role}</td>
+                                </tr>
+                            </c:forEach>
 
                             </tbody>
                         </table>
@@ -213,35 +263,22 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>student1</td>
-                                <td>s10001</td>
-                                <td>计算机学院</td>
-                                <td>软件工程</td>
-                            </tr>
-                            <tr>
-                                <td>student2</td>
-                                <td>s10002</td>
-                                <td>计算机学院</td>
-                                <td>软件工程</td>
-                            </tr>
-                            <tr>
-                                <td>student3</td>
-                                <td>s10003</td>
-                                <td>计算机学院</td>
-                                <td>软件工程</td>
-                            </tr>
-                            <tr>
-                                <td>student4</td>
-                                <td>s10004</td>
-                                <td>计算机学院</td>
-                                <td>软件工程</td>
-                            </tr>
-
+                            <c:forEach var="student" items="${requestScope.student}"
+                                       varStatus="status">
+                                <c:if test="${status.count%2==0}">
+                                    <tr style="background: #eeeeff">
+                                </c:if>
+                                <c:if test="${status.count%2!=0}">
+                                    <tr style="background: #dedeff">
+                                </c:if>
+                                <td>${student.name}</td>
+                                <td>${student.school_id}</td>
+                                <td>${student.college}</td>
+                                <td>${student.major}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
-
-                        <div id="NetImg" style="width:100%;height:370px;"></div>
                     </div>
                 </div>
             </div>
@@ -252,19 +289,19 @@
 
     <div class="footer bgw">版权所有 © 浙江工业大学 | 信息化办公室维护 | 网络管理 www@zjut.edu.cn</div>
 </div>
-<script src="../JS/jquery-1.10.2.min.js"></script>
-<script src="../JS/bootstrap.min.js"></script>
-<script src="../language/Simplified_Chinese/lan.js?date=7.1.0"></script>
-<script src="../layer/layer.js?date=7.1.0"></script>
-<script src="../JS/public.js?version=7.1.0"></script>
-<script src="../JS/public_backup.js?version=7.1.0"></script>
-<script src="../codemirror/lib/codemirror.js?version=7.1.0"></script>
+<script src="<%=path%>/static/js/jquery-1.10.2.min.js"></script>
+<script src="<%=path%>/static/js/bootstrap.min.js"></script>
+<script src="<%=path%>/static/language/Simplified_Chinese/lan.js?date=7.1.0"></script>
+<script src="<%=path%>/static/layer/layer.js?date=7.1.0"></script>
+<script src="<%=path%>/static/js/public.js?version=7.1.0"></script>
+<script src="<%=path%>/static/js/public_backup.js?version=7.1.0"></script>
+<script src="<%=path%>/static/codemirror/lib/codemirror.js?version=7.1.0"></script>
 
-<script type="text/javascript" src="/js/jquery.dragsort-0.5.2.min.js"></script>
-<script type="text/javascript" src="/js/echarts.min.js"></script>
-<script type="text/javascript" src="/js/index.js?f20200214=7.1.0"></script>
-<script type="text/javascript" src="/js/soft.js?version_20191219=7.1.0"></script>
-<script type="text/javascript" src="/ace/ace.js?date=7.1.0"></script>
+<script type="text/javascript" src="<%=path%>/static/js/jquery.dragsort-0.5.2.min.js"></script>
+<script type="text/javascript" src="<%=path%>/static/js/echarts.min.js"></script>
+<script type="text/javascript" src="<%=path%>/static/js/index.js?f20200214=7.1.0"></script>
+<script type="text/javascript" src="<%=path%>/static/js/soft.js?version_20191219=7.1.0"></script>
+<script type="text/javascript" src="<%=path%>/static/ace/ace.js?date=7.1.0"></script>
 <script type="text/javascript">
     setCookie('pro_end',-1);
     setCookie('ltd_end',-1);
@@ -379,9 +416,9 @@
         });
     }
     loadScript([
-        'laydate/laydate.js',
-        'js/jquery.qrcode.min.js',
-        'js/clipboard.min.js'
+        '<%=path%>/static/laydate/laydate.js',
+        '<%=path%>/static/js/jquery.qrcode.min.js',
+        '<%=path%>/static/js/clipboard.min.js'
     ],function(e){
     });
     task_stat();
