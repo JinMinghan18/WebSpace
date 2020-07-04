@@ -5,6 +5,7 @@
   Time: 15:23
   To change this template use File | Settings | File Templates.
 --%>
+<%String path = request.getContextPath();%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,12 +14,12 @@
     <meta name="referer" content="never" />
     <meta name="renderer" content="webkit">
     <title>学生管理界面</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link href="bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/site.css" rel="stylesheet" />
-    <link href="codemirror/lib/codemirror.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../image/favicon.ico" type="image/x-icon" />
+    <link href="<%=path%>/static/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../CSS/site.css" rel="stylesheet" />
+    <link href="../codemirror/lib/codemirror.css" rel="stylesheet" />
     <!--[if lte IE 9]>
-    <script src="/js/requestAnimationFrame.js"></script>
+    <script src="../JS/requestAnimationFrame.js"></script>
     <![endif]-->
     <style>
         .top-tips {
@@ -251,13 +252,13 @@
 
     <div class="footer bgw">版权所有 © 浙江工业大学 | 信息化办公室维护 | 网络管理 www@zjut.edu.cn</div>
 </div>
-<script src="/js/jquery-1.10.2.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/language/Simplified_Chinese/lan.js?date=7.1.0"></script>
-<script src="/layer/layer.js?date=7.1.0"></script>
-<script src="/js/public.js?version=7.1.0"></script>
-<script src="/js/public_backup.js?version=7.1.0"></script>
-<script src="/codemirror/lib/codemirror.js?version=7.1.0"></script>
+<script src="../JS/jquery-1.10.2.min.js"></script>
+<script src="../JS/bootstrap.min.js"></script>
+<script src="../language/Simplified_Chinese/lan.js?date=7.1.0"></script>
+<script src="../layer/layer.js?date=7.1.0"></script>
+<script src="../JS/public.js?version=7.1.0"></script>
+<script src="../JS/public_backup.js?version=7.1.0"></script>
+<script src="../codemirror/lib/codemirror.js?version=7.1.0"></script>
 
 <script type="text/javascript" src="/js/jquery.dragsort-0.5.2.min.js"></script>
 <script type="text/javascript" src="/js/echarts.min.js"></script>
