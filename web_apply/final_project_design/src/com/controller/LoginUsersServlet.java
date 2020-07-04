@@ -24,7 +24,7 @@ public class LoginUsersServlet extends HttpServlet {
         String id = request.getParameter("id");
         System.out.println(id);
         HealthCodeDao dao = new HealthCodeDao();
-        Student student = dao.findStudentInfo(name);
+        Student student = dao.findStudentInfo(school_id);
         Teacher teacher = dao.findTeacherInfo(school_id);
         System.out.println("studentinfo"+student.getName());
         System.out.println(student.getId());

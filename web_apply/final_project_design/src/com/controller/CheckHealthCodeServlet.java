@@ -7,6 +7,7 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
 import com.model.HealthCode;
 import com.model.MatrixToImageWriter;
+import com.model.Student;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -79,18 +80,22 @@ public class CheckHealthCodeServlet extends HttpServlet {
             BitMatrix bitMatrix = multiFormatWriter.encode(aa, BarcodeFormat.QR_CODE,220,220,hint);
             File file1 = new File(path,"test.jpg");
             request.setAttribute("file",file1);
-            MatrixToImageWriter.writeToFile(bitMatrix,"jpg",file1,choice);
+            int choice2 = dao.healthCodeColor(choice,school_id);
+            MatrixToImageWriter.writeToFile(bitMatrix,"jpg",file1,choice2);
         }catch(Exception e){}
         request.setAttribute("choice",choice);
         HttpSession session = request.getSession();
         synchronized (session){
             session.setAttribute("healthCode",healthCode);
-
         }
+
         boolean check_teacher = dao.isTeacher(school_id);
         boolean check_stuednt = dao.isStudent(school_id);
-        if(check_stuednt!=true){
 
+
+        if(check_stuednt!=true){
+            Student student = dao.findStudentInfo(school_id);
+            boolean issuccess = dao.updateStudent(name,id,school_id,tel,student.getAttendenceRecord(),choice,student.getHealthday(),student.getHealthcode());
         }
         RequestDispatcher rd = request.getRequestDispatcher("/JSP/displayHealthCode.jsp");
         rd.forward(request,response);

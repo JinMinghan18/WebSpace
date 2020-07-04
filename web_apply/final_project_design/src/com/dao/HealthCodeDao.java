@@ -8,6 +8,7 @@ import com.sun.xml.internal.bind.v2.model.core.ID;
 import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import org.omg.CosNaming.NamingContextExtPackage.AddressHelper;
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
+import sun.security.util.Length;
 
 import javax.management.relation.Role;
 import javax.servlet.RequestDispatcher;
@@ -115,12 +116,12 @@ public class HealthCodeDao extends Basedao{
     }
 
     //查找学生信息
-    public Student findStudentInfo(String name){
+    public Student findStudentInfo(String school_id){
         Student student = new Student();
-        String sql = "SELECT * FROM students WHERE name=?";
+        String sql = "SELECT * FROM students WHERE school_id=?";
         try(Connection conn = dataSource.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(sql)){
-            pstmt.setString(1,name);
+            pstmt.setString(1,school_id);
             try(ResultSet rst =  pstmt.executeQuery()){
                 while(rst.next()) {
                     student.setName(rst.getString("name"));
@@ -647,13 +648,93 @@ public class HealthCodeDao extends Basedao{
         }
         return false;
     }
+    //判断学生打卡后的健康码颜色
+    public int healthCodeColor(int choice,String school_id){
+        HealthCodeDao dao = new HealthCodeDao();
+        Student student = dao.findStudentInfo(school_id);
+        Date d1 = new Date();
+        SimpleDateFormat dfd = new SimpleDateFormat("dd");
+        String date = dfd.format(d1);
+        int date2 = Integer.parseInt(date);//获取日期
+        int healthday = student.getHealthday();
+        if(choice==0)
+        {
+            healthday += 1;
+            if(healthday>=7 && student.getHealthcode().equals("红码")){
+                healthday = 0;
+                return 1;
+            }
+            if(healthday>=7 && student.getHealthcode().equals("黄码")){
+                healthday = 0;
+                return 0;
+            }
+        }
+        if(choice==1)
+        {
+            healthday = 0;
+            return 1;
+
+        }
+        if(choice==2)
+        {
+            healthday = 0;
+            return 2;
+        }
+        return -1;
+    }
     //上传学生打卡信息到数据库
-    public boolean updateStudent(String name,String id, String school_id, String phonenumber,String attendenceRecord){
+    public boolean updateStudent(String name,String id, String school_id, String phonenumber,String attendenceRecord,int choice,int healthday,String healthcode){
         String sql = "UPDATE students SET attendenceRecord=?,healthday=?,healthcode=?,phonenumber=? WHERE school_id=?";
         try(Connection conn = dataSource.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(sql)){
 
-//            pstmt.setString(1,);
+            Date d1 = new Date();
+            SimpleDateFormat dfd = new SimpleDateFormat("dd");
+            String date = dfd.format(d1);
+            int date2 = Integer.parseInt(date);//获取日期
+
+
+            if(choice==0)
+            {
+                char[] arr = attendenceRecord.toCharArray();
+                for(int i = 0;i<=date2;i++){
+                    arr[i] = (char)('1');
+                }
+                attendenceRecord = new String(arr);
+                healthday += 1;
+                if(healthday>=7 && healthcode.equals("红码")){
+                    healthday = 0;
+                    healthcode = "黄码";
+                }
+                if(healthday>=7 && healthcode.equals("黄码")){
+                    healthday = 0;
+                    healthcode = "绿码";
+                }
+            }
+            if(choice==1)
+            {
+                char[] arr = attendenceRecord.toCharArray();
+                for(int i = 0;i<=date2;i++){
+                    arr[i] = (char)('1');
+                }
+                attendenceRecord = new String(arr);
+                healthday = 0;
+                healthcode = "黄码";
+
+            }
+            if(choice==1)
+            {
+                char[] arr = attendenceRecord.toCharArray();
+                for(int i = 0;i<=date2;i++){
+                    arr[i] = (char)('1');
+                }
+                attendenceRecord = new String(arr);
+                healthday = 0;
+                healthcode = "黄码";
+
+            }
+
+            pstmt.setString(1,attendenceRecord);
         }catch (SQLException se){
             se.printStackTrace();
             return false;
