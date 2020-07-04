@@ -25,7 +25,7 @@
             String time2 = df2.format(d);
             String path = request.getServletContext().getRealPath("/images/");
             String pathh = session.getServletContext().getRealPath("/images/")+"test.jpg";
-            System.out.println(path);
+//            System.out.println(path);
             String basepath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
             String name = request.getParameter("name");
         %><br>

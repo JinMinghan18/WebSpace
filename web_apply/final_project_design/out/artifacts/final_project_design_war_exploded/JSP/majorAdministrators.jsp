@@ -7,7 +7,7 @@
 --%>
 <%String path = request.getContextPath();%>
 <%String college= (String) request.getAttribute("college");%>
-<%System.out.println(college);%>
+<%--<%System.out.println(college);%>--%>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

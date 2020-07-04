@@ -23,7 +23,7 @@ public class StudentModifyServlet extends HttpServlet {
         String major = request.getParameter("major");
         String class1 = request.getParameter("class1");
         String healthcode = request.getParameter("healthcode");
-        System.out.println(healthcode);
+//        System.out.println(healthcode);
         Boolean success = dao.ModifyStudentInfo(name,id,school_id,college,major,class1,healthcode);
         RequestDispatcher rd = request.getRequestDispatcher("/StudentQueryServlet?college="+college+"&major="+major+"&class1="+class1+"");
         rd.forward(request,response);

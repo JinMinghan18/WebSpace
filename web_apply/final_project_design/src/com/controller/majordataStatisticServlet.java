@@ -37,8 +37,8 @@ public class majordataStatisticServlet extends HttpServlet {
         unfinishedStudent=unfinishedStudent*100;
         String ufs100= String.valueOf(unfinishedStudent);
         ufs100=ufs100+"%";
-        System.out.println(uft100);
-        System.out.println(ufs100);
+//        System.out.println(uft100);
+//        System.out.println(ufs100);
         request.setAttribute("teacherAttendence",uft100);
         request.setAttribute("studentAttendence",ufs100);
 

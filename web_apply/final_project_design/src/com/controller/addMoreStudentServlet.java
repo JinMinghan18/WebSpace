@@ -21,7 +21,7 @@ public class addMoreStudentServlet extends HttpServlet {
         String message = null;
         try{
             String str = request.getParameter("added");
-            System.out.println(str);
+//            System.out.println(str);
             boolean success = dao.addMoreStudent(str);
         }catch (Exception e){
             e.printStackTrace();

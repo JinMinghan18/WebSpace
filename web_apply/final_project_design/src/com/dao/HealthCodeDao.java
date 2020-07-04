@@ -131,6 +131,8 @@ public class HealthCodeDao extends Basedao{
                     student.setCollege(rst.getString("college"));
                     student.setMajor(rst.getString("major"));
                     student.setAttendenceRecord(rst.getString("attendenceRecord"));
+                    student.setHealthday(rst.getInt("healthday"));
+                    student.setHealthcode(rst.getString("healthcode"));
                 }
             }
             return student;
@@ -155,6 +157,9 @@ public class HealthCodeDao extends Basedao{
                     teacher.setCollege(rst.getString("college"));
                     teacher.setAttendenceRecord(rst.getString("attendenceRecord"));
                     teacher.setPassword(rst.getString("password"));
+                    teacher.setHealthcode(rst.getString("healthcode"));
+                    teacher.setHealthday(rst.getInt("healthday"));
+
                 }
             }
             return teacher;
@@ -453,7 +458,7 @@ public class HealthCodeDao extends Basedao{
                 pstmt.setString(7,"0000000000000000000000000000000");
                 pstmt.setInt(8,0);
                 pstmt.setString(9,null);
-                System.out.println(result[1]);
+//                System.out.println(result[1]);
                 pstmt.executeUpdate();
             }
             return true;
@@ -625,33 +630,40 @@ public class HealthCodeDao extends Basedao{
         String sql = "SELECT * FROM teachers WHERE school_id=?";
         try(Connection conn = dataSource.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,school_id);
             try(ResultSet rst = pstmt.executeQuery()){
-                if(rst!=null)
+                if(rst.next())
                     return true;
+                else return false;
             }
         }catch (SQLException se){
             se.printStackTrace();
+            return false;
         }
-        return false;
     }
     //判断是否为学生（打卡的时候）
     public boolean isStudent(String school_id){
         String sql = "SELECT * FROM students WHERE school_id=?";
         try(Connection conn = dataSource.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,school_id);
             try(ResultSet rst = pstmt.executeQuery()){
-                if(rst!=null)
+                if(rst.next())
                     return true;
+                else return false;
             }
         }catch (SQLException se){
             se.printStackTrace();
+            return false;
         }
-        return false;
     }
     //判断学生打卡后的健康码颜色
-    public int healthCodeColor(int choice,String school_id){
+    public int studentHealthCodeColor(int choice, String school_id){
         HealthCodeDao dao = new HealthCodeDao();
         Student student = dao.findStudentInfo(school_id);
+        System.out.println("dao"+student.getHealthday());
+        System.out.println("dao"+student.getHealthcode());
+
         Date d1 = new Date();
         SimpleDateFormat dfd = new SimpleDateFormat("dd");
         String date = dfd.format(d1);
@@ -664,8 +676,75 @@ public class HealthCodeDao extends Basedao{
                 healthday = 0;
                 return 1;
             }
-            if(healthday>=7 && student.getHealthcode().equals("黄码")){
+            else if(healthday>=7 && student.getHealthcode().equals("黄码")){
                 healthday = 0;
+                return 0;
+            }
+            else if(healthday>=7 && student.getHealthcode().equals("绿码")){
+                return  0;
+            }
+            else if(healthday<7 && student.getHealthcode().equals("红码")){
+
+                return 2;
+            }
+            else if(healthday<7 && student.getHealthcode().equals("黄码")){
+
+                return 1;
+            }
+            else if(healthday<7 && student.getHealthcode().equals("绿码")){
+
+                return 0;
+            }
+        }
+        if(choice==1)
+        {
+            healthday = 0;
+            return 1;
+
+        }
+        if(choice==2)
+        {
+            healthday = 0;
+            return 2;
+        }
+        return -1;
+    }
+    //判断老师打卡后的健康码颜色
+    public int teacherHealthCodeColor(int choice, String school_id){
+        HealthCodeDao dao = new HealthCodeDao();
+        Teacher teacher = dao.findTeacherInfo(school_id);
+        System.out.println("dao"+teacher.getHealthday());
+        System.out.println("dao"+teacher.getHealthcode());
+
+        Date d1 = new Date();
+        SimpleDateFormat dfd = new SimpleDateFormat("dd");
+        String date = dfd.format(d1);
+        int date2 = Integer.parseInt(date);//获取日期
+        int healthday = teacher.getHealthday();
+        if(choice==0)
+        {
+            healthday += 1;
+            if(healthday>=7 && teacher.getHealthcode().equals("红码")){
+                healthday = 0;
+                return 1;
+            }
+            else if(healthday>=7 && teacher.getHealthcode().equals("黄码")){
+                healthday = 0;
+                return 0;
+            }
+            else if(healthday>=7 && teacher.getHealthcode().equals("绿码")){
+                return  0;
+            }
+            else if(healthday<7 && teacher.getHealthcode().equals("红码")){
+
+                return 2;
+            }
+            else if(healthday<7 && teacher.getHealthcode().equals("黄码")){
+
+                return 1;
+            }
+            else if(healthday<7 && teacher.getHealthcode().equals("绿码")){
+
                 return 0;
             }
         }
@@ -698,7 +777,8 @@ public class HealthCodeDao extends Basedao{
             {
                 char[] arr = attendenceRecord.toCharArray();
                 for(int i = 0;i<=date2;i++){
-                    arr[i] = (char)('1');
+                    if(i==date2)
+                        arr[i] = (char)('1');
                 }
                 attendenceRecord = new String(arr);
                 healthday += 1;
@@ -706,7 +786,7 @@ public class HealthCodeDao extends Basedao{
                     healthday = 0;
                     healthcode = "黄码";
                 }
-                if(healthday>=7 && healthcode.equals("黄码")){
+                else if(healthday>=7 && healthcode.equals("黄码")){
                     healthday = 0;
                     healthcode = "绿码";
                 }
@@ -715,34 +795,106 @@ public class HealthCodeDao extends Basedao{
             {
                 char[] arr = attendenceRecord.toCharArray();
                 for(int i = 0;i<=date2;i++){
-                    arr[i] = (char)('1');
+                    if(i==date2)
+                        arr[i] = (char)('2');
                 }
                 attendenceRecord = new String(arr);
                 healthday = 0;
                 healthcode = "黄码";
 
+            }
+            if(choice==2)
+            {
+                char[] arr = attendenceRecord.toCharArray();
+                for(int i = 0;i<=date2;i++){
+                    if(i==date2)
+                        arr[i] = (char)('3');
+                }
+                attendenceRecord = new String(arr);
+                healthday = 0;
+                healthcode = "红码";
+
+            }
+
+            pstmt.setString(1,attendenceRecord);
+            pstmt.setInt(2,healthday);
+            pstmt.setString(3,healthcode);
+            pstmt.setString(4,phonenumber);
+            pstmt.setString(5,school_id);
+            pstmt.executeUpdate();
+            return true;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+    }
+    //上传
+    public boolean updateTeacher(String name,String id, String school_id, String phonenumber,String attendenceRecord,int choice,int healthday,String healthcode){
+        String sql = "UPDATE teachers SET attendenceRecord=?,healthday=?,healthcode=?,phonenumber=? WHERE school_id=?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+
+            Date d1 = new Date();
+            SimpleDateFormat dfd = new SimpleDateFormat("dd");
+            String date = dfd.format(d1);
+            int date2 = Integer.parseInt(date);//获取日期
+
+
+            if(choice==0)
+            {
+                char[] arr = attendenceRecord.toCharArray();
+                for(int i = 0;i<=date2;i++){
+                    if(i==date2)
+                        arr[i] = (char)('1');
+                }
+                attendenceRecord = new String(arr);
+                healthday += 1;
+                if(healthday>=7 && healthcode.equals("红码")){
+                    healthday = 0;
+                    healthcode = "黄码";
+                }
+                else if(healthday>=7 && healthcode.equals("黄码")){
+                    healthday = 0;
+                    healthcode = "绿码";
+                }
             }
             if(choice==1)
             {
                 char[] arr = attendenceRecord.toCharArray();
                 for(int i = 0;i<=date2;i++){
-                    arr[i] = (char)('1');
+                    if(i==date2)
+                        arr[i] = (char)('2');
                 }
                 attendenceRecord = new String(arr);
                 healthday = 0;
                 healthcode = "黄码";
 
             }
+            if(choice==2)
+            {
+                char[] arr = attendenceRecord.toCharArray();
+                for(int i = 0;i<=date2;i++){
+                    if(i==date2)
+                        arr[i] = (char)('3');
+                }
+                attendenceRecord = new String(arr);
+                healthday = 0;
+                healthcode = "红码";
+
+            }
 
             pstmt.setString(1,attendenceRecord);
+            pstmt.setInt(2,healthday);
+            pstmt.setString(3,healthcode);
+            pstmt.setString(4,phonenumber);
+            pstmt.setString(5,school_id);
+            pstmt.executeUpdate();
+            return true;
         }catch (SQLException se){
             se.printStackTrace();
             return false;
         }
-        return false;
     }
-
-
     //院级管理员数据统计——返回未打卡教师
     public ArrayList<Teacher> majorfindUnfinishedTeacher(String college) {
         String sql = "SELECT * FROM teachers WHERE college = ?";

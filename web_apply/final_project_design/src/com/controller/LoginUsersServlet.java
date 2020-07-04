@@ -18,39 +18,39 @@ public class LoginUsersServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         String name = request.getParameter("name");
-        System.out.println(name);
+//        System.out.println(name);
         String school_id = request.getParameter("school_id");
-        System.out.println(school_id);
+//        System.out.println(school_id);
         String id = request.getParameter("id");
-        System.out.println(id);
+//        System.out.println(id);
         HealthCodeDao dao = new HealthCodeDao();
         Student student = dao.findStudentInfo(school_id);
         Teacher teacher = dao.findTeacherInfo(school_id);
-        System.out.println("studentinfo"+student.getName());
-        System.out.println(student.getId());
-        System.out.println(student.getSchool_id());
-        System.out.println("teacherinfo"+teacher.getName());
-        System.out.println(teacher.getId());
-        System.out.println(teacher.getSchool_id());
+//        System.out.println("studentinfo"+student.getName());
+//        System.out.println(student.getId());
+//        System.out.println(student.getSchool_id());
+//        System.out.println("teacherinfo"+teacher.getName());
+//        System.out.println(teacher.getId());
+//        System.out.println(teacher.getSchool_id());
         request.setAttribute("student",student);
         request.setAttribute("teacher",teacher);
         if(student==null && teacher==null){
-            System.out.println("s1");
+//            System.out.println("s1");
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/error.jsp");
             rd.forward(request,response);
         }
         else if(student!=null && school_id.equals(student.getSchool_id()) && id.equals(student.getId())){
-            System.out.println("s2");
+//            System.out.println("s2");
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/HealthCode.jsp");
             rd.forward(request,response);
         }
         else if(teacher!=null && name.equals(teacher.getName()) && id.equals(teacher.getId())){
-            System.out.println("s3");
+//            System.out.println("s3");
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/HealthCode.jsp");
             rd.forward(request,response);
         }
         else{
-            System.out.println("s4");
+//            System.out.println("s4");
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/error.jsp");
             rd.forward(request,response);
         }

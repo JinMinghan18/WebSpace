@@ -8,6 +8,7 @@ import com.google.zxing.common.BitMatrix;
 import com.model.HealthCode;
 import com.model.MatrixToImageWriter;
 import com.model.Student;
+import com.model.Teacher;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -63,6 +64,10 @@ public class CheckHealthCodeServlet extends HttpServlet {
 
 
         HealthCode healthCode = new HealthCode(name,id,school_id,tel,choice);
+        boolean check_teacher = dao.isTeacher(school_id);
+        System.out.println("servlettea"+check_teacher);
+        boolean check_stuednt = dao.isStudent(school_id);
+        System.out.println("servletstu"+check_stuednt);
         try{
             request.setAttribute("choice",choice);
             Date d = new Date();
@@ -70,8 +75,7 @@ public class CheckHealthCodeServlet extends HttpServlet {
             SimpleDateFormat df2 = new SimpleDateFormat(" HH:mm:ss");
             String time = df.format(d);
             String time2 = df2.format(d);
-            String aa = "姓名"+name+"\n"+"学号(工号)"+id+"\n"+"生成时间"+time+time2;
-            String path2 =  request.getContextPath();
+            String aa = "姓名"+name+"\n"+"学号(工号)"+school_id+"\n"+"生成时间"+time+time2;
             String path = request.getServletContext().getRealPath("/images/");
 
             MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
@@ -80,7 +84,14 @@ public class CheckHealthCodeServlet extends HttpServlet {
             BitMatrix bitMatrix = multiFormatWriter.encode(aa, BarcodeFormat.QR_CODE,220,220,hint);
             File file1 = new File(path,"test.jpg");
             request.setAttribute("file",file1);
-            int choice2 = dao.healthCodeColor(choice,school_id);
+//            int choice2 = dao.studentHealthCodeColor(choice,school_id);
+            int choice2 = -1;
+            if(check_stuednt){
+                choice2 = dao.studentHealthCodeColor(choice,school_id);
+            }
+            else{
+                choice2 = dao.teacherHealthCodeColor(choice,school_id);
+            }
             MatrixToImageWriter.writeToFile(bitMatrix,"jpg",file1,choice2);
         }catch(Exception e){}
         request.setAttribute("choice",choice);
@@ -89,13 +100,17 @@ public class CheckHealthCodeServlet extends HttpServlet {
             session.setAttribute("healthCode",healthCode);
         }
 
-        boolean check_teacher = dao.isTeacher(school_id);
-        boolean check_stuednt = dao.isStudent(school_id);
 
 
-        if(check_stuednt!=true){
+        if(check_stuednt==true){
             Student student = dao.findStudentInfo(school_id);
             boolean issuccess = dao.updateStudent(name,id,school_id,tel,student.getAttendenceRecord(),choice,student.getHealthday(),student.getHealthcode());
+            System.out.println(issuccess);
+        }
+        else if(check_teacher==true){
+            Teacher teacher = dao.findTeacherInfo(school_id);
+            boolean issuccess = dao.updateTeacher(name,id,school_id,tel,teacher.getAttendenceRecord(),choice,teacher.getHealthday(),teacher.getHealthcode());
+//            System.out.println(issuccess);
         }
         RequestDispatcher rd = request.getRequestDispatcher("/JSP/displayHealthCode.jsp");
         rd.forward(request,response);

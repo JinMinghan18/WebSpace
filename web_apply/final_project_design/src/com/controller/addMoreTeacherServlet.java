@@ -21,7 +21,7 @@ public class addMoreTeacherServlet extends HttpServlet {
         Teacher teacher = new Teacher();
         try{
             String str = request.getParameter("added");
-            System.out.println(str);
+//            System.out.println(str);
             boolean success = dao.addMoreTeacher(str);
         }catch (Exception e){
             e.printStackTrace();
