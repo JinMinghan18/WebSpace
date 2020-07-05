@@ -138,7 +138,7 @@
             </div>
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <form target="hid" style="position:fixed; left: 1200px" action="<%=path%>/StudentQueryServlet">
+                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/StudentQueryServlet">
                         <input type="text" name="college" class="ser-text pull-left" placeholder="学院" />
                         <input type="text" name="major" class="ser-text pull-left" placeholder="专业" />
                         <input type="text" name="class1" class="ser-text pull-left" placeholder="班级" />
