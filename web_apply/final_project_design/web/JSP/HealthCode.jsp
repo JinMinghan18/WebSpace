@@ -44,7 +44,7 @@
                 <td width="305px"><input type="radio" name="q1" value="yes"></td><td style="width: 95%;border-bottom: 1px solid rgba(0,0,0,0.15)"><span style="font-size: 10px">是</span></td>
             </tr>
             <tr>
-                <td><input type="radio" name="q1" value="no"></td><td width="95%">否</td>
+                <td><input type="radio" name="q1" value="no"></td><td width="95%"><span style="font-size: 10px">否</span></td>
             </tr>
         </table>
     </div><br>

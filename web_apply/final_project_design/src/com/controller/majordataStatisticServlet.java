@@ -47,7 +47,7 @@ public class majordataStatisticServlet extends HttpServlet {
         ArrayList<Student> student = dao.majorfindUnfinishedStudent(college);
         request.setAttribute("teacher",teacher);
         request.setAttribute("student",student);
-        RequestDispatcher rd = request.getRequestDispatcher("JSP/majorDataStatistics.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("JSP/majorAdministrators2.jsp");
         rd.forward(request,response);
     }
 

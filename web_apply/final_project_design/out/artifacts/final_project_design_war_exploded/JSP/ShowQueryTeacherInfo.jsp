@@ -29,7 +29,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="school_info" items="${requestScope.teacher}"
+    <c:forEach var="teacher" items="${requestScope.teacher}"
                varStatus="status">
         <c:if test="${status.count%2==0}">
             <tr style="background: #eeeeff">
@@ -37,15 +37,15 @@
         <c:if test="${status.count%2!=0}">
             <tr style="background: #dedeff">
         </c:if>
-        <td>${school_info.name}</td>
-        <td>${school_info.id}</td>
-        <td>${school_info.school_id}</td>
-        <td>${school_info.college}</td>
-        <td>${school_info.attendenceRecord}</td>
-        <td>${school_info.healthcode}</td>
+        <td>${teacher.name}</td>
+        <td>${teacher.id}</td>
+        <td>${teacher.school_id}</td>
+        <td>${teacher.college}</td>
+        <td>${teacher.attendenceRecord}</td>
+        <td>${teacher.healthcode}</td>
         <td>
-            <a href="JSP/ModifyTeacherInfo.jsp?name=${school_info.name}&id=${school_info.id}&school_id=${school_info.school_id}&college=${school_info.college}&healthcode=${school_info.healthcode}">修改</a>
-            <a href="TeacherDeleteServlet?name=${school_info.name}&id=${school_info.id}&school_id=${school_info.school_id}&college=${school_info.college}&healthcode=${school_info.healthcode}">删除</a>
+            <a href="JSP/ModifyTeacherInfo.jsp?name=${teacher.name}&id=${teacher.id}&school_id=${teacher.school_id}&college=${teacher.college}&healthcode=${teacher.healthcode}">修改</a>
+            <a href="TeacherDeleteServlet?name=${teacher.name}&id=${teacher.id}&school_id=${teacher.school_id}&college=${teacher.college}&healthcode=${teacher.healthcode}">删除</a>
         </td>
         </tr>
     </c:forEach>

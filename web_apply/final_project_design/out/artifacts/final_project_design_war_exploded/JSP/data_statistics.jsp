@@ -7,6 +7,7 @@
   Time: 20:07
   To change this template use File | Settings | File Templates.
 --%>
+<%String path = request.getContextPath();%>
 <%
     Date d1 = new Date();
     SimpleDateFormat dfd = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
@@ -103,6 +104,11 @@
                     </tr>
                 </c:forEach>
                 </tbody>
+                <tr>
+                    <td>
+                        <a href="<%=path%>/JSP/allAdministrators2.jsp">返回主界面</a>
+                    </td>
+                </tr>
             </table>
         </div>
     </div>

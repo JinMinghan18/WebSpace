@@ -26,7 +26,7 @@
                 <input id="manageTeacher" value="老师信息管理" type="submit">
             </div>
         </form>
-        <form action="dataStatisticsServlet" method="post">
+        <form action="<%=path%>/dataStatisticsServlet" method="post">
             <div class="login_btn">
                 <input id="data_statistics" value="师生打卡数据统计" type="submit">
             </div>

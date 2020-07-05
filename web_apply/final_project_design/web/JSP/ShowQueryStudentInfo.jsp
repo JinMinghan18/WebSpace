@@ -32,7 +32,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="school_info" items="${requestScope.student}"
+    <c:forEach var="student" items="${requestScope.student}"
                varStatus="status">
         <c:if test="${status.count%2==0}">
             <tr style="background: #eeeeff">
@@ -40,17 +40,17 @@
         <c:if test="${status.count%2!=0}">
             <tr style="background: #dedeff">
         </c:if>
-        <td>${school_info.name}</td>
-        <td>${school_info.id}</td>
-        <td>${school_info.school_id}</td>
-        <td>${school_info.college}</td>
-        <td>${school_info.major}</td>
-        <td>${school_info.class1}</td>
-        <td>${school_info.attendenceRecord}</td>
-        <td>${school_info.healthcode}</td>
+        <td>${student.name}</td>
+        <td>${student.id}</td>
+        <td>${student.school_id}</td>
+        <td>${student.college}</td>
+        <td>${student.major}</td>
+        <td>${student.class1}</td>
+        <td>${student.attendenceRecord}</td>
+        <td>${student.healthcode}</td>
         <td>
-            <a href="JSP/ModifyStudentInfo.jsp?name=${school_info.name}&id=${school_info.id}&school_id=${school_info.school_id}&college=${school_info.college}&major=${school_info.major}&class1=${school_info.class1}&healthcode=${school_info.healthcode}">修改</a>
-            <a href="StudentDeleteServlet?name=${school_info.name}&id=${school_info.id}&school_id=${school_info.school_id}&college=${school_info.college}&major=${school_info.major}&class1=${school_info.class1}&healthcode=${school_info.healthcode}">删除</a>
+            <a href="JSP/ModifyStudentInfo.jsp?name=${student.name}&id=${student.id}&school_id=${student.school_id}&college=${student.college}&major=${student.major}&class1=${student.class1}&healthcode=${student.healthcode}">修改</a>
+            <a href="StudentDeleteServlet?name=${student.name}&id=${student.id}&school_id=${student.school_id}&college=${student.college}&major=${student.major}&class1=${student.class1}&healthcode=${student.healthcode}">删除</a>
         </td>
         </tr>
     </c:forEach>

@@ -16,7 +16,7 @@
 <body style="background: #444444">
 <div class="login2">
     <div class="account">
-        <form action="../LoginAdministratorsServlet" method="post" onsubmit="return check_form();">
+        <form action="<%=path%>/LoginAdministratorsServlet" method="post" onsubmit="return check_form();">
             <div class="logo">管理员登录界面</div>
             <div class="line">
                 <input class="inputtxt" name="school_id" id="school_id" datatype="*"

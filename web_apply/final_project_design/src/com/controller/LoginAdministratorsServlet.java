@@ -38,11 +38,11 @@ public class LoginAdministratorsServlet extends HttpServlet {
         }
         else if(password.equals((teacher.getPassword())) && teacher.getRole().equals("院级管理员")){
             request.setAttribute("college",teacher.getCollege());
-            RequestDispatcher rd = request.getRequestDispatcher("/JSP/majorAdministrators.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/JSP/majorAdministrators2.jsp");
             rd.forward(request,response);
         }
         else if(password.equals((teacher.getPassword())) && teacher.getRole().equals("系统管理员")){
-            RequestDispatcher rd = request.getRequestDispatcher("/JSP/allAdministrators.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/JSP/allAdministrators2.jsp");
             rd.forward(request,response);
         }
     }

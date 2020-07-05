@@ -27,7 +27,7 @@ public class TeacherQueryServlet extends HttpServlet {
         teacher = dao.teacherInfoQuery(college);
 //        System.out.println(student.get(1).getName());
         request.setAttribute("teacher",teacher);
-        RequestDispatcher rd = request.getRequestDispatcher("/JSP/ShowQueryTeacherInfo.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/JSP/TeacherInfoManage2.jsp");
         rd.forward(request,response);
     }
 

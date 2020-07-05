@@ -20,9 +20,7 @@
     <link href="<%=path%>/static/css/site.css" rel="stylesheet" />
     <link href="<%=path%>/static/codemirror/lib/codemirror.css" rel="stylesheet" />
     <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
-    <!--[if lte IE 9]>
-    <script src="<%=path%>/static/js/requestAnimationFrame.js"></script>
-    <![endif]-->
+
     <style>
         .top-tips {
             height: 50px;
@@ -109,32 +107,30 @@
     <div id="container" class="container-fluid">
         <div class="sidebar-scroll">
             <div class="sidebar-auto">
-                <h3 class="mypcip"><span class="f14 cw">校级管理员</span></h3>
+                <h3 class="mypcip"><span class="f14 cw">系统管理员</span></h3>
                 <ul class="menu">
 
 
-                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/SchoolAdministrators2.jsp">首页</a></li>
+                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a></li>
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/StudentInfoCheckServlet">全校学生信息</a></li>
+                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/StudentInfoManage2.jsp">学生信息管理</a></li>
 
 
-                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/TeacherInfoCheckServlet">全校老师信息</a></li>
+                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/JSP/TeacherInfoManage2.jsp">老师信息管理</a></li>
 
 
-                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/schoolInfoServlet">师生信息总览</a></li>
+                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/dataStatisticsServlet">师生信息总览</a></li>
                 </ul>
             </div>
         </div>
-        <button style="display: none;" id="bt_copys" class="bt_copy" data-clipboard-text=""></button>
-        <a style="display: none;" id="defaultPath">/www/wwwroot</a>
     </div>
     <div class="main-content">
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/JSP/SchoolAdministrators2.jsp">首页</a></span>
+                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a></span>
                 </div>
             </div>
             <div class="danger-tips">
@@ -146,7 +142,7 @@
                 </div>
                 <div class="server-circle">
 
-<%--                    图表 fs1,ufs1,ft1,uft1为数据--%>
+                    <%--                    图表 fs1,ufs1,ft1,uft1为数据--%>
                     <div id="main" style="width: 900px;height:400px;margin:0 auto;text-align:center;"></div>
                     <script type="text/javascript">
                         //饼状图的方法

@@ -25,9 +25,10 @@ public class StudentQueryServlet extends HttpServlet {
         String class1 = request.getParameter("class1");
 //        System.out.println(college+major+class1);
         student = dao.studentInfoQuery(college,major,class1);
+        String path = request.getContextPath();
 //        System.out.println(student.get(1).getName());
         request.setAttribute("student",student);
-        RequestDispatcher rd = request.getRequestDispatcher("/JSP/ShowQueryStudentInfo.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/JSP/StudentInfoManage2.jsp");
         rd.forward(request,response);
     }
 

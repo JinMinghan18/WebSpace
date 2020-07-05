@@ -20,7 +20,7 @@
 <div class="login2">
     <div class="account">
         <div class="logo">院级管理员管理界面</div>
-        <form action="majordataStatisticServlet" method="post">
+        <form action="<%=path%>/majordataStatisticServlet" method="post">
             <div class="login_btn">
                 <input id="college" name="college" value="<%=request.getAttribute("college")%>" style="display: none" readonly>
                 <input id="专业打卡情况统计" value="本专业打卡情况统计" type="submit" >

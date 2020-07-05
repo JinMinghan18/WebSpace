@@ -2,7 +2,10 @@
 <%@ page import="com.dao.HealthCodeDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Date" %><%--
+<%@ page import="java.util.Date" %>
+<%@ page import="com.model.Student" %>
+<%@ page import="com.model.Teacher" %>
+<%@ page import="com.model.school_info" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/7/4
@@ -14,6 +17,17 @@
     Date d1 = new Date();
     SimpleDateFormat dfd = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
     String date = dfd.format(d1);
+%>
+<%
+
+    HealthCodeDao dao = new HealthCodeDao();
+    ArrayList<Teacher> teacher = dao.allTeacherInfo();
+    ArrayList<Student> student = dao.allStudentInfo();
+
+    request.setAttribute("teacher",teacher);
+    request.setAttribute("student",student);
+    int stunum = dao.studentnumber();
+    int teanum = dao.teachernumber();
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -76,7 +90,6 @@
         }
     </style>
     <%
-        HealthCodeDao dao = new HealthCodeDao();
         //饼图数据
         ArrayList<Integer> stuTea = dao.allstatistics();
         Integer fs=stuTea.get(0);
@@ -100,52 +113,133 @@
                 <ul class="menu">
 
 
-                    <li id="memuA"> <a class="menu_home" href="JSP/SchoolAdministrators2.jsp">首页</a></li>
+                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/SchoolAdministrators2.jsp">首页</a></li>
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="StudentInfoCheckServlet">全校学生信息</a></li>
+                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/StudentInfoCheckServlet">全校学生信息</a></li>
 
 
-                    <li id="memuBsite"> <a class="menu_web" href="TeacherInfoCheckServlet">全校老师信息</a></li>
+                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/TeacherInfoCheckServlet">全校老师信息</a></li>
 
 
 
-                    <li id="memuCsite"> <a class="menu_web" href="schoolInfoServlet">师生信息总览</a></li>
+                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/schoolInfoServlet">师生信息总览</a></li>
 
                 </ul>
-                <div id="newbtpc"></div>
-                <div class="btpc-plus" onclick="bindBTPanel(0,'b')">+</div>
             </div>
         </div>
-        <button style="display: none;" id="bt_copys" class="bt_copy" data-clipboard-text=""></button>
+
     </div>
 
     <div class="main-content pb55">
         <div class="container-fluid">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="SchoolAdministrators2.jsp">首页</a>&gt&gt<span class="plr10 c4">信息总览</span>
-                </div>
-                <div class="search pull-right">
-                    <iframe name='hid' id="hid" style="display:none"></iframe>
+                    <a class="plr10 c4" href="<%=path%>/JSP/SchoolAdministrators2.jsp">首页</a>&gt&gt<span class="plr10 c4">信息总览</span>
                 </div>
             </div>
             <div class="safe bgw mtb15 pd15">
 
                 <div class="divtable mtb10">
+                <div class="tablescroll">
+                    <table id="DataBody" class="table table-hover" width="100%" cellspacing="0" cellpadding="0" border="0" style="border: 0 none;">
+                        <thead>
+                        <tr>
+                            <th>学院</th>
+                            <th>专业</th>
+                            <th>班级</th>
+                            <th>详情</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var="school_info" items="${requestScope.school_infos}"
+                                   varStatus="status">
+                            <c:if test="${status.count%2==0}">
+                                <tr style="background: #eeeeff">
+                            </c:if>
+                            <c:if test="${status.count%2!=0}">
+                                <tr style="background: #dedeff">
+                            </c:if>
+                            <td>${school_info.college}</td>
+                            <td>${school_info.major}</td>
+                            <td>${school_info.class1}</td>
+                            <td>
+                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#${status.count}">详情</button>
+                                <div class="modal fade" id="${status.count}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel" style="text-align: center">学生信息</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <table class="table table-condensed" contenteditable="false">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th>姓名</th>
+                                                        <th>身份证号</th>
+                                                        <th>学号</th>
+                                                        <th>学院</th>
+                                                        <th>专业</th>
+                                                        <th>班级</th>
+                                                        <th>打卡情况</th>
+                                                        <th>健康码</th>
+                                                    </tr>
+                                                    <c:forEach var="i" items="${student}"
+                                                               varStatus="status">
+                                                    <c:if test="${status.count%2==0}">
+                                                    <tr style="background: #eeeeff">
+                                                        </c:if>
+                                                        <c:if test="${status.count%2!=0}">
+                                                    <tr style="background: #dedeff">
+                                                        </c:if>
+                                                        <c:if test="${i.college.equals(school_info.college) and i.major.equals(school_info.major) and i.class1.equals(school_info.class1)}">
+                                                        <td>${i.name}</td>
+                                                        <td>${i.id}</td>
+                                                        <td>${i.school_id}</td>
+                                                        <td>${i.college}</td>
+                                                        <td>${i.major}</td>
+                                                        <td>${i.class1}</td>
+                                                        <td>${i.attendenceRecord}</td>
+                                                        <td>${i.healthcode}</td>
+                                                        </c:if>
+                                                        </c:forEach>
+                                                    </tbody>
+                                                </table>
+
+                                                <p>
+                                                    <audio controls="controls" style="display: none;">&nbsp;</audio>
+                                                </p>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="tablescroll">
-                        <table id="DataBody" class="table table-hover" width="100%" cellspacing="0" cellpadding="0" border="0" style="border: 0 none;">
+                        <table id="DataBody2" class="table table-hover" width="100%" cellspacing="0" cellpadding="0" border="0" style="border: 0 none;">
                             <thead>
                             <tr>
                                 <th>学院</th>
-                                <th>专业</th>
-                                <th>班级</th>
+                                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                 <th>详情</th>
-
                             </tr>
                             </thead>
                             <tbody>
+                            <%String coll = null;%>
                             <c:forEach var="school_info" items="${requestScope.school_infos}"
                                        varStatus="status">
                                 <c:if test="${status.count%2==0}">
@@ -154,18 +248,76 @@
                                 <c:if test="${status.count%2!=0}">
                                     <tr style="background: #dedeff">
                                 </c:if>
+                                <c:if test="${!school_info.college.equals(coll)}">
+                                    <div style="visibility: hidden">${coll=school_info.college}</div>
                                 <td>${school_info.college}</td>
-                                <td>${school_info.major}</td>
-                                <td>${school_info.class1}</td>
-                                <td><a>详情</a></td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td>
+
+                                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#${status.count}ss">详情</button>
+                                    <div class="modal fade" id="${status.count}ss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4 class="modal-title" id="myModalLabel2" style="text-align: center">学生信息</h4>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <table class="table table-condensed" contenteditable="false">
+                                                        <tbody>
+                                                        <tr>
+                                                            <th>姓名</th>
+                                                            <th>身份证号</th>
+                                                            <th>工号</th>
+                                                            <th>学院</th>
+                                                            <th>打卡情况</th>
+                                                            <th>健康码</th>
+                                                        </tr>
+
+                                                        <c:forEach var="i2" items="${teacher}"
+                                                                   varStatus="status">
+                                                        <c:if test="${status.count%2==0}">
+                                                        <tr style="background: #eeeeff">
+                                                            </c:if>
+                                                            <c:if test="${status.count%2!=0}">
+                                                        <tr style="background: #dedeff">
+                                                            </c:if>
+                                                            <c:if test="${i2.college.equals(school_info.college)}">
+                                                            <td>${i2.name}</td>
+                                                            <td>${i2.id}</td>
+                                                            <td>${i2.school_id}</td>
+                                                            <td>${i2.college}</td>
+                                                            <td>${i2.attendenceRecord}</td>
+                                                            <td>${i2.healthcode}</td>
+                                                            </c:if>
+                                                            </c:forEach>
+                                                        </tbody>
+                                                    </table>
+
+                                                    <p>
+                                                        <audio controls="controls" style="display: none;">&nbsp;</audio>
+                                                    </p>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </c:if>
                                 </tr>
                             </c:forEach>
                             </tbody>
                         </table>
                     </div>
-                    <div id='databasePage' class="dataTables_paginate paging_bootstrap page">
-                    </div>
+                <div id='databasePage' class="dataTables_paginate paging_bootstrap page">
                 </div>
+            </div>
+
             </div>
             <form id="toPHPMyAdmin" action="http://39.97.238.64:888/phpmyadmin_9d6bd9ac44b8d96f/index.php" method="post" style="display: none;" target="_blank">
                 <input type="text" name="pma_username" id="pma_username" value="" />
