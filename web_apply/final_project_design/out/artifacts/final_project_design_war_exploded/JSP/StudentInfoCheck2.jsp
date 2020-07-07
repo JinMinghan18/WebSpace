@@ -121,8 +121,6 @@
                 </ul>
             </div>
         </div>
-        <button style="display: none;" id="bt_copys" class="bt_copy" data-clipboard-text=""></button>
-        <a style="display: none;" id="defaultPath">/www/wwwroot</a>
     </div>
 
     <div class="main-content pb55">
