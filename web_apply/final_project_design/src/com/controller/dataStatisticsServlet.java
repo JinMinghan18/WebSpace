@@ -22,7 +22,6 @@ public class dataStatisticsServlet extends HttpServlet {
         HealthCodeDao dao = new HealthCodeDao();
 
         Double unfinishedTeacher = dao.teacherDailyAttendence();
-//        System.out.println(unfinishedTeacher);
         Double unfinishedStudent = dao.studentDailyAttendence();
         request.setAttribute("teacherAttendence",unfinishedTeacher);
         request.setAttribute("studentAttendence",unfinishedStudent);
@@ -32,7 +31,7 @@ public class dataStatisticsServlet extends HttpServlet {
         request.setAttribute("teacher",teacher);
         request.setAttribute("student",student);
 
-        RequestDispatcher rd = request.getRequestDispatcher("JSP/data_statistics.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("JSP/data_statistics2.jsp");
         rd.forward(request,response);
     }
 

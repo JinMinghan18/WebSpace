@@ -3,15 +3,15 @@ package com.model;
 public class HealthCode {
     private String name;
     private String id;
-    private String stuid;
+    private String school_id;
     private String tel;
     private int choice;
 
     public HealthCode(){}
-    public HealthCode(String name, String id, String stuid, String tel, int choice){
+    public HealthCode(String name, String id, String school_id, String tel, int choice){
         this.id = id;
         this.name = name;
-        this.stuid = stuid;
+        this.school_id = school_id;
         this.tel = tel;
         this.choice = choice;
     }
@@ -28,8 +28,8 @@ public class HealthCode {
         return name;
     }
 
-    public String getStuid() {
-        return stuid;
+    public String getSchool_id() {
+        return school_id;
     }
 
     public String getTel() {
@@ -44,8 +44,8 @@ public class HealthCode {
         this.id = id;
     }
 
-    public void setStuid(String stuid) {
-        this.stuid = stuid;
+    public void setSchool_id(String school_id) {
+        this.school_id = school_id;
     }
 
     public void setTel(String tel) {

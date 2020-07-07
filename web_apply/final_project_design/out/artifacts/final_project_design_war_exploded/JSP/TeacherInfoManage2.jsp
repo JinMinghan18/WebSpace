@@ -140,10 +140,7 @@
                 <div class="position f14 c9 pull-left">
                     <form target="hid" style="position:fixed; left: 1200px" action="<%=path%>/TeacherQueryServlet">
                         <input type="text" name="college" class="ser-text pull-left" placeholder="学院" />
-<%--                        <input type="text" name="major" class="ser-text pull-left" placeholder="专业" />--%>
-<%--                        <input type="text" name="class1" class="ser-text pull-left" placeholder="班级" />--%>
                         <input type="submit" class="ser-sub pull-left" value="">
-                        <%--                        <button type="button" onclick="onsubmit" class="ser-sub pull-left"></button>--%>
                     </form>
 
                 </div>
@@ -186,47 +183,13 @@
                                 </tr>
                             </c:forEach>
                             <tr>
-                                <td rowspan="9"><a href="JSP/AddTeacherInfo.jsp">添加</a></td>
+                                <td rowspan="9"><a href="<%=path%>/JSP/AddTeacherInfo2.jsp">添加</a></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <%--            <div class="col-xs-12 col-sm-12 col-md-6 pull-left pd0">--%>
-            <%--                <div class="pl7">--%>
-            <%--                    <div class="bgw" style="height:491px">--%>
-            <%--                        <div class="title c6 f16 plr15">学生缺卡情况</div><br>--%>
-            <%--                        <table class="table table-bordered table-condensed" contenteditable="false">--%>
-            <%--                            <thead>--%>
-            <%--                            <tr>--%>
-            <%--                                <th>姓名</th>--%>
-            <%--                                <th>学号</th>--%>
-            <%--                                <th>学院</th>--%>
-            <%--                                <th>专业</th>--%>
-            <%--                            </tr>--%>
-            <%--                            </thead>--%>
-            <%--                            <tbody>--%>
-            <%--                            <c:forEach var="school_info" items="${requestScope.student}"--%>
-            <%--                                       varStatus="status">--%>
-            <%--                                <c:if test="${status.count%2==0}">--%>
-            <%--                                    <tr style="background: #eeeeff">--%>
-            <%--                                </c:if>--%>
-            <%--                                <c:if test="${status.count%2!=0}">--%>
-            <%--                                    <tr style="background: #dedeff">--%>
-            <%--                                </c:if>--%>
-            <%--                                <td>${school_info.name}</td>--%>
-            <%--                                <td>${school_info.school_id}</td>--%>
-            <%--                                <td>${school_info.college}</td>--%>
-            <%--                                <td>${school_info.major}</td>--%>
-            <%--                                </tr>--%>
-            <%--                            </c:forEach>--%>
-            <%--                            </tbody>--%>
-            <%--                        </table>--%>
-            <%--                    </div>--%>
-            <%--                </div>--%>
-            <%--            </div>--%>
-
         </div>
     </div>
     <div class="footer bgw">版权所有 © 浙江工业大学 | 信息化办公室维护 | 网络管理 www@zjut.edu.cn</div>

@@ -17,8 +17,10 @@ public class TeacherDeleteServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HealthCodeDao dao = new HealthCodeDao();
         String name = request.getParameter("name");
+        String school_id = request.getParameter("school_id");
+
         String college = request.getParameter("college");
-        boolean success = dao.deleteTeacher(name);
+        boolean success = dao.deleteTeacher(school_id);
         RequestDispatcher rd = request.getRequestDispatcher("/TeacherQueryServlet?college="+college+"");
         rd.forward(request,response);
     }

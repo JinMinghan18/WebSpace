@@ -122,9 +122,6 @@
                     <li id="memuA"> <a class="menu_home" href="<%=path%>/majordataStatisticServlet?college=<%=college%>">院内打卡情况</a></li>
 
 
-
-<%--                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/StudentInfoManage2.jsp">学生信息管理</a></li>--%>
-
                 </ul>
             </div>
         </div>
@@ -133,7 +130,7 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a></span>
+                    <a class="plr10 c4" href="<%=path%>/JSP/majorAdministrators2.jsp">首页</a></span>
                 </div>
             </div>
             <div class="pos-box bgw mtb15">
@@ -145,7 +142,7 @@
                             </h1>
                             <h6>截至<%=date%></h6><br>
                             <%--饼图--%>
-                            <div id="main" style="width: 900px;height:400px;margin:0 auto;text-align:center;"></div>
+                            <div id="main" style="width: 700px;height:300px;margin:0 auto;text-align:center;"></div>
                             <script type="text/javascript">
                                 //饼状图的方法
                                 //对应放图片的Id（imageId）
@@ -276,153 +273,8 @@
                     </div>
                 </div>
             </div>
-<%--            <div class="server bgw mtb15">--%>
-<%--                <div class="title c6 f16 plr15">--%>
-<%--                    <h3 class="c6 f16 pull-left">打卡情况</h3>--%>
-<%--                </div>--%>
-<%--                <div class="server-circle">--%>
-
-<%--                    &lt;%&ndash;                    图表 fs1,ufs1,ft1,uft1为数据&ndash;%&gt;--%>
-<%--                    <div id="main" style="width: 900px;height:400px;margin:0 auto;text-align:center;"></div>--%>
-<%--                    <script type="text/javascript">--%>
-<%--                        //饼状图的方法--%>
-<%--                        //对应放图片的Id（imageId）--%>
-<%--                        //typeArr:对应名称的数组--%>
-<%--                        //dataArr:对应名称数组的对应数据的数组--%>
-<%--                        var dataArr = [fs1,ufs1,ft1,uft1];--%>
-<%--                        var typeArr = new Array("打卡学生","未打卡学生","打卡教师","未打卡教师");--%>
-<%--                        var ListFirstArr = new Array();--%>
-<%--                        for (var i = 0; i < typeArr.length; i++) {--%>
-<%--                            var item = {--%>
-<%--                                value: dataArr[i],--%>
-<%--                                name: typeArr[i]--%>
-<%--                            };--%>
-<%--                            ListFirstArr.push(item);--%>
-<%--                        }--%>
-<%--                        // 基于准备好的dom，初始化echarts图表--%>
-<%--                        var myChart = echarts.init(document.getElementById('main'));--%>
-<%--                        option = {--%>
-<%--                            title: {--%>
-<%--                                text: '',--%>
-<%--                                subtext: '',--%>
-<%--                                x: 'center'--%>
-<%--                            },--%>
-<%--                            tooltip: {--%>
-<%--                                trigger: 'item',--%>
-<%--                                formatter: "{a} <br/>{b} : {c} ({d}%)"--%>
-<%--                            },--%>
-<%--                            legend: {--%>
-<%--                                orient: 'vertical',--%>
-<%--                                left: 'left',--%>
-<%--                                data: typeArr--%>
-<%--                            },--%>
-<%--                            series: [--%>
-<%--                                {--%>
-<%--                                    name: '今日数据',--%>
-<%--                                    type: 'pie',--%>
-<%--                                    radius: '55%',--%>
-<%--                                    center: ['50%', '60%'],--%>
-<%--                                    data: ListFirstArr,--%>
-<%--                                    itemStyle: {--%>
-<%--                                        emphasis: {--%>
-<%--                                            shadowBlur: 10,--%>
-<%--                                            shadowOffsetX: 0,--%>
-<%--                                            shadowColor: 'rgba(0, 0, 0, 0.5)'--%>
-<%--                                        }--%>
-<%--                                    }--%>
-<%--                                }--%>
-<%--                            ]--%>
-<%--                        };--%>
-<%--                        myChart.setOption(option);--%>
-<%--                    </script>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            <div class="system-info bgw clearfix mtb15">--%>
-<%--                <div class="title c6 f16 plr15">人员管理</div>--%>
-<%--                <div class="system-info-con mtb20">--%>
-<%--                    <ul class="clearfix text-center">--%>
-<%--                        <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">--%>
-<%--                            <p class="name f15 c9">教职人员</p>--%>
-<%--                            <div class="val"><a class="btlink" href="<%=path%>/TeacherInfoCheckServlet"><%=teanum%></a></div>--%>
-<%--                        </li>--%>
-<%--                        <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">--%>
-<%--                            <p class="name f15 c9">学生</p>--%>
-<%--                            <div class="val"><a class="btlink" href="<%=path%>/StudentInfoCheckServlet"><%=stunum%></a></div>--%>
-<%--                        </li>--%>
-<%--                    </ul>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            <div class="col-xs-12 col-sm-12 col-md-6 pull-left pd0">--%>
-<%--                <div class="p17">--%>
-<%--                    <div class="bgw" style="height:491px">--%>
-<%--                        <div class="title c6 f16 plr15">教师缺卡情况</div><br>--%>
-<%--                        <table class="table table-bordered table-condensed" contenteditable="false">--%>
-<%--                            <thead>--%>
-<%--                            <tr>--%>
-<%--                                <th>姓名</th>--%>
-<%--                                <th>工号</th>--%>
-<%--                                <th>学院</th>--%>
-<%--                                <th>职务</th>--%>
-<%--                            </tr>--%>
-<%--                            </thead>--%>
-<%--                            <tbody>--%>
-<%--                            <c:forEach var="school_info" items="${requestScope.teacher}"--%>
-<%--                                       varStatus="status">--%>
-<%--                                <c:if test="${status.count%2==0}">--%>
-<%--                                    <tr style="background: #eeeeff">--%>
-<%--                                </c:if>--%>
-<%--                                <c:if test="${status.count%2!=0}">--%>
-<%--                                    <tr style="background: #dedeff">--%>
-<%--                                </c:if>--%>
-<%--                                <td>${school_info.name}</td>--%>
-<%--                                <td>${school_info.school_id}</td>--%>
-<%--                                <td>${school_info.college}</td>--%>
-<%--                                <td>${school_info.role}</td>--%>
-<%--                                </tr>--%>
-<%--                            </c:forEach>--%>
-
-<%--                            </tbody>--%>
-<%--                        </table>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            <div class="col-xs-12 col-sm-12 col-md-6 pull-left pd0">--%>
-<%--                <div class="pl7">--%>
-<%--                    <div class="bgw" style="height:491px">--%>
-<%--                        <div class="title c6 f16 plr15">学生缺卡情况</div><br>--%>
-<%--                        <table class="table table-bordered table-condensed" contenteditable="false">--%>
-<%--                            <thead>--%>
-<%--                            <tr>--%>
-<%--                                <th>姓名</th>--%>
-<%--                                <th>学号</th>--%>
-<%--                                <th>学院</th>--%>
-<%--                                <th>专业</th>--%>
-<%--                            </tr>--%>
-<%--                            </thead>--%>
-<%--                            <tbody>--%>
-<%--                            <c:forEach var="school_info" items="${requestScope.student}"--%>
-<%--                                       varStatus="status">--%>
-<%--                                <c:if test="${status.count%2==0}">--%>
-<%--                                    <tr style="background: #eeeeff">--%>
-<%--                                </c:if>--%>
-<%--                                <c:if test="${status.count%2!=0}">--%>
-<%--                                    <tr style="background: #dedeff">--%>
-<%--                                </c:if>--%>
-<%--                                <td>${school_info.name}</td>--%>
-<%--                                <td>${school_info.school_id}</td>--%>
-<%--                                <td>${school_info.college}</td>--%>
-<%--                                <td>${school_info.major}</td>--%>
-<%--                                </tr>--%>
-<%--                            </c:forEach>--%>
-<%--                            </tbody>--%>
-<%--                        </table>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
         </div>
     </div>
-    <div class="footer bgw">版权所有 © 浙江工业大学 | 信息化办公室维护 | 网络管理 www@zjut.edu.cn</div>
 </div>
 
 </body>

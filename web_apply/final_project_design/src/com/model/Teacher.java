@@ -10,6 +10,15 @@ public class Teacher {
     private String password;//各类管理员密码
     private int healthday;
     private String healthcode;
+    private String tel;
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
 
     public String getHealthcode() {
         return healthcode;

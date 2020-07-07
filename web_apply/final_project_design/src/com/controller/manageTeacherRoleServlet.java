@@ -30,7 +30,7 @@ public class manageTeacherRoleServlet extends HttpServlet {
 //        teacher.setSchool_id(school_id);
 //        teacher.setAttendenceRecord("");
 //        System.out.println(healthcode);
-        Boolean success = dao.modifyTeacherInfo(name,id,school_id,college,healthcode,password,role);
+        Boolean success = dao.ModifyTeacherInfo(name,id,school_id,college,healthcode,password,role);
         RequestDispatcher rd = request.getRequestDispatcher("/TeacherInfoCheckServlet");
         rd.forward(request,response);
     }

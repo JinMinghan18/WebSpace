@@ -282,7 +282,7 @@ public class HealthCodeDao extends Basedao{
 
     //修改学生信息
     public boolean ModifyStudentInfo(String name,String id, String school_id,String college,String major, String class1,String healthcode){
-        String sql = "UPDATE students SET name=?,id=?,school_id=?,college=?,major=?,class1=?,attendenceRecord=?,healthday=?,healthcode=? WHERE name=?";
+        String sql = "UPDATE students SET name=?,id=?,school_id=?,college=?,major=?,class1=?,attendenceRecord=?,healthday=?,healthcode=? WHERE school_id=?";
         try(Connection conn = dataSource.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setString(1,name);
@@ -326,7 +326,7 @@ public class HealthCodeDao extends Basedao{
             pstmt.setString(7,attendenceRecord);
             pstmt.setInt(8,healthday);
             pstmt.setString(9,healthcode);
-            pstmt.setString(10,name);
+            pstmt.setString(10,school_id);
             pstmt.executeUpdate();
             return true;
         }catch (SQLException se){
@@ -335,7 +335,7 @@ public class HealthCodeDao extends Basedao{
         }
     }
     //修改老师信息
-    public boolean modifyTeacherInfo(String name,String id, String school_id,String college,String healthcode,String password,String role){
+    public boolean ModifyTeacherInfo(String name, String id, String school_id, String college, String healthcode, String password, String role){
         String sql = "UPDATE teachers SET name=?,id=?,school_id=?,college=?,role=?, attendenceRecord=?,password=?,healthday=?,healthcode=? WHERE name=?";
         try(Connection conn = dataSource.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)){
@@ -388,11 +388,11 @@ public class HealthCodeDao extends Basedao{
         }
     }
     //删除学生信息
-    public boolean deleteStudent(String name){
-        String sql = "DELETE FROM students WHERE name=?";
+    public boolean deleteStudent(String school_id){
+        String sql = "DELETE FROM students WHERE school_id=?";
         try(Connection conn = dataSource.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(sql)){
-            pstmt.setString(1,name);
+            pstmt.setString(1,school_id);
             pstmt.executeUpdate();
             return true;
         }catch (SQLException se){
@@ -401,11 +401,11 @@ public class HealthCodeDao extends Basedao{
         }
     }
     //删除教师信息
-    public boolean deleteTeacher(String name){
-        String sql = "DELETE FROM teachers WHERE name=?";
+    public boolean deleteTeacher(String school_id){
+        String sql = "DELETE FROM teachers WHERE school_id=?";
         try(Connection conn = dataSource.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sql)){
-            pstmt.setString(1,name);
+            pstmt.setString(1,school_id);
             if(pstmt.executeUpdate() > 0){
                 return true;
             }
@@ -904,7 +904,7 @@ public class HealthCodeDao extends Basedao{
             return false;
         }
     }
-    //上传
+    //上传老师打卡信息
     public boolean updateTeacher(String name,String id, String school_id, String phonenumber,String attendenceRecord,int choice,int healthday,String healthcode){
         String sql = "UPDATE teachers SET attendenceRecord=?,healthday=?,healthcode=?,phonenumber=? WHERE school_id=?";
         try(Connection conn = dataSource.getConnection();

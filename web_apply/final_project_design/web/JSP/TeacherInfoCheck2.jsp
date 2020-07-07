@@ -14,6 +14,8 @@
     Date d1 = new Date();
     SimpleDateFormat dfd = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
     String date = dfd.format(d1);
+    double tea =(Double) request.getAttribute("teacherAttendence");
+    tea*=100;
 %>
 <%String path = request.getContextPath();%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -191,7 +193,7 @@
                             };
                             myChart.setOption(option);
                         </script>
-                        <h4>教师打卡率：<%=request.getAttribute("teacherAttendence")%></h4>
+                        <h4>教师打卡率：<%=tea%>%</h4>
                         <table id="DataBody" class="table table-hover" width="100%" cellspacing="0" cellpadding="0" border="0" style="border: 0 none;">
                             <thead>
                             <tr>

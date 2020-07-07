@@ -184,53 +184,19 @@
                                 <td>${student.attendenceRecord}</td>
                                 <td>${student.healthcode}</td>
                                 <td>
-                                    <a href="JSP/ModifyStudentInfo.jsp?name=${student.name}&id=${student.id}&school_id=${student.school_id}&college=${student.college}&major=${student.major}&class1=${student.class1}&healthcode=${student.healthcode}">修改</a>
+                                    <a href="<%=path%>/JSP/ModifyStudentInfo.jsp?name=${student.name}&id=${student.id}&school_id=${student.school_id}&college=${student.college}&major=${student.major}&class1=${student.class1}&healthcode=${student.healthcode}">修改</a>
                                     <a href="StudentDeleteServlet?name=${student.name}&id=${student.id}&school_id=${student.school_id}&college=${student.college}&major=${student.major}&class1=${student.class1}&healthcode=${student.healthcode}">删除</a>
                                 </td>
                                 </tr>
                             </c:forEach>
                             <tr>
-                                <td rowspan="9"><a href="JSP/AddStudentInfo.jsp">添加</a></td>
+                                <td rowspan="9"><a href="<%=path%>/JSP/AddStudentInfo2.jsp">添加</a></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-<%--            <div class="col-xs-12 col-sm-12 col-md-6 pull-left pd0">--%>
-<%--                <div class="pl7">--%>
-<%--                    <div class="bgw" style="height:491px">--%>
-<%--                        <div class="title c6 f16 plr15">学生缺卡情况</div><br>--%>
-<%--                        <table class="table table-bordered table-condensed" contenteditable="false">--%>
-<%--                            <thead>--%>
-<%--                            <tr>--%>
-<%--                                <th>姓名</th>--%>
-<%--                                <th>学号</th>--%>
-<%--                                <th>学院</th>--%>
-<%--                                <th>专业</th>--%>
-<%--                            </tr>--%>
-<%--                            </thead>--%>
-<%--                            <tbody>--%>
-<%--                            <c:forEach var="school_info" items="${requestScope.student}"--%>
-<%--                                       varStatus="status">--%>
-<%--                                <c:if test="${status.count%2==0}">--%>
-<%--                                    <tr style="background: #eeeeff">--%>
-<%--                                </c:if>--%>
-<%--                                <c:if test="${status.count%2!=0}">--%>
-<%--                                    <tr style="background: #dedeff">--%>
-<%--                                </c:if>--%>
-<%--                                <td>${school_info.name}</td>--%>
-<%--                                <td>${school_info.school_id}</td>--%>
-<%--                                <td>${school_info.college}</td>--%>
-<%--                                <td>${school_info.major}</td>--%>
-<%--                                </tr>--%>
-<%--                            </c:forEach>--%>
-<%--                            </tbody>--%>
-<%--                        </table>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-
         </div>
     </div>
     <div class="footer bgw">版权所有 © 浙江工业大学 | 信息化办公室维护 | 网络管理 www@zjut.edu.cn</div>

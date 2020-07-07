@@ -1,7 +1,6 @@
 package com.controller;
 
 import com.dao.HealthCodeDao;
-import com.model.Teacher;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,7 +23,7 @@ public class TeacherModifyServlet extends HttpServlet {
         String healthcode = request.getParameter("healthcode");
         String password = request.getParameter("password");
         String role = request.getParameter("role");
-        Boolean success = dao.modifyTeacherInfo(name,id,school_id,college,healthcode,password,role);
+        Boolean success = dao.ModifyTeacherInfo(name,id,school_id,college,healthcode,password,role);
         RequestDispatcher rd = request.getRequestDispatcher("/TeacherQueryServlet?college="+college+"");
         rd.forward(request,response);
     }

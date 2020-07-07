@@ -27,9 +27,7 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span12">
-            <h1 class="text-center">
-                全校师生打卡情况汇总
-            </h1>
+
             <h6>截至<%=date%></h6><br>
             <h3>
                 教师未打卡情况

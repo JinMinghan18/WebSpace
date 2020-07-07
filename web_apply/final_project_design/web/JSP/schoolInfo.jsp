@@ -109,7 +109,7 @@
     <div id="container" class="container-fluid">
         <div class="sidebar-scroll">
             <div class="sidebar-auto">
-                <h3 class="mypcip"><span class="f14 cw">学生管理系统</span></h3>
+                <h3 class="mypcip"><span class="f14 cw">校级管理员</span></h3>
                 <ul class="menu">
 
 
@@ -121,7 +121,6 @@
 
 
                     <li id="memuBsite"> <a class="menu_web" href="<%=path%>/TeacherInfoCheckServlet">全校老师信息</a></li>
-
 
 
                     <li id="memuCsite"> <a class="menu_web" href="<%=path%>/schoolInfoServlet">师生信息总览</a></li>

@@ -127,8 +127,6 @@
                 </ul>
             </div>
         </div>
-        <button style="display: none;" id="bt_copys" class="bt_copy" data-clipboard-text=""></button>
-        <a style="display: none;" id="defaultPath">/www/wwwroot</a>
     </div>
     <div class="main-content">
         <div class="container-fluid" style="padding-bottom: 66px;">
@@ -142,7 +140,7 @@
             </div>
             <div class="server bgw mtb15">
                 <div class="title c6 f16 plr15">
-                    <h3 class="c6 f16 pull-left">打卡情况</h3>
+                    <h3 class="c6 f16pull-left">打卡情况</h3>
                 </div>
                 <div class="server-circle">
 
