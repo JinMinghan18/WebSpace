@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.dao.highSchoolDao" %><%--
+<%@ page import="com.dao.SchoolDao" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/7/8

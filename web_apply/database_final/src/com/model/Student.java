@@ -5,7 +5,7 @@ public class Student {
     private String sname;
     private String bno;
     private String ssex;
-    private String sage;
+    private int sage;
     private String shome;
     private String spoint;
     private String spass;
@@ -42,11 +42,11 @@ public class Student {
         this.ssex = ssex;
     }
 
-    public String getSage() {
+    public int getSage() {
         return sage;
     }
 
-    public void setSage(String sage) {
+    public void setSage(int sage) {
         this.sage = sage;
     }
 

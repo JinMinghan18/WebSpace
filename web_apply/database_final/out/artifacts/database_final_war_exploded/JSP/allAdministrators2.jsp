@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <%--
   Created by IntelliJ IDEA.
@@ -6,8 +8,18 @@
   Time: 15:23
   To change this template use File | Settings | File Templates.
 --%>
+<%@page import="com.dao.highSchoolDao" %>
+<%@page import="com.model.Student" %>
+<%@page import="com.model.Teacher" %>
+<%@ page import="java.util.ArrayList" %>
 <%String path = request.getContextPath();%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    highSchoolDao dao = new highSchoolDao();
+    int teaSum = dao.TeacherSum();
+    int stuSum = dao.studentSum();
+
+%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -66,10 +78,7 @@
         }
     </style>
 </head>
-<%@page import="com.dao.highSchoolDao" %>
-<%@page import="com.model.Student" %>
-<%@page import="com.model.Teacher" %>
-<%@ page import="java.util.ArrayList" %>
+
 
 <body>
 <div class="bt-warp bge6">
@@ -89,8 +98,7 @@
 
                     <li id="memuBsite"> <a class="menu_web" href="<%=path%>/JSP/TeacherInfoManage2.jsp">老师信息管理</a></li>
 
-
-                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/dataStatisticsServlet">师生信息总览</a></li>
+                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/JSP/TeacherInfoManage2.jsp">密码修改</a></li>
                 </ul>
             </div>
         </div>
@@ -107,7 +115,533 @@
             </div>
             <div class="server bgw mtb15">
                 <div class="title c6 f16 plr15">
-                    <h3 class="c6 f16 pull-left">打卡情况</h3>
+                    <h3 class="c6 f16 pull-left">校历</h3>
+                    <div class="col-md-12">
+
+                        <div class="index_rctx" id="area_five">
+
+
+                            <style type="text/css">
+                                .index_rctx .list-group-item .time {
+                                    float: right;
+                                    margin-left: 10px;
+                                    color: #858585;
+                                    font: normal 12px/39px SimSun;
+                                }
+                            </style>
+
+                            <style type="text/css">
+                                .nextDay{background-color:#f0ad4e !important;color: #FFFFFF;}
+                                td{text-align: center;}
+                            </style>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered tab-bor-col-1 tab-td-padding-2 tab-td-font-12 tab-td-center">
+                                    <input type="hidden" name="rcStr" value="" id="rcStr">
+                                    <thead>
+                                    <tr class="tab-th-1">
+                                        <th rowspan="3" class="xl_jb">&nbsp;</th>
+
+                                        <th colspan="21" style="text-align: center">2019-2020学年2学期(2020-03-02至2020-07-05)</th>
+
+
+                                    </tr>
+                                    <tr class="tab-th-1">
+
+                                        <th colspan="5" style="text-align: center">3月</th>
+
+                                        <th colspan="5" style="text-align: center">4月</th>
+
+                                        <th colspan="5" style="text-align: center">5月</th>
+
+                                        <th colspan="5" style="text-align: center">6月</th>
+
+                                        <th colspan="1" style="text-align: center">7月</th>
+
+                                    </tr>
+                                    <tr class="tab-th-2">
+
+                                        <th style="text-align: center">1</th>
+
+                                        <th style="text-align: center">2</th>
+
+                                        <th style="text-align: center">3</th>
+
+                                        <th style="text-align: center">4</th>
+
+                                        <th style="text-align: center">5</th>
+
+                                        <th style="text-align: center">5</th>
+
+                                        <th style="text-align: center">6</th>
+
+                                        <th style="text-align: center">7</th>
+
+                                        <th style="text-align: center">8</th>
+
+                                        <th style="text-align: center">9</th>
+
+                                        <th style="text-align: center">9</th>
+
+                                        <th style="text-align: center">10</th>
+
+                                        <th style="text-align: center">11</th>
+
+                                        <th style="text-align: center">12</th>
+
+                                        <th style="text-align: center">13</th>
+
+                                        <th style="text-align: center">14</th>
+
+                                        <th style="text-align: center">15</th>
+
+                                        <th style="text-align: center">16</th>
+
+                                        <th style="text-align: center">17</th>
+
+                                        <th style="text-align: center">18</th>
+
+                                        <th style="text-align: center">18</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr>
+                                        <th style="">一</th>
+
+                                        <td id="2020-03-02" title="农历：2020年二月初九">2</td>
+
+                                        <td id="2020-03-09" title="农历：2020年二月十六">9</td>
+
+                                        <td id="2020-03-16" title="农历：2020年二月廿三">16</td>
+
+                                        <td id="2020-03-23" title="农历：2020年二月卅十">23</td>
+
+                                        <td id="2020-03-30" title="农历：2020年三月初七">30</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-04-06" title="农历：2020年三月十四">6</td>
+
+                                        <td id="2020-04-13" title="农历：2020年三月廿一">13</td>
+
+                                        <td id="2020-04-20" title="农历：2020年三月廿八">20</td>
+
+                                        <td id="2020-04-27" title="农历：2020年四月初五">27</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-05-04" title="农历：2020年四月十二">4</td>
+
+                                        <td id="2020-05-11" title="农历：2020年四月十九">11</td>
+
+                                        <td id="2020-05-18" title="农历：2020年四月廿六">18</td>
+
+                                        <td id="2020-05-25" title="农历：2020年闰四月初三">25</td>
+
+                                        <td id="2020-06-01" title="农历：2020年闰四月初十">1</td>
+
+                                        <td id="2020-06-08" title="农历：2020年闰四月十七">8</td>
+
+                                        <td id="2020-06-15" title="农历：2020年闰四月廿四">15</td>
+
+                                        <td id="2020-06-22" title="农历：2020年五月初二">22</td>
+
+                                        <td id="2020-06-29" title="农历：2020年五月初九">29</td>
+
+                                        <td id="" title=""></td>
+
+                                    </tr>
+                                    <tr><th style="">二</th>
+
+                                        <td id="2020-03-03" title="农历：2020年二月初十">3</td>
+
+                                        <td id="2020-03-10" title="农历：2020年二月十七">10</td>
+
+                                        <td id="2020-03-17" title="农历：2020年二月廿四">17</td>
+
+                                        <td id="2020-03-24" title="农历：2020年三月初一">24</td>
+
+                                        <td id="2020-03-31" title="农历：2020年三月初八">31</td>
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-04-07" title="农历：2020年三月十五">7</td>
+
+                                        <td id="2020-04-14" title="农历：2020年三月廿二">14</td>
+
+                                        <td id="2020-04-21" title="农历：2020年三月廿九">21</td>
+
+                                        <td id="2020-04-28" title="农历：2020年四月初六">28</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-05-05" title="农历：2020年四月十三">5</td>
+
+                                        <td id="2020-05-12" title="农历：2020年四月廿十">12</td>
+
+                                        <td id="2020-05-19" title="农历：2020年四月廿七">19</td>
+
+                                        <td id="2020-05-26" title="农历：2020年闰四月初四">26</td>
+
+                                        <td id="2020-06-02" title="农历：2020年闰四月十一">2</td>
+
+                                        <td id="2020-06-09" title="农历：2020年闰四月十八">9</td>
+
+                                        <td id="2020-06-16" title="农历：2020年闰四月廿五">16</td>
+
+                                        <td id="2020-06-23" title="农历：2020年五月初三">23</td>
+
+                                        <td id="2020-06-30" title="农历：2020年五月初十">30</td>
+
+                                        <td id="" title=""></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th style="">三</th>
+
+                                        <td id="2020-03-04" title="农历：2020年二月十一">4</td>
+
+                                        <td id="2020-03-11" title="农历：2020年二月十八">11</td>
+
+                                        <td id="2020-03-18" title="农历：2020年二月廿五">18</td>
+
+                                        <td id="2020-03-25" title="农历：2020年三月初二">25</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-04-01" title="农历：2020年三月初九">1</td>
+
+                                        <td id="2020-04-08" title="农历：2020年三月十六">8</td>
+
+                                        <td id="2020-04-15" title="农历：2020年三月廿三">15</td>
+
+                                        <td id="2020-04-22" title="农历：2020年三月卅十">22</td>
+
+                                        <td id="2020-04-29" title="农历：2020年四月初七">29</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-05-06" title="农历：2020年四月十四">6</td>
+
+                                        <td id="2020-05-13" title="农历：2020年四月廿一">13</td>
+
+                                        <td id="2020-05-20" title="农历：2020年四月廿八">20</td>
+
+                                        <td id="2020-05-27" title="农历：2020年闰四月初五">27</td>
+
+                                        <td id="2020-06-03" title="农历：2020年闰四月十二">3</td>
+
+                                        <td id="2020-06-10" title="农历：2020年闰四月十九">10</td>
+
+                                        <td id="2020-06-17" title="农历：2020年闰四月廿六">17</td>
+
+                                        <td id="2020-06-24" title="农历：2020年五月初四">24</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-07-01" title="农历：2020年五月十一">1</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th style="">四</th>
+
+                                        <td id="2020-03-05" title="农历：2020年二月十二">5</td>
+
+                                        <td id="2020-03-12" title="农历：2020年二月十九">12</td>
+
+                                        <td id="2020-03-19" title="农历：2020年二月廿六">19</td>
+
+                                        <td id="2020-03-26" title="农历：2020年三月初三">26</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-04-02" title="农历：2020年三月初十">2</td>
+
+                                        <td id="2020-04-09" title="农历：2020年三月十七">9</td>
+
+                                        <td id="2020-04-16" title="农历：2020年三月廿四">16</td>
+
+                                        <td id="2020-04-23" title="农历：2020年四月初一">23</td>
+
+                                        <td id="2020-04-30" title="农历：2020年四月初八">30</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-05-07" title="农历：2020年四月十五">7</td>
+
+                                        <td id="2020-05-14" title="农历：2020年四月廿二">14</td>
+
+                                        <td id="2020-05-21" title="农历：2020年四月廿九">21</td>
+
+                                        <td id="2020-05-28" title="农历：2020年闰四月初六">28</td>
+
+                                        <td id="2020-06-04" title="农历：2020年闰四月十三">4</td>
+
+                                        <td id="2020-06-11" title="农历：2020年闰四月廿十">11</td>
+
+                                        <td id="2020-06-18" title="农历：2020年闰四月廿七">18</td>
+
+                                        <td id="2020-06-25" title="农历：2020年五月初五">25</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-07-02" title="农历：2020年五月十二">2</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th style="">五</th>
+
+                                        <td id="2020-03-06" title="
+农历：2020年二月十三">6</td>
+
+                                        <td id="2020-03-13" title="
+农历：2020年二月廿十">13</td>
+
+                                        <td id="2020-03-20" title="
+农历：2020年二月廿七">20</td>
+
+                                        <td id="2020-03-27" title="
+农历：2020年三月初四">27</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-04-03" title="
+农历：2020年三月十一">3</td>
+
+                                        <td id="2020-04-10" title="
+农历：2020年三月十八">10</td>
+
+                                        <td id="2020-04-17" title="
+农历：2020年三月廿五">17</td>
+
+                                        <td id="2020-04-24" title="
+农历：2020年四月初二">24</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-05-01" title="
+农历：2020年四月初九">1</td>
+
+                                        <td id="2020-05-08" title="
+农历：2020年四月十六">8</td>
+
+                                        <td id="2020-05-15" title="
+农历：2020年四月廿三">15</td>
+
+                                        <td id="2020-05-22" title="
+农历：2020年四月卅十">22</td>
+
+                                        <td id="2020-05-29" title="
+农历：2020年闰四月初七">29</td>
+
+                                        <td id="2020-06-05" title="
+农历：2020年闰四月十四">5</td>
+
+                                        <td id="2020-06-12" title="
+农历：2020年闰四月廿一">12</td>
+
+                                        <td id="2020-06-19" title="
+农历：2020年闰四月廿八">19</td>
+
+                                        <td id="2020-06-26" title="
+农历：2020年五月初六">26</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-07-03" title="
+农历：2020年五月十三">3</td>
+
+                                    </tr>
+                                    <tr class="tab-col-2">
+                                        <th style="">六</th>
+
+                                        <td id="2020-03-07" title="
+农历：2020年二月十四">7</td>
+
+                                        <td id="2020-03-14" title="
+农历：2020年二月廿一">14</td>
+
+                                        <td id="2020-03-21" title="
+农历：2020年二月廿八">21</td>
+
+                                        <td id="2020-03-28" title="
+农历：2020年三月初五">28</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-04-04" title="
+农历：2020年三月十二">4</td>
+
+                                        <td id="2020-04-11" title="
+农历：2020年三月十九">11</td>
+
+                                        <td id="2020-04-18" title="
+农历：2020年三月廿六">18</td>
+
+                                        <td id="2020-04-25" title="
+农历：2020年四月初三">25</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-05-02" title="
+农历：2020年四月初十">2</td>
+
+                                        <td id="2020-05-09" title="
+农历：2020年四月十七">9</td>
+
+                                        <td id="2020-05-16" title="
+农历：2020年四月廿四">16</td>
+
+                                        <td id="2020-05-23" title="
+农历：2020年闰四月初一">23</td>
+
+                                        <td id="2020-05-30" title="
+农历：2020年闰四月初八">30</td>
+
+                                        <td id="2020-06-06" title="
+农历：2020年闰四月十五">6</td>
+
+                                        <td id="2020-06-13" title="
+农历：2020年闰四月廿二">13</td>
+
+                                        <td id="2020-06-20" title="
+农历：2020年闰四月廿九">20</td>
+
+                                        <td id="2020-06-27" title="
+农历：2020年五月初七">27</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-07-04" title="
+农历：2020年五月十四">4</td>
+
+                                    </tr>
+
+                                    <tr class="tab-col-2">
+                                        <th style="">日</th>
+
+                                        <td id="2020-03-08" title="
+农历：2020年二月十五">8</td>
+
+                                        <td id="2020-03-15" title="
+农历：2020年二月廿二">15</td>
+
+                                        <td id="2020-03-22" title="
+农历：2020年二月廿九">22</td>
+
+                                        <td id="2020-03-29" title="
+农历：2020年三月初六">29</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-04-05" title="
+农历：2020年三月十三">5</td>
+
+                                        <td id="2020-04-12" title="
+农历：2020年三月廿十">12</td>
+
+                                        <td id="2020-04-19" title="
+农历：2020年三月廿七">19</td>
+
+                                        <td id="2020-04-26" title="
+农历：2020年四月初四">26</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-05-03" title="
+农历：2020年四月十一">3</td>
+
+                                        <td id="2020-05-10" title="
+农历：2020年四月十八">10</td>
+
+                                        <td id="2020-05-17" title="
+农历：2020年四月廿五">17</td>
+
+                                        <td id="2020-05-24" title="
+农历：2020年闰四月初二">24</td>
+
+                                        <td id="2020-05-31" title="
+农历：2020年闰四月初九">31</td>
+
+                                        <td id="2020-06-07" title="
+农历：2020年闰四月十六">7</td>
+
+                                        <td id="2020-06-14" title="
+农历：2020年闰四月廿三">14</td>
+
+                                        <td id="2020-06-21" title="
+农历：2020年五月初一">21</td>
+
+                                        <td id="2020-06-28" title="
+农历：2020年五月初八">28</td>
+
+                                        <td id="" title=""></td>
+
+                                        <td id="2020-07-05" title="
+农历：2020年五月十五">5</td>
+
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <script type="text/javascript">
+
+
+                                function cshRc(){
+                                    if (!$("#rcStr").founded()) {
+                                        return;
+                                    }
+                                    var rcStr = $("#rcStr").val();
+                                    var rcObj = rcStr.split("!two!");
+
+                                    for(var i=0;i<rcObj.length;i++){
+                                        if(rcObj[i]!=null && rcObj[i]!=""){
+                                            var obj = rcObj[i].split("!one!");
+                                            var rc_id = obj[0];
+                                            var rcmc = obj[1];
+                                            var qsrq = obj[2];
+                                            var jsrq = obj[3];
+
+                                            if(qsrq!="" && jsrq!=""){
+                                                showRc(qsrq,jsrq);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                //在表中显示日程
+                                function showRc(kssj,jssj){
+                                    var countDate = new Date(jssj).differDays(new Date(kssj));
+                                    for(var i=0;i<parseInt(countDate)+1;i++){
+                                        var nextDate = new Date(kssj).addDays(i).toShortDateString();
+                                        $("#"+nextDate).addClass('nextDay');
+                                    }
+                                }
+                                //在表中隐藏日程
+                                function hideRc(obj,kssj,jssj){
+                                    var countDate = new Date(jssj).differDays(new Date(kssj));
+                                    for(var i=0;i<parseInt(countDate)+1;i++){
+                                        var nextDate = new Date(kssj).addDays(i).toShortDateString();
+                                        if($(obj).prop("checked")){
+                                            $("#"+nextDate).removeClass('nextDay');
+                                        }else{
+                                            $("#"+nextDate).addClass('nextDay');
+                                        }
+                                    }
+                                }
+
+                                cshRc();
+
+                            </script>
+
+
+                        </div>
+
+
+                    </div>
                 </div>
                 <div class="server-circle">
 
@@ -172,82 +706,82 @@
                     <ul class="clearfix text-center">
                         <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <p class="name f15 c9">教职人员</p>
-<%--                            <div class="val"><a class="btlink" href="<%=path%>/TeacherInfoCheckServlet"><%=teanum%></a></div>--%>
+                            <div class="val"><a class="btlink" href="<%=path%>/TeacherInfoCheckServlet"><%=teaSum%></a></div>
                         </li>
                         <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <p class="name f15 c9">学生</p>
-<%--                            <div class="val"><a class="btlink" href="<%=path%>/StudentInfoCheckServlet"><%=stunum%></a></div>--%>
+                            <div class="val"><a class="btlink" href="<%=path%>/queryAllStudentServlet"><%=stuSum%></a></div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 pull-left pd0">
-                <div class="p17">
-                    <div class="bgw" style="height:491px">
-                        <div class="title c6 f16 plr15">教师缺卡情况</div><br>
-                        <table class="table table-bordered table-condensed" contenteditable="false">
-                            <thead>
-                            <tr>
-                                <th>姓名</th>
-                                <th>工号</th>
-                                <th>学院</th>
-                                <th>职务</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach var="school_info" items="${requestScope.teacher}"
-                                       varStatus="status">
-                                <c:if test="${status.count%2==0}">
-                                    <tr style="background: #eeeeff">
-                                </c:if>
-                                <c:if test="${status.count%2!=0}">
-                                    <tr style="background: #dedeff">
-                                </c:if>
-                                <td>${school_info.name}</td>
-                                <td>${school_info.school_id}</td>
-                                <td>${school_info.college}</td>
-                                <td>${school_info.role}</td>
-                                </tr>
-                            </c:forEach>
+<%--            <div class="col-xs-12 col-sm-12 col-md-6 pull-left pd0">--%>
+<%--                <div class="p17">--%>
+<%--                    <div class="bgw" style="height:491px">--%>
+<%--                        <div class="title c6 f16 plr15">教师缺卡情况</div><br>--%>
+<%--                        <table class="table table-bordered table-condensed" contenteditable="false">--%>
+<%--                            <thead>--%>
+<%--                            <tr>--%>
+<%--                                <th>姓名</th>--%>
+<%--                                <th>工号</th>--%>
+<%--                                <th>学院</th>--%>
+<%--                                <th>职务</th>--%>
+<%--                            </tr>--%>
+<%--                            </thead>--%>
+<%--                            <tbody>--%>
+<%--                            <c:forEach var="school_info" items="${requestScope.teacher}"--%>
+<%--                                       varStatus="status">--%>
+<%--                                <c:if test="${status.count%2==0}">--%>
+<%--                                    <tr style="background: #eeeeff">--%>
+<%--                                </c:if>--%>
+<%--                                <c:if test="${status.count%2!=0}">--%>
+<%--                                    <tr style="background: #dedeff">--%>
+<%--                                </c:if>--%>
+<%--                                <td>${school_info.name}</td>--%>
+<%--                                <td>${school_info.school_id}</td>--%>
+<%--                                <td>${school_info.college}</td>--%>
+<%--                                <td>${school_info.role}</td>--%>
+<%--                                </tr>--%>
+<%--                            </c:forEach>--%>
 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 pull-left pd0">
-                <div class="pl7">
-                    <div class="bgw" style="height:491px">
-                        <div class="title c6 f16 plr15">学生缺卡情况</div><br>
-                        <table class="table table-bordered table-condensed" contenteditable="false">
-                            <thead>
-                            <tr>
-                                <th>姓名</th>
-                                <th>学号</th>
-                                <th>学院</th>
-                                <th>专业</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach var="school_info" items="${requestScope.student}"
-                                       varStatus="status">
-                                <c:if test="${status.count%2==0}">
-                                    <tr style="background: #eeeeff">
-                                </c:if>
-                                <c:if test="${status.count%2!=0}">
-                                    <tr style="background: #dedeff">
-                                </c:if>
-                                <td>${school_info.name}</td>
-                                <td>${school_info.school_id}</td>
-                                <td>${school_info.college}</td>
-                                <td>${school_info.major}</td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+<%--                            </tbody>--%>
+<%--                        </table>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col-xs-12 col-sm-12 col-md-6 pull-left pd0">--%>
+<%--                <div class="pl7">--%>
+<%--                    <div class="bgw" style="height:491px">--%>
+<%--                        <div class="title c6 f16 plr15">学生缺卡情况</div><br>--%>
+<%--                        <table class="table table-bordered table-condensed" contenteditable="false">--%>
+<%--                            <thead>--%>
+<%--                            <tr>--%>
+<%--                                <th>姓名</th>--%>
+<%--                                <th>学号</th>--%>
+<%--                                <th>学院</th>--%>
+<%--                                <th>专业</th>--%>
+<%--                            </tr>--%>
+<%--                            </thead>--%>
+<%--                            <tbody>--%>
+<%--                            <c:forEach var="school_info" items="${requestScope.student}"--%>
+<%--                                       varStatus="status">--%>
+<%--                                <c:if test="${status.count%2==0}">--%>
+<%--                                    <tr style="background: #eeeeff">--%>
+<%--                                </c:if>--%>
+<%--                                <c:if test="${status.count%2!=0}">--%>
+<%--                                    <tr style="background: #dedeff">--%>
+<%--                                </c:if>--%>
+<%--                                <td>${school_info.name}</td>--%>
+<%--                                <td>${school_info.school_id}</td>--%>
+<%--                                <td>${school_info.college}</td>--%>
+<%--                                <td>${school_info.major}</td>--%>
+<%--                                </tr>--%>
+<%--                            </c:forEach>--%>
+<%--                            </tbody>--%>
+<%--                        </table>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
 
         </div>
     </div>

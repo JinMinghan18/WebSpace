@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.dao.highSchoolDao;
+import com.dao.SchoolDao;
 import com.model.Admin;
 import com.model.Student;
 import com.model.Teacher;
@@ -11,7 +11,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.text.Highlighter;
 import java.io.IOException;
 
 @WebServlet({"/LoginUsersServlet"})
@@ -21,18 +20,18 @@ public class LoginUsersServlet extends HttpServlet {
         String school_id = request.getParameter("school_id");
         String password = request.getParameter("password");
         if(type.equals("admin")){
-            highSchoolDao dao = new highSchoolDao();
-            Admin admin = dao.findAdmininfo(school_id);
+            SchoolDao dao = new SchoolDao();
+            Admin admin = dao.loginAdmin(school_id);
             if(password.equals(admin.getApass().trim())){
                 //进入管理员界面
                 System.out.println("admin");
-                RequestDispatcher rd = request.getRequestDispatcher("/JSP/test.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/JSP/allAdministrators2.jsp");
                 rd.forward(request,response);
             }
         }
         else if(type.equals("teacher")){
-            highSchoolDao dao = new highSchoolDao();
-            Teacher teacher = dao.findTeacherinfo(school_id);
+            SchoolDao dao = new SchoolDao();
+            Teacher teacher = dao.loginTeacher(school_id);
             if(password.equals(teacher.getTpass().trim())){
                 //进入教师界面
                 System.out.println("tea");
@@ -41,8 +40,8 @@ public class LoginUsersServlet extends HttpServlet {
             }
         }
         else if(type.equals("student")){
-            highSchoolDao dao = new highSchoolDao();
-            Student student= dao.findStudentinfo(school_id);
+            SchoolDao dao = new SchoolDao();
+            Student student= dao.loginStudent(school_id);
             if(password.equals(student.getSpass().trim())){
                 //进入学生界面
                 System.out.println("stu");
