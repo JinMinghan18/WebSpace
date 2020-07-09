@@ -33,9 +33,9 @@
             <form action="<%=path%>/LoginUsersServlet" method="post" onsubmit="return check_form();">
                 <div class="logo">登录界面</div>
                 <div class="line">
-                    <input type="checkbox" name="type" id="admin" value="admin">管理员&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="type" id="teacher" value="teacher">教师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="type" id="student" value="student">学生
+                    <input type="radio" name="type" id="admin" value="admin">管理员&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="type" id="teacher" value="teacher">教师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="type" id="student" value="student">学生
                 </div>
                 <div class="line">
                     <input class="inputtxt" name="school_id" id="school_id" type="text" placeholder="学号/工号"
