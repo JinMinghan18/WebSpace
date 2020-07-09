@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Context reloadable = "true">
+    <Resource
+            name="jdbc/sampleDS"
+            auth="Container"
+            type="javax.sql.DataSource"
+            driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+            url="jdbc:sqlserver://localhost:1433;Database=jinminghanMis03"
+            username="sa"
+            password="123456"
+            maxActive="400"
+            maxIdle="20"
+            maxWait="500"
+    />
+</Context>
+<!--        ?serverTimezone=GMT%2B8-->
