@@ -13,7 +13,7 @@ public class enterQueryCourseServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tno = request.getParameter("tno");
         request.setAttribute("tno",tno);
-        RequestDispatcher rd = request.getRequestDispatcher("/JSP/.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/JSP/queryCourseReport.jsp");
         rd.forward(request,response);
     }
 

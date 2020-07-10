@@ -21,10 +21,11 @@ public class queryCourseReportServlet extends HttpServlet {
         String cno = request.getParameter("cno");
         ArrayList<CourseReport> courseReport = dao.queryCourseReport(cno);
         String tno = request.getParameter("tno");
-        request.setAttribute("courseReport",courseReport);
         request.setAttribute("tno",tno);
+        request.setAttribute("courseReport",courseReport);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/JSP/queryCourseReport.jsp");
+
+        RequestDispatcher rd = request.getRequestDispatcher("/JSP/queryCourseReport.jsp?tno=T01");
         rd.forward(request,response);
     }
 
