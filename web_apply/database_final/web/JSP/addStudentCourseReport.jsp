@@ -25,7 +25,7 @@
                 <input class="inputtxt" name="sno" id="sno" placeholder="学号" type="text">
             </div>
             <div class="line">
-                <input class="inputtxt" name="co" id="cno" placeholder="课程编号" type="text">
+                <input class="inputtxt" name="cno" id="cno" placeholder="课程编号" type="text">
             </div>
             <div class="line">
                 <input class="inputtxt" name="grade" id="grade" placeholder="成绩" type="text">

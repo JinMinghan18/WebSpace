@@ -1,5 +1,8 @@
 package com.controller;
 
+import com.dao.SchoolDao;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +17,10 @@ public class addStudentCourseReportServlet extends HttpServlet {
         String cno = request.getParameter("cno");
         String grade = request.getParameter("grade");
         String tno = request.getParameter("tno");
-
+        SchoolDao dao = new SchoolDao();
+        boolean isSuccess = dao.addStudentCourseReport(sno,cno,grade,tno);
+        RequestDispatcher rd = request.getRequestDispatcher("/JSP/queryCourseReport.jsp");
+        rd.forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -89,7 +89,7 @@
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp">课程成绩管理</a></li>
+                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp?tno=<%=tno%>">课程成绩管理</a></li>
                 </ul>
             </div>
         </div>
@@ -103,7 +103,7 @@
             </div>
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryCourseReportServlet">
+                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryCourseReportServlet?tno=<%=tno%>">
                         <input type="text" name="cno" class="ser-text pull-left" placeholder="课程名" />
                         <input type="submit" class="ser-sub pull-left" value="">
                     </form>
@@ -143,7 +143,7 @@
                                 </c:forEach>
                                 <tr>
                                     <td>
-                                        <a href="addStudentCourseReport.jsp?<%=tno%>">添加成绩</a>
+                                        <a href="<%=path%>/JSP/addStudentCourseReport.jsp?tno=<%=tno%>">添加成绩</a>
                                     </td>
                                 </tr>
                                 </tbody>

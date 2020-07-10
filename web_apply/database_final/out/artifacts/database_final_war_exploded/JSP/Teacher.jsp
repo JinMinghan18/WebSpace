@@ -85,7 +85,7 @@
                 <h3 class="mypcip"><span class="f14 cw">教师界面</span></h3>
                 <ul class="menu">
 
-                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/Teacher.jsp">首页</a></li>
+                    <li id="memuA"> <a class="menu_home" href="<%=path%>/enterTeacherServlet?tno=<%=tno%>">首页</a></li>
 
 
 

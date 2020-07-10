@@ -3,6 +3,7 @@ package com.dao;
 import com.model.*;
 
 import javax.servlet.RequestDispatcher;
+import java.io.SequenceInputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -543,5 +544,63 @@ public class SchoolDao extends Basedao {
     }
 
 //查找开课学期
-    public String findCterm(String cno)
+    public String findCterm(String cno){
+        String sql = "SELECT jmh_Cterm03 FROM jinmh_Course03 WHERE jmh_Cno03=?";
+        String cterm = "";
+
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, cno);
+            ArrayList<String> list = new ArrayList<String>();
+            try(ResultSet rst = pstmt.executeQuery()) {
+                while (rst.next()) {
+                     cterm = rst.getString("jmh_Cterm03");
+                }
+            }
+            return cterm;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return null;
+        }
+    }
+    public String findCname(String cno){
+        String sql = "SELECT jmh_Cname03 FROM jinmh_Course03 WHERE jmh_Cno03=?";
+        String cname = "";
+
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, cno);
+            ArrayList<String> list = new ArrayList<String>();
+            try(ResultSet rst = pstmt.executeQuery()) {
+                while (rst.next()) {
+                    cname = rst.getString("jmh_Cname03");
+                }
+            }
+            return cname;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return null;
+        }
+    }
+//插入新成绩记录
+    public boolean addStudentCourseReport(String sno,String cno,String grade,String tno) {
+        String sql = "INSERT INTO jinmh_Report03 VALUES(?,?,?,?,?,?)";
+        SchoolDao dao = new SchoolDao();
+        String cterm = dao.findCterm(cno);
+        String cname = dao.findCname(cno);
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, sno);
+            pstmt.setString(2, cno);
+            pstmt.setString(3, tno);
+            pstmt.setString(4, cname);
+            pstmt.setString(5, cterm);
+            pstmt.setString(6, grade);
+            pstmt.executeUpdate();
+            return true;
+        } catch (SQLException se) {
+            se.printStackTrace();
+            return false;
+        }
+    }
 }
