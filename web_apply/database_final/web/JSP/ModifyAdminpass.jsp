@@ -1,9 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2020/7/5
-  Time: 2:34
+  Date: 2020/7/10
+  Time: 14:48
   To change this template use File | Settings | File Templates.
 --%>
 <%String path = request.getContextPath();%>
@@ -14,7 +13,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>学生信息管理</title>
+    <title>Title</title>
 </head>
 <body>
 <head>
@@ -103,8 +102,6 @@
                     <li id="memuEsite"> <a class="menu_web" href="<%=path%>/queryAllCourseServlet">课程管理</a></li>
 
 
-                    <li id="memuFsite"> <a class="menu_web" href="<%=path%>/JSP/BanjiCourseInfoCheck.jsp">班级课表查询</a></li>
-
                     <li id="memuCsite"> <a class="menu_web" href="<%=path%>/StudentShomeCountServlet">学生地区</a></li>
 
 
@@ -117,7 +114,7 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>教师信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>修改密码</span>
                 </div>
             </div>
             <div class="pos-box bgw mtb15">
@@ -132,43 +129,32 @@
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
                     <div class="bgw" style="height:491px">
-                        <div class="title c6 f16 plr15">教师信息</div><br>
+                        <div class="title c6 f16 plr15">密码修改</div><br>
                         <div class="container-fluid">
                             <div class="row-fluid">
                                 <div class="span12">
                                     <h3 class="text-center">
-                                        教师信息新增
+                                        管理员密码修改
                                     </h3>
                                     <div class="accordion" id="accordion-794631">
                                         <div class="accordion-group">
                                             <div class="accordion-heading" style="border: 1px #444444 solid">
-                                                <a class="accordion-toggle collapsed" data-parent="#accordion-794631" data-toggle="collapse" href="#accordion-element-66275" style="text-decoration: none">单条导入&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                                <a class="accordion-toggle collapsed" data-parent="#accordion-794631" data-toggle="collapse" href="#accordion-element-66275" style="text-decoration: none">修改密码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                                             </div>
                                             <div class="accordion-body collapse" id="accordion-element-66275">
                                                 <div class="accordion-inner">
-                                                    <form action="<%=path%>/addTeacherServlet">
+                                                    <form action="<%=path%>/modifyAdminpassServlet">
                                                         <table>
                                                             <tr>
-                                                                <td>工号：</td><td><input type="text" name="tno"></td>
+                                                                <td>工号：</td><td><input type="text" name="ano"></td>
                                                             </tr>
                                                             <tr>
-                                                                <td>姓名：</td><td><input type="text" name="tname"></td>
+                                                                <td>原密码：</td><td><input type="text" name="apassold"></td>
                                                             </tr>
                                                             <tr>
-                                                                <td>性别：</td><td><input type="text" name="tsex"></td>
+                                                                <td>新密码：</td><td><input type="text" name="apass"></td>
                                                             </tr>
-                                                            <tr>
-                                                                <td>年龄：</td><td><input type="number" name="tage"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>职称：</td><td><input type="text" name="ttitle"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>电话：</td><td><input type="text" name="ttel"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>密码：</td><td><input type="text" name="tpass"></td>
-                                                            </tr>
+
                                                             <tr>
                                                                 <td><input type="submit" value="提交"></td>
                                                                 <td><input type="reset" value="重置"></td>
@@ -190,7 +176,6 @@
     </div>
     <div class="footer bgw">版权所有 © 浙江工业大学 | 信息化办公室维护 | 网络管理 www@zjut.edu.cn</div>
 </div>
-
 
 </body>
 </html>

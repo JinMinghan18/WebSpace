@@ -1,19 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2020/7/5
-  Time: 2:34
+  Date: 2020/7/10
+  Time: 17:50
   To change this template use File | Settings | File Templates.
 --%>
-<%String path = request.getContextPath();%>
-<%
-    String school_id = request.getParameter("school_id");
-    String pass = request.getParameter("pass");
-%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%String path = request.getContextPath();%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -120,8 +114,8 @@
             </div>
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryStudentServlet">
-                        <input type="text" name="school_id" class="ser-text pull-left" placeholder="学号" />
+                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryBanjiCourseServlet">
+                        <input type="text" name="school_id" class="ser-text pull-left" placeholder="班级编号" />
                         <input type="submit" class="ser-sub pull-left" value="">
                     </form>
 
@@ -132,48 +126,32 @@
                     <div class="bgw" style="height:491px" >
                         <div class="title c6 f16 plr15">学生信息</div><br>
                         <div style="overflow:auto">
-                        <table class="table table-bordered table-condensed" contenteditable="false">
-                            <thead>
-                            <tr>
-                                <th>学号</th>
-                                <th>姓名</th>
-                                <th>班级</th>
-                                <th>性别</th>
-                                <th>年龄</th>
-                                <th>生源地</th>
-                                <th>学分</th>
-                                <th>密码</th>
-                                <th>操作</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach var="student" items="${requestScope.student}"
-                                       varStatus="status">
-                                <c:if test="${status.count%2==0}">
-                                    <tr style="background: #eeeeff">
-                                </c:if>
-                                <c:if test="${status.count%2!=0}">
-                                    <tr style="background: #dedeff">
-                                </c:if>
-                                <td>${student.sno}</td>
-                                <td>${student.sname}</td>
-                                <td>${student.bno}</td>
-                                <td>${student.ssex}</td>
-                                <td>${student.sage}</td>
-                                <td>${student.shome}</td>
-                                <td>${student.spoint}</td>
-                                <td>${student.spass}</td>
-                                <td>
-                                    <a href="<%=path%>/JSP/ModifyStudentInfo.jsp?sno=${student.sno}&sname=${student.sname}&bno=${student.bno}&sage=${student.sage}&sex=${student.ssex}&shome=${student.shome}&spoint=${student.spoint}&spass=${student.spass}">修改</a>
-                                    <a href="<%=path%>/deleteStudentServlet?sno=${student.sno}&sname=${student.sname}&bno=${student.bno}&sage=${student.sage}&sex=${student.ssex}&shome=${student.shome}&spoint=${student.spoint}&spass=${student.spass}">删除</a>
-                                </td>
+                            <table class="table table-bordered table-condensed" contenteditable="false">
+                                <thead>
+                                <tr>
+                                    <th>班级编号</th>
+                                    <th>班级名称</th>
+                                    <th>课程编号</th>
+                                    <th>课程名称</th>
                                 </tr>
-                            </c:forEach>
-                            <tr>
-                                <td rowspan="9"><a href="<%=path%>/JSP/AddStudentInfo2.jsp">添加</a></td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="i" items="${requestScope.banjiCourse}"
+                                           varStatus="status">
+                                    <c:if test="${status.count%2==0}">
+                                        <tr style="background: #eeeeff">
+                                    </c:if>
+                                    <c:if test="${status.count%2!=0}">
+                                        <tr style="background: #dedeff">
+                                    </c:if>
+                                    <td>${i.bno}</td>
+                                    <td>${i.bname}</td>
+                                    <td>${i.cno}</td>
+                                    <td>${i.cname}</td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

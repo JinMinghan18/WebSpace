@@ -9,12 +9,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%String path = request.getContextPath();%>
+<%
+    String school_id = request.getParameter("school_id");
+    String pass = request.getParameter("pass");
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>学生信息管理</title>
-</head>
-<body>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -97,10 +97,16 @@
                     <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryAllTeacherServlet">老师信息管理</a></li>
 
 
-                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/dataStatisticsServlet">学生地区分管</a></li>
+                    <li id="memuEsite"> <a class="menu_web" href="<%=path%>/queryAllCourseServlet">课程管理</a></li>
 
 
-                    <li id="memuDsite"> <a class="menu_web" href="<%=path%>/dataStatisticsServlet">修改密码</a></li>
+                    <li id="memuFsite"> <a class="menu_web" href="<%=path%>/JSP/BanjiCourseInfoCheck.jsp">班级课表查询</a></li>
+
+
+                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/StudentShomeCountServlet">学生地区</a></li>
+
+
+                    <li id="memuDsite"> <a class="menu_web" href="<%=path%>/JSP/ModifyAdminpass.jsp">修改密码</a></li>
                 </ul>
             </div>
         </div>
@@ -178,5 +184,5 @@
 </div>
 
 </body>
-</body>
+
 </html>

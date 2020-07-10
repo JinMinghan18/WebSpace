@@ -19,6 +19,8 @@ public class LoginUsersServlet extends HttpServlet {
         String type = request.getParameter("type");
         String school_id = request.getParameter("school_id");
         String password = request.getParameter("password");
+        request.setAttribute("school_id",school_id);
+        request.setAttribute("pass",password);
         if(type.equals("admin")){
             SchoolDao dao = new SchoolDao();
             Admin admin = dao.loginAdmin(school_id);

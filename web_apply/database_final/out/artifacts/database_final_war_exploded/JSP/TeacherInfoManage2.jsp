@@ -7,6 +7,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%String path = request.getContextPath();%>
+<%
+    String school_id = request.getParameter("school_id");
+    String pass = request.getParameter("pass");
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -91,10 +95,14 @@
 
                     <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryAllTeacherServlet">老师信息管理</a></li>
 
+                    <li id="memuEsite"> <a class="menu_web" href="<%=path%>/queryAllCourseServlet">课程管理</a></li>
 
-                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/dataStatisticsServlet">师生信息总览</a></li>
+                    <li id="memuFsite"> <a class="menu_web" href="<%=path%>/JSP/BanjiCourseInfoCheck.jsp">班级课表查询</a></li>
 
-                    <li id="memuDsite"> <a class="menu_web" href="<%=path%>/JSP/TeacherInfoManage2.jsp">密码修改</a></li>
+
+                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/StudentShomeCountServlet">学生地区</a></li>
+
+                    <li id="memuDsite"> <a class="menu_web" href="<%=path%>/JSP/ModifyAdminpass.jsp">密码修改</a></li>
                 </ul>
             </div>
         </div>

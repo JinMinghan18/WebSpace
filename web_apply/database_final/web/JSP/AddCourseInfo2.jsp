@@ -1,22 +1,13 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2020/7/5
-  Time: 2:34
+  Date: 2020/7/10
+  Time: 16:29
   To change this template use File | Settings | File Templates.
 --%>
-<%String path = request.getContextPath();%>
-<%
-    String school_id = request.getParameter("school_id");
-    String pass = request.getParameter("pass");
-%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%String path = request.getContextPath();%>
 <html>
-<head>
-    <title>学生信息管理</title>
-</head>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -120,13 +111,13 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>学生信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>课程信息管理</span>
                 </div>
             </div>
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryStudentServlet">
-                        <input type="text" name="school_id" class="ser-text pull-left" placeholder="学号" />
+                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryCourseServlet">
+                        <input type="text" name="school_id" class="ser-text pull-left" placeholder="课程编号" />
                         <input type="submit" class="ser-sub pull-left" value="">
                     </form>
 
@@ -135,11 +126,11 @@
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
                     <div class="bgw" style="height:491px">
-                        <div class="title c6 f16 plr15">学生信息</div><br>
+                        <div class="title c6 f16 plr15">课程信息</div><br>
                         <div class="row-fluid">
                             <div class="span12">
                                 <h3 class="text-center">
-                                    学生信息新增
+                                    课程信息新增
                                 </h3>
                                 <div class="accordion" id="accordion-794631">
                                     <div class="accordion-group">
@@ -148,31 +139,25 @@
                                         </div>
                                         <div class="accordion-body collapse" id="accordion-element-66275">
                                             <div class="accordion-inner">
-                                                <form action="<%=path%>/addStudentServlet">
+                                                <form action="<%=path%>/addCourseServlet">
                                                     <table>
                                                         <tr>
-                                                            <td>学号：</td><td><input type="text" name="sno"></td>
+                                                            <td>课程编号：</td><td><input type="text" name="cno"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>班级：</td><td><input type="text" name="bno"></td>
+                                                            <td>课程名称：</td><td><input type="text" name="cname"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>姓名：</td><td><input type="text" name="sname"></td>
+                                                            <td>开课学期：</td><td><input type="text" name="cterm"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>性别：</td><td><input type="text" name="sex"></td>
+                                                            <td>课时：</td><td><input type="text" name="ctime"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>年龄：</td><td><input type="number" name="sage"></td>
+                                                            <td>考查方式：</td><td><input type="text" name="cway"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>生源地：</td><td><input type="text" name="shome"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>学分：</td><td><input type="text" name="spoint"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>密码：</td><td><input type="text" name="spass"></td>
+                                                            <td>学分：</td><td><input type="text" name="ccredit"></td>
                                                         </tr>
                                                         <tr>
                                                             <td><input type="submit" value="提交"></td>
@@ -183,20 +168,6 @@
                                             </div>
                                         </div>
                                     </div><br>
-<%--                                    <div class="accordion-group">--%>
-<%--                                        <div class="accordion-heading" style="border: 1px #444444 solid">--%>
-<%--                                            <a class="accordion-toggle collapsed" data-parent="#accordion-794631" data-toggle="collapse" href="#accordion-element-534405" style="text-decoration: none">多条导入&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>--%>
-<%--                                        </div>--%>
-<%--                                        <div class="accordion-body collapse" id="accordion-element-534405">--%>
-<%--                                            <div class="accordion-inner">--%>
-<%--                                                <form action="<%=path%>/addMoreStudentServlet">--%>
-<%--                                                    <p>请按name,id,school_id,college,major,class;格式依次输入，<br>逗号为间隔，分号为一条记录的结尾</p>--%>
-<%--                                                    <textarea rows="6" style="width: 435px;height: 120px;text-align: left;" name="added"></textarea><br>--%>
-<%--                                                    <input type="submit" value="批量导入">--%>
-<%--                                                </form>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
                                 </div>
                             </div>
                             <a href="<%=path%>/JSP/allAdministrators2.jsp">返回主界面</a>
@@ -210,5 +181,4 @@
 </div>
 
 </body>
-
 </html>

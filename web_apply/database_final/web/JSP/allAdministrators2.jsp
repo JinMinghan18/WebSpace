@@ -20,6 +20,10 @@
     int stuSum = dao.studentSum();
 
 %>
+<%
+    String school_id = request.getParameter("school_id");
+    String pass = request.getParameter("pass");
+%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -98,7 +102,20 @@
 
                     <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryAllTeacherServlet">老师信息管理</a></li>
 
-                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/JSP/TeacherInfoManage2.jsp">密码修改</a></li>
+
+                    <li id="memuEsite"> <a class="menu_web" href="<%=path%>/queryAllCourseServlet">课程管理</a></li>
+
+
+
+                    <li id="memuFsite"> <a class="menu_web" href="<%=path%>/JSP/BanjiCourseInfoCheck.jsp">班级课表查询</a></li>
+
+
+
+                    <li id="memuDsite"> <a class="menu_web" href="<%=path%>/StudentShomeCountServlet">学生地区</a></li>
+
+
+
+                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/JSP/ModifyAdminpass.jsp">密码修改</a></li>
                 </ul>
             </div>
         </div>

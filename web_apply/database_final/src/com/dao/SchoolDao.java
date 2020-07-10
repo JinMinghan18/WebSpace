@@ -1,8 +1,6 @@
 package com.dao;
 
-import com.model.Admin;
-import com.model.Student;
-import com.model.Teacher;
+import com.model.*;
 
 import javax.servlet.RequestDispatcher;
 import java.sql.*;
@@ -153,6 +151,32 @@ public class SchoolDao extends Basedao {
             return null;
         }
     }
+
+//查询所有课程
+    public ArrayList<Course> QueryAllCourse(){
+        String sql = "SELECT * FROM jinmh_Course03";
+        ArrayList<Course>courseList = new ArrayList<Course>();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Course course = new Course();
+                    course.setCno(rst.getString("jmh_Cno03"));
+                    course.setCname(rst.getString("jmh_Cname03"));
+                    course.setCterm(rst.getString("jmh_Cterm03"));
+                    course.setCtime(rst.getInt("jmh_Ctime03"));
+                    course.setCway(rst.getString("jmh_Cway03"));
+                    course.setCcredit(rst.getString("jmh_Ccredit03"));
+                    courseList.add(course);
+                }
+            }
+            return courseList;
+        }catch (SQLException se ){
+            se.printStackTrace();
+            return null;
+        }
+}
+
 //按学号查询学生信息
     public ArrayList<Student> QueryStudent(String school_id){
         String sql = "SELECT * FROM jinmh_Student03 WHERE jmh_Sno03=?";
@@ -207,6 +231,32 @@ public class SchoolDao extends Basedao {
             return null;
         }
     }
+
+//按课程编号查询课程信息
+    public ArrayList<Course> QueryCourse(String school_id){
+        String sql = "SELECT * FROM jinmh_Course03 WHERE jmh_Cno03=?";
+        ArrayList<Course>courseList = new ArrayList<Course>();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Course course = new Course();
+                    course.setCno(rst.getString("jmh_Cno03"));
+                    course.setCname(rst.getString("jmh_Cname03"));
+                    course.setCterm(rst.getString("jmh_Cterm03"));
+                    course.setCtime(rst.getInt("jmh_Ctime03"));
+                    course.setCway(rst.getString("jmh_Cway03"));
+                    course.setCcredit(rst.getString("jmh_Ccredit03"));
+                    courseList.add(course);
+                }
+            }
+            return courseList;
+        }catch (SQLException se ){
+            se.printStackTrace();
+            return null;
+        }
+    }
+
 //添加学生信息
     public boolean addStudent(String sno, String bno, String sname, String sex, int sage, String shome, String spoint ,String spass){
         String sql = "INSERT INTO jinmh_Student03 VALUES(?,?,?,?,?,?,?,?)";
@@ -248,6 +298,25 @@ public class SchoolDao extends Basedao {
     }
     return true;
 }
+
+//添加课程信息
+    public boolean addCourse(String cno, String cname, String cterm, int ctime, String cway, String ccredit){
+        String sql = "INSERT INTO jinmh_Course03 VALUES(?,?,?,?,?,?)";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,cno);
+            pstmt.setString(2,cname);
+            pstmt.setString(3,cterm);
+            pstmt.setInt(4,ctime);
+            pstmt.setString(5,cway);
+            pstmt.setString(6,ccredit);
+            pstmt.executeUpdate();
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+        return true;
+}
 //删除学生信息
     public boolean delStudent(String school_id){
     String sql = "DELETE FROM jinmh_Student03 WHERE jmh_Sno03=?";
@@ -263,8 +332,21 @@ public class SchoolDao extends Basedao {
 }
 
 //删除教师信息
-public boolean delTeacher(String school_id){
-    String sql = "DELETE FROM jinmh_Teacher03 WHERE jmh_Tno03=?";
+    public boolean delTeacher(String school_id){
+        String sql = "DELETE FROM jinmh_Teacher03 WHERE jmh_Tno03=?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,school_id);
+            pstmt.executeUpdate();
+            return true;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+}
+//删除课程信息
+    public boolean delCourse(String school_id){
+    String sql = "DELETE FROM jinmh_Course03 WHERE jmh_Cno03=?";
     try(Connection conn = dataSource.getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql)){
         pstmt.setString(1,school_id);
@@ -275,7 +357,6 @@ public boolean delTeacher(String school_id){
         return false;
     }
 }
-
 //修改学生信息（学号）
     public boolean modStudent1(String sno, String bno, String sname, String sex, int sage, String shome, String spoint , String spass ,String snoold){
         String sql = "UPDATE jinmh_Student03 SET jmh_Sno03=?,jmh_Bno03=?,jmh_Sname03=?,jmh_Ssex03=?,jmh_Sage03=?,jmh_Shome03=?,jmh_Spoint03=?,jmh_Spass03=? WHERE jmh_Sno 03=?";
@@ -319,7 +400,7 @@ public boolean delTeacher(String school_id){
     }
 //修改管理员密码
     public boolean modAdminPass(String pass ,String ano){
-        String sql = "UPDATE jinmh_Admin SET jmh_Apass03=? WHERE jmh_Ano03=?";
+        String sql = "UPDATE jinmh_Admin03 SET jmh_Apass03=? WHERE jmh_Ano03=?";
         try (Connection conn = dataSource.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setString(1,pass);
@@ -330,5 +411,77 @@ public boolean delTeacher(String school_id){
             return false;
         }
         return true;
+    }
+
+//修改课程信息
+    public boolean modCourse(String cno, String cname, String cterm, int ctime, String cway, String ccredit,String cnoold){
+        String sql = "UPDATE jinmh_Course03 SET jmh_Cno03=?,jmh_Cname03=?,jmh_Cterm03=?,jmh_Ctime03=?,jmh_Cway03=?,jmh_Ccredit03=? WHERE jmh_Cno03=?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,cno);
+            pstmt.setString(2,cname);
+            pstmt.setString(3,cterm);
+            pstmt.setInt(4,ctime);
+            pstmt.setString(5,cway);
+            pstmt.setInt(6,Integer.parseInt(ccredit));
+            pstmt.setString(7,cnoold);
+            pstmt.executeUpdate();
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+//生源地统计
+    public ArrayList<Shome> countStudentHome(){
+        String sql = "SELECT jmh_Shome03,COUNT(jmh_Shome03) stunum from jinmh_Student03 group by jmh_Shome03";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            ArrayList<Shome> shome = new ArrayList<Shome>();
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    Shome shome1 = new Shome();
+                    shome1.setShome(rst.getString("jmh_Shome03"));
+                    shome1.setCount(rst.getInt("stunum"));
+                    shome.add(shome1);
+                }
+
+            }
+            return shome;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return null;
+        }
+
+    }
+
+//班级课表查询
+    public ArrayList<BanjiCourse> queryBanjiCourse(String bno){
+        String sql = "SELECT jmh_Cname03,jmh_Cno03,jmh_Bno03,jmh_Bname03 " +
+                "FROM jinmh_Course03,jinmh_Banji03 " +
+                "WHERE jmh_Cno03 IN " +
+                "(SELECT jmh_Cno03 " +
+                "FROM jinmh_Lesson03 " +
+                "WHERE jmh_Bno03=?) AND jmh_Bno03=?";
+        ArrayList<BanjiCourse>banjiCoursesList = new ArrayList<BanjiCourse>();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,bno);
+            pstmt.setString(2,bno);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    BanjiCourse banjiCourse = new BanjiCourse();
+                    banjiCourse.setCno(rst.getString("jmh_Cno03"));
+                    banjiCourse.setCname(rst.getString("jmh_Cname03"));
+                    banjiCourse.setBno(rst.getString("jmh_Bno03"));
+                    banjiCourse.setBname(rst.getString("jmh_Bname03"));
+                    banjiCoursesList.add(banjiCourse);
+                }
+            }
+            return banjiCoursesList;
+        }catch (SQLException se ){
+            se.printStackTrace();
+            return null;
+        }
     }
 }
