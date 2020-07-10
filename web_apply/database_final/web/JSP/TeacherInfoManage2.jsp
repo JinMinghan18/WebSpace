@@ -1,6 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -20,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referer" content="never" />
     <meta name="renderer" content="webkit">
-    <title>学生管理界面</title>
+    <title>教师管理界面</title>
     <link rel="shortcut icon" href="<%=path%>/static/image/favicon.ico" type="image/x-icon" />
     <link href="<%=path%>/static/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="<%=path%>/static/css/site.css" rel="stylesheet" />
@@ -76,9 +74,6 @@
 <%@page import="com.model.Student" %>
 <%@page import="com.model.Teacher" %>
 <%@ page import="java.util.ArrayList" %>
-
-
-
 <body>
 <div class="bt-warp bge6">
     <div id="container" class="container-fluid">
@@ -97,10 +92,9 @@
                     <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryAllTeacherServlet">老师信息管理</a></li>
 
 
-                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/dataStatisticsServlet">学生地区分管</a></li>
+                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/dataStatisticsServlet">生源地统计</a></li>
 
-
-                    <li id="memuDsite"> <a class="menu_web" href="<%=path%>/dataStatisticsServlet">修改密码</a></li>
+                    <li id="memuDsite"> <a class="menu_web" href="<%=path%>/JSP/TeacherInfoManage2.jsp">密码修改</a></li>
                 </ul>
             </div>
         </div>
@@ -109,13 +103,13 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>学生信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/queryAllTeacherServlet">首页</a>>>教师信息管理</span>
                 </div>
             </div>
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryStudentServlet">
-                        <input type="text" name="school_id" class="ser-text pull-left" placeholder="学号" />
+                    <form target="hid" style="position:fixed; left: 1200px" action="<%=path%>/queryTeacherServlet">
+                        <input type="text" name="tno" class="ser-text pull-left" placeholder="工号" />
                         <input type="submit" class="ser-sub pull-left" value="">
                     </form>
 
@@ -123,25 +117,23 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
-                    <div class="bgw" style="height:491px" >
-                        <div class="title c6 f16 plr15">学生信息</div><br>
-                        <div style="overflow:auto">
+                    <div class="bgw" style="height:491px">
+                        <div class="title c6 f16 plr15">教师信息</div><br>
                         <table class="table table-bordered table-condensed" contenteditable="false">
                             <thead>
                             <tr>
-                                <th>学号</th>
+                                <th>工号</th>
                                 <th>姓名</th>
-                                <th>班级</th>
                                 <th>性别</th>
                                 <th>年龄</th>
-                                <th>生源地</th>
-                                <th>学分</th>
+                                <th>职称</th>
+                                <th>电话</th>
                                 <th>密码</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="student" items="${requestScope.student}"
+                            <c:forEach var="teacher" items="${requestScope.teacher}"
                                        varStatus="status">
                                 <c:if test="${status.count%2==0}">
                                     <tr style="background: #eeeeff">
@@ -149,32 +141,29 @@
                                 <c:if test="${status.count%2!=0}">
                                     <tr style="background: #dedeff">
                                 </c:if>
-                                <td>${student.sno}</td>
-                                <td>${student.sname}</td>
-                                <td>${student.bno}</td>
-                                <td>${student.ssex}</td>
-                                <td>${student.sage}</td>
-                                <td>${student.shome}</td>
-                                <td>${student.spoint}</td>
-                                <td>${student.spass}</td>
+                                <td>${teacher.tno}</td>
+                                <td>${teacher.tname}</td>
+                                <td>${teacher.tsex}</td>
+                                <td>${teacher.tage}</td>
+                                <td>${teacher.ttitle}</td>
+                                <td>${teacher.ttel}</td>
+                                <td>${teacher.tpass}</td>
                                 <td>
-                                    <a href="<%=path%>/JSP/ModifyStudentInfo.jsp?sno=${student.sno}&sname=${student.sname}&bno=${student.bno}&sage=${student.sage}&sex=${student.ssex}&shome=${student.shome}&spoint=${student.spoint}&spass=${student.spass}">修改</a>
-                                    <a href="<%=path%>/deleteStudentServlet?sno=${student.sno}&sname=${student.sname}&bno=${student.bno}&sage=${student.sage}&sex=${student.ssex}&shome=${student.shome}&spoint=${student.spoint}&spass=${student.spass}">删除</a>
+                                    <a href="<%=path%>/JSP/ModifyTeacherInfo.jsp?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&tage=${teacher.tage}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">修改</a>
+                                    <a href="<%=path%>/deleteTeacherServlet?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">删除</a>
                                 </td>
                                 </tr>
                             </c:forEach>
                             <tr>
-                                <td rowspan="9"><a href="<%=path%>/JSP/AddStudentInfo2.jsp">添加</a></td>
+                                <td rowspan="9"><a href="<%=path%>/JSP/AddTeacherInfo2.jsp">添加</a></td>
                             </tr>
                             </tbody>
                         </table>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 
 </body>

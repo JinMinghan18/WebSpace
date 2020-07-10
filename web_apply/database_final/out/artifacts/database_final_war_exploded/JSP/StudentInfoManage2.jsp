@@ -72,7 +72,7 @@
         }
     </style>
 </head>
-<%@page import="com.dao.highSchoolDao" %>
+<%@page import="com.dao.SchoolDao" %>
 <%@page import="com.model.Student" %>
 <%@page import="com.model.Teacher" %>
 <%@ page import="java.util.ArrayList" %>
@@ -94,7 +94,7 @@
                     <li id="memuAsite"> <a class="menu_web" href="<%=path%>/queryAllStudentServlet">学生信息管理</a></li>
 
 
-                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/JSP/TeacherInfoManage2.jsp">老师信息管理</a></li>
+                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryAllTeacherServlet">老师信息管理</a></li>
 
 
                     <li id="memuCsite"> <a class="menu_web" href="<%=path%>/dataStatisticsServlet">学生地区分管</a></li>
@@ -125,6 +125,7 @@
                 <div class="p17">
                     <div class="bgw" style="height:491px" >
                         <div class="title c6 f16 plr15">学生信息</div><br>
+                        <div style="overflow:auto">
                         <table class="table table-bordered table-condensed" contenteditable="false">
                             <thead>
                             <tr>
@@ -157,8 +158,8 @@
                                 <td>${student.spoint}</td>
                                 <td>${student.spass}</td>
                                 <td>
-                                    <a href="<%=path%>/JSP/ModifyStudentInfo.jsp?sno=${student.sno}&sname=${student.sno}&bno=${student.bno}&ssex=${student.ssex}&shome=${student.shome}&spoint=${student.spoint}&spass=${student.spass}">修改</a>
-                                    <a href="StudentDeleteServlet??sno=${student.sno}&sname=${student.sno}&bno=${student.bno}&ssex=${student.ssex}&shome=${student.shome}&spoint=${student.spoint}&spass=${student.spass}">删除</a>
+                                    <a href="<%=path%>/JSP/ModifyStudentInfo.jsp?sno=${student.sno}&sname=${student.sname}&bno=${student.bno}&sage=${student.sage}&sex=${student.ssex}&shome=${student.shome}&spoint=${student.spoint}&spass=${student.spass}">修改</a>
+                                    <a href="<%=path%>/deleteStudentServlet?sno=${student.sno}&sname=${student.sname}&bno=${student.bno}&sage=${student.sage}&sex=${student.ssex}&shome=${student.shome}&spoint=${student.spoint}&spass=${student.spass}">删除</a>
                                 </td>
                                 </tr>
                             </c:forEach>
@@ -167,12 +168,13 @@
                             </tr>
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer bgw">版权所有 © 浙江工业大学 | 信息化办公室维护 | 网络管理 www@zjut.edu.cn</div>
+
 </div>
 
 </body>

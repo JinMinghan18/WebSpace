@@ -75,7 +75,7 @@
         }
     </style>
 </head>
-<%@page import="com.dao.highSchoolDao" %>
+<%@page import="com.dao.SchoolDao" %>
 <%@page import="com.model.Student" %>
 <%@page import="com.model.Teacher" %>
 <%@ page import="java.util.ArrayList" %>
@@ -113,10 +113,8 @@
             </div>
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/StudentQueryServlet">
-                        <input type="text" name="college" class="ser-text pull-left" placeholder="学院" />
-                        <input type="text" name="major" class="ser-text pull-left" placeholder="专业" />
-                        <input type="text" name="class1" class="ser-text pull-left" placeholder="班级" />
+                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryStudentServlet">
+                        <input type="text" name="school_id" class="ser-text pull-left" placeholder="学号" />
                         <input type="submit" class="ser-sub pull-left" value="">
                     </form>
 
@@ -141,22 +139,28 @@
                                                 <form action="<%=path%>/addStudentServlet">
                                                     <table>
                                                         <tr>
-                                                            <td>姓名：</td><td><input type="text" name="name"></td>
+                                                            <td>学号：</td><td><input type="text" name="sno"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>身份证号：</td><td><input type="text" name="id"></td>
+                                                            <td>班级：</td><td><input type="text" name="bno"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>学号：</td><td><input type="text" name="school_id"></td>
+                                                            <td>姓名：</td><td><input type="text" name="sname"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>学院：</td><td><input type="text" name="college"></td>
+                                                            <td>性别：</td><td><input type="text" name="sex"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>专业：</td><td><input type="text" name="major"></td>
+                                                            <td>年龄：</td><td><input type="number" name="sage"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>班级：</td><td><input type="text" name="class1"></td>
+                                                            <td>生源地：</td><td><input type="text" name="shome"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>学分：</td><td><input type="text" name="spoint"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>密码：</td><td><input type="text" name="spass"></td>
                                                         </tr>
                                                         <tr>
                                                             <td><input type="submit" value="提交"></td>

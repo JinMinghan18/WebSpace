@@ -93,10 +93,10 @@
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/StudentInfoManage2.jsp">学生信息管理</a></li>
+                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/queryAllStudentServlet">学生信息管理</a></li>
 
 
-                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/JSP/TeacherInfoManage2.jsp">老师信息管理</a></li>
+                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryAllTeacherServlet">老师信息管理</a></li>
 
                     <li id="memuCsite"> <a class="menu_web" href="<%=path%>/JSP/TeacherInfoManage2.jsp">密码修改</a></li>
                 </ul>
@@ -706,7 +706,7 @@
                     <ul class="clearfix text-center">
                         <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <p class="name f15 c9">教职人员</p>
-                            <div class="val"><a class="btlink" href="<%=path%>/TeacherInfoCheckServlet"><%=teaSum%></a></div>
+                            <div class="val"><a class="btlink" href="<%=path%>/queryAllTeacherServlet"><%=teaSum%></a></div>
                         </li>
                         <li class="sys-li-box col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <p class="name f15 c9">学生</p>
