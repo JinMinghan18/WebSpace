@@ -46,8 +46,8 @@ public class LoginUsersServlet extends HttpServlet {
             Student student= dao.loginStudent(school_id);
             if(password.equals(student.getSpass().trim())){
                 //进入学生界面
-                System.out.println("stu");
-                RequestDispatcher rd = request.getRequestDispatcher("/JSP/test.jsp");
+                request.setAttribute("sno",school_id);
+                RequestDispatcher rd = request.getRequestDispatcher("/JSP/Student.jsp");
                 rd.forward(request,response);
             }
         }

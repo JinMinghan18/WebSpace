@@ -99,7 +99,7 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/queryAllTeacherServlet">首页</a>>>教师信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/enterTeacherServlet?tno=<%=tno%>">首页</a>>>教师信息管理</span>
                 </div>
             </div>
 
@@ -128,7 +128,7 @@
                                 <td>${teacher.ttitle}</td>
                                 <td>${teacher.ttel}</td>
                                 <td>
-                                    <a href="<%=path%>/JSP/ModifyTeacherpass.jsp?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&tage=${teacher.tage}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">修改</a>
+                                    <a href="<%=path%>/JSP/ModifyTeacherpass.jsp?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&tage=${teacher.tage}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">修改密码</a>
                                 </td>
                             </tr>
                             </tbody>

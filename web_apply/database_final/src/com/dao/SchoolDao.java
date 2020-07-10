@@ -2,6 +2,7 @@ package com.dao;
 
 import com.model.*;
 
+import javax.management.remote.SubjectDelegationPermission;
 import javax.servlet.RequestDispatcher;
 import java.io.SequenceInputStream;
 import java.sql.*;
@@ -252,6 +253,27 @@ public class SchoolDao extends Basedao {
                 }
             }
             return teacher;
+        }catch (SQLException se ){
+            se.printStackTrace();
+            return null;
+        }
+    }
+    //查询学生单个
+    public Student QueryStudent1(String school_id){
+        String sql = "SELECT * FROM jinmh_Student03 WHERE jmh_Sno03=?";
+        Student student = new Student();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,school_id);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    student.setSno(rst.getString("jmh_Sno03"));
+                    student.setSname(rst.getString("jmh_Sname03"));
+                    student.setBno(rst.getString("jmh_Bno03"));
+                    student.setSsex(rst.getString("jmh_Ssex03"));
+                }
+            }
+            return student;
         }catch (SQLException se ){
             se.printStackTrace();
             return null;

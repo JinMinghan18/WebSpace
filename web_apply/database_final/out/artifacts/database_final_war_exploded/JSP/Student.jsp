@@ -10,8 +10,7 @@
 <%
     SchoolDao dao = new SchoolDao();
     String tno = (String) request.getAttribute("tno");
-    Teacher teacher = dao.QueryTeacher1(tno);
-    request.setAttribute("teacher",teacher);
+
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -20,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referer" content="never" />
     <meta name="renderer" content="webkit">
-    <title>教师管理界面</title>
+    <title>学生管理界面</title>
     <link rel="shortcut icon" href="<%=path%>/static/image/favicon.ico" type="image/x-icon" />
     <link href="<%=path%>/static/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="<%=path%>/static/css/site.css" rel="stylesheet" />
@@ -82,7 +81,7 @@
     <div id="container" class="container-fluid">
         <div class="sidebar-scroll">
             <div class="sidebar-auto">
-                <h3 class="mypcip"><span class="f14 cw">教师界面</span></h3>
+                <h3 class="mypcip"><span class="f14 cw">学生界面</span></h3>
                 <ul class="menu">
 
                     <li id="memuA"> <a class="menu_home" href="<%=path%>/enterTeacherServlet?tno=<%=tno%>">首页</a></li>
@@ -99,14 +98,14 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/enterTeacherServlet?tno=<%=tno%>">首页</a>>>教师信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/queryAllTeacherServlet">首页</a>>>教师信息管理</span>
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
                     <div class="bgw" style="height:491px">
-                        <div class="title c6 f16 plr15">教师信息</div><br>
+                        <div class="title c6 f16 plr15">学生信息</div><br>
                         <table class="table table-bordered table-condensed" contenteditable="false">
                             <thead>
                             <tr>

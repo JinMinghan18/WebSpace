@@ -27,6 +27,9 @@
             <div class="line">
                 <input class="inputtxt" name="cno" id="cno" placeholder="课程编号" type="text">
             </div>
+            <div class="line" style="display: none">
+                <input class="inputtxt" name="tno" id="tno" value="<%=request.getParameter("tno")%>" placeholder="课程编号" type="text">
+            </div>
             <div class="line">
                 <input class="inputtxt" name="grade" id="grade" placeholder="成绩" type="text">
             </div>
