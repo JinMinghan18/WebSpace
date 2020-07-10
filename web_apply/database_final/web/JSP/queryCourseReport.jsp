@@ -8,6 +8,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%String path = request.getContextPath();%>
+<%
+    String tno = request.getParameter("tno");
+    request.setAttribute("tno",tno);
+%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -78,29 +82,14 @@
     <div id="container" class="container-fluid">
         <div class="sidebar-scroll">
             <div class="sidebar-auto">
-                <h3 class="mypcip"><span class="f14 cw">系统管理员</span></h3>
+                <h3 class="mypcip"><span class="f14 cw">教师界面</span></h3>
                 <ul class="menu">
 
-                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a></li>
+                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/Teacher.jsp">首页</a></li>
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/queryAllStudentServlet">学生信息管理</a></li>
-
-
-                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryAllTeacherServlet">老师信息管理</a></li>
-
-
-                    <li id="memuEsite"> <a class="menu_web" href="<%=path%>/queryAllCourseServlet">课程管理</a></li>
-
-
-                    <li id="memuFsite"> <a class="menu_web" href="<%=path%>/JSP/BanjiCourseInfoCheck.jsp">班级课表查询</a></li>
-
-
-                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/StudentShomeCountServlet">学生地区</a></li>
-
-
-                    <li id="memuDsite"> <a class="menu_web" href="<%=path%>/JSP/ModifyAdminpass.jsp">修改密码</a></li>
+                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp">课程成绩管理</a></li>
                 </ul>
             </div>
         </div>
@@ -109,13 +98,13 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>班级课程信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>课程成绩</span>
                 </div>
             </div>
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryBanjiCourseServlet">
-                        <input type="text" name="school_id" class="ser-text pull-left" placeholder="班级编号" />
+                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryCourseReportServlet">
+                        <input type="text" name="cno" class="ser-text pull-left" placeholder="课程名" />
                         <input type="submit" class="ser-sub pull-left" value="">
                     </form>
 
@@ -124,19 +113,20 @@
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
                     <div class="bgw" style="height:491px" >
-                        <div class="title c6 f16 plr15">班级课程信息</div><br>
+                        <div class="title c6 f16 plr15">课程成绩</div><br>
                         <div style="overflow:auto">
                             <table class="table table-bordered table-condensed" contenteditable="false">
                                 <thead>
                                 <tr>
-                                    <th>班级编号</th>
-                                    <th>班级名称</th>
+                                    <th>学号</th>
+                                    <th>姓名</th>
                                     <th>课程编号</th>
                                     <th>课程名称</th>
+                                    <th>成绩</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach var="i" items="${requestScope.banjiCourse}"
+                                <c:forEach var="i" items="${requestScope.courseReport}"
                                            varStatus="status">
                                     <c:if test="${status.count%2==0}">
                                         <tr style="background: #eeeeff">
@@ -144,12 +134,18 @@
                                     <c:if test="${status.count%2!=0}">
                                         <tr style="background: #dedeff">
                                     </c:if>
-                                    <td>${i.bno}</td>
-                                    <td>${i.bname}</td>
+                                    <td>${i.sno}</td>
+                                    <td>${i.sname}</td>
                                     <td>${i.cno}</td>
-                                    <td>${i.cname}</td>
+                                    <td>${i.sname}</td>
+                                    <td>${i.grade}</td>
                                     </tr>
                                 </c:forEach>
+                                <tr>
+                                    <td>
+                                        <a href="addStudentCourseReport.jsp?tno=<%=tno%>">添加成绩</a>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

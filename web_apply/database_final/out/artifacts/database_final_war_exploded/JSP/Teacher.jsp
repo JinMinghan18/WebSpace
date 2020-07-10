@@ -2,20 +2,19 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2020/7/5
-  Time: 2:34
+  Date: 2020/7/10
+  Time: 19:12
   To change this template use File | Settings | File Templates.
 --%>
 <%String path = request.getContextPath();%>
 <%
-    String school_id = request.getParameter("school_id");
-    String pass = request.getParameter("pass");
+    SchoolDao dao = new SchoolDao();
+    String tno = (String) request.getAttribute("tno");
+    Teacher teacher = dao.QueryTeacher1(tno);
+    request.setAttribute("teacher",teacher);
 %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>教师信息管理</title>
-</head>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,30 +77,20 @@
 <%@page import="com.model.Teacher" %>
 <%@ page import="java.util.ArrayList" %>
 <body>
+
 <div class="bt-warp bge6">
     <div id="container" class="container-fluid">
         <div class="sidebar-scroll">
             <div class="sidebar-auto">
-                <h3 class="mypcip"><span class="f14 cw">系统管理员</span></h3>
+                <h3 class="mypcip"><span class="f14 cw">教师界面</span></h3>
                 <ul class="menu">
 
-                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a></li>
+                    <li id="memuA"> <a class="menu_home" href="<%=path%>/JSP/Teacher.jsp">首页</a></li>
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/queryAllStudentServlet">学生信息管理</a></li>
+                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp?tno=<%=tno%>">课程成绩查询</a></li>
 
-
-                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryAllTeacherServlet">老师信息管理</a></li>
-
-                    <li id="memuEsite"> <a class="menu_web" href="<%=path%>/queryAllCourseServlet">课程管理</a></li>
-
-                    <li id="memuFsite"> <a class="menu_web" href="<%=path%>/JSP/BanjiCourseInfoCheck.jsp">班级课表查询</a></li>
-
-
-                    <li id="memuCsite"> <a class="menu_web" href="<%=path%>/StudentShomeCountServlet">学生地区</a></li>
-
-                    <li id="memuDsite"> <a class="menu_web" href="<%=path%>/JSP/ModifyAdminpass.jsp">密码修改</a></li>
                 </ul>
             </div>
         </div>
@@ -113,15 +102,7 @@
                     <a class="plr10 c4" href="<%=path%>/queryAllTeacherServlet">首页</a>>>教师信息管理</span>
                 </div>
             </div>
-            <div class="pos-box bgw mtb15">
-                <div class="position f14 c9 pull-left">
-                    <form target="hid" style="position:fixed; left: 1200px" action="<%=path%>/queryTeacherServlet">
-                        <input type="text" name="tno" class="ser-text pull-left" placeholder="工号" />
-                        <input type="submit" class="ser-sub pull-left" value="">
-                    </form>
 
-                </div>
-            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
                     <div class="bgw" style="height:491px">
@@ -135,34 +116,20 @@
                                 <th>年龄</th>
                                 <th>职称</th>
                                 <th>电话</th>
-                                <th>密码</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="teacher" items="${requestScope.teacher}"
-                                       varStatus="status">
-                                <c:if test="${status.count%2==0}">
-                                    <tr style="background: #eeeeff">
-                                </c:if>
-                                <c:if test="${status.count%2!=0}">
-                                    <tr style="background: #dedeff">
-                                </c:if>
+                            <tr>
                                 <td>${teacher.tno}</td>
                                 <td>${teacher.tname}</td>
                                 <td>${teacher.tsex}</td>
                                 <td>${teacher.tage}</td>
                                 <td>${teacher.ttitle}</td>
                                 <td>${teacher.ttel}</td>
-                                <td>${teacher.tpass}</td>
                                 <td>
-                                    <a href="<%=path%>/JSP/ModifyTeacherInfo.jsp?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&tage=${teacher.tage}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">修改</a>
-                                    <a href="<%=path%>/deleteTeacherServlet?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">删除</a>
+                                    <a href="<%=path%>/JSP/ModifyTeacherpass.jsp?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&tage=${teacher.tage}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">修改</a>
                                 </td>
-                                </tr>
-                            </c:forEach>
-                            <tr>
-                                <td rowspan="9"><a href="<%=path%>/JSP/AddTeacherInfo2.jsp">添加</a></td>
                             </tr>
                             </tbody>
                         </table>

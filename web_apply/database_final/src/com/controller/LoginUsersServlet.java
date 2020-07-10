@@ -36,8 +36,8 @@ public class LoginUsersServlet extends HttpServlet {
             Teacher teacher = dao.loginTeacher(school_id);
             if(password.equals(teacher.getTpass().trim())){
                 //进入教师界面
-                System.out.println("tea");
-                RequestDispatcher rd = request.getRequestDispatcher("/JSP/test.jsp");
+                request.setAttribute("tno",school_id);
+                RequestDispatcher rd = request.getRequestDispatcher("/JSP/Teacher.jsp");
                 rd.forward(request,response);
             }
         }

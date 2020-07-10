@@ -232,6 +232,30 @@ public class SchoolDao extends Basedao {
         }
     }
 
+    //查询教师单个
+    public Teacher QueryTeacher1(String school_id){
+        String sql = "SELECT * FROM jinmh_Teacher03 WHERE jmh_Tno03=?";
+        Teacher teacher = new Teacher();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,school_id);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    teacher.setTno(rst.getString("jmh_Tno03"));
+                    teacher.setTname(rst.getString("jmh_Tname03"));
+                    teacher.setTsex(rst.getString("jmh_Tsex03"));
+                    teacher.setTage(rst.getInt("jmh_Tage03"));
+                    teacher.setTtitle(rst.getString("jmh_Ttitle03"));
+                    teacher.setTtel(rst.getString("jmh_Ttel03"));
+                    teacher.setTpass(rst.getString("jmh_Tpass03"));
+                }
+            }
+            return teacher;
+        }catch (SQLException se ){
+            se.printStackTrace();
+            return null;
+        }
+    }
 //按课程编号查询课程信息
     public ArrayList<Course> QueryCourse(String school_id){
         String sql = "SELECT * FROM jinmh_Course03 WHERE jmh_Cno03=?";
@@ -484,4 +508,40 @@ public class SchoolDao extends Basedao {
             return null;
         }
     }
+
+//教师查询课程成绩排序
+    public ArrayList<CourseReport> queryCourseReport(String cno){
+        String sql="SELECT [学号]" +
+                "      ,[姓名]" +
+                "      ,[课程编号]" +
+                "      ,[课程名称]" +
+                "      ,[成绩]" +
+                "  FROM [jinminghanMIS03].[dbo].[jinmh_Record03]" +
+                "  WHERE [课程名称]=?" +
+                "  ORDER BY [成绩] DESC";
+
+        ArrayList<CourseReport> courseReportList = new ArrayList<CourseReport>();
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,cno);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    CourseReport cr = new CourseReport();
+                    cr.setCname(rst.getString("课程名称"));
+                    cr.setSno(rst.getString("学号"));
+                    cr.setSname(rst.getString("姓名"));
+                    cr.setGrade(rst.getInt("成绩"));
+                    cr.setCno(rst.getString("课程编号"));
+                    courseReportList.add(cr);
+                }
+            }
+            return courseReportList;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return  null;
+        }
+    }
+
+//查找开课学期
+    public String findCterm(String cno)
 }

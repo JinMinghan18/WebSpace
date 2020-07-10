@@ -14,9 +14,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>学生信息管理</title>
+    <title>教师信息管理</title>
 </head>
-<body>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -174,6 +173,5 @@
     </div>
 </div>
 
-</body>
 </body>
 </html>

@@ -109,7 +109,7 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>学生信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>班级课程信息管理</span>
                 </div>
             </div>
             <div class="pos-box bgw mtb15">
@@ -124,7 +124,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
                     <div class="bgw" style="height:491px" >
-                        <div class="title c6 f16 plr15">学生信息</div><br>
+                        <div class="title c6 f16 plr15">班级课程信息</div><br>
                         <div style="overflow:auto">
                             <table class="table table-bordered table-condensed" contenteditable="false">
                                 <thead>

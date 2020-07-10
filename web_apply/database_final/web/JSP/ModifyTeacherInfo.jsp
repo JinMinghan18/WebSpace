@@ -43,7 +43,7 @@
                     <input class="inputtxt" value="<%=request.getParameter("ttel")%>" name="ttel" id="ttel" placeholder="电话" type="text">
                 </div>
                 <div class="line">
-                    <input class="inputtxt" value="" name="tpass" id="tpass" placeholder="密码" type="text">
+                    <input class="inputtxt" value="<%=request.getParameter("tpass")%>" name="tpass" id="tpass" placeholder="密码" type="text">
                 </div>
                 <div class="login_btn">
                     <input id="" value="教师信息修改" type="submit">
