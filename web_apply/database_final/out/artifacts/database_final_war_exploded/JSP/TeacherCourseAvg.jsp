@@ -105,6 +105,16 @@
                     <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>授课详情</span>
                 </div>
             </div>
+            <div class="pos-box bgw mtb15">
+                <div class="position f14 c9 pull-left">
+                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryCourseAVG">
+                        <input type="text" name="cno" class="ser-text pull-left" placeholder="课程编号" />
+                        <input type="text" name="tno" value="<%=tno%>" class="ser-text pull-left" style="display: none" />
+                        <input type="submit" class="ser-sub pull-left" value="">
+                    </form>
+
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
                     <div class="bgw" style="height:491px" >
@@ -118,7 +128,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach var="i" items="${requestScope.teacherCourse}"
+                                <c:forEach var="i" items="${requestScope.avg}"
                                            varStatus="status">
                                     <c:if test="${status.count%2==0}">
                                         <tr style="background: #eeeeff">
@@ -127,9 +137,7 @@
                                         <tr style="background: #dedeff">
                                     </c:if>
                                     <td>${i.cno}</td>
-                                    <td>${i.cname}</td>
-                                    <td>${i.tname}</td>
-                                    <td>${i.tno}</td>
+                                    <td>${i.avg}</td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>

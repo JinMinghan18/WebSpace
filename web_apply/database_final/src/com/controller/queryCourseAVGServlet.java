@@ -25,7 +25,7 @@ public class queryCourseAVGServlet extends HttpServlet {
         ArrayList<AVG> avg = dao.queryCourseAVG(cno);
         request.setAttribute("avg",avg);
         request.setAttribute("tno",tno);
-        RequestDispatcher rd = request.getRequestDispatcher("/JSP/queryCourseReport.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/JSP/TeacherCourseAvg.jsp");
         rd.forward(request,response);
     }
 
