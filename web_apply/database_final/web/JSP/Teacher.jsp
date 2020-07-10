@@ -128,7 +128,7 @@
                                 <td>${teacher.ttitle}</td>
                                 <td>${teacher.ttel}</td>
                                 <td>
-                                    <a href="<%=path%>/JSP/ModifyTeacherpass.jsp?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&tage=${teacher.tage}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">修改</a>
+                                    <a href="<%=path%>/JSP/ModifyTeacherpass.jsp?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&tage=${teacher.tage}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">修改密码</a>
                                 </td>
                             </tr>
                             </tbody>

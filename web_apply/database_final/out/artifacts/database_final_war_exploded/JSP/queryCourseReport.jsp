@@ -103,8 +103,9 @@
             </div>
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryCourseReportServlet?tno=<%=tno%>">
+                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryCourseReportServlet">
                         <input type="text" name="cno" class="ser-text pull-left" placeholder="课程名" />
+                        <input type="text" name="tno" value="<%=tno%>" class="ser-text pull-left" style="display: none" />
                         <input type="submit" class="ser-sub pull-left" value="">
                     </form>
 
