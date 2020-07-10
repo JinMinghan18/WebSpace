@@ -90,7 +90,7 @@
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp?sno=<%=sno%>">课程成绩查询</a></li>
+                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/StudentCoursebyTerm.jsp?sno=<%=sno%>">课程成绩查询</a></li>
 
                 </ul>
             </div>
@@ -100,7 +100,7 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/queryAllTeacherServlet">首页</a>>>教师信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/queryAllTeacherServlet">首页</a>>>学生信息管理</span>
                 </div>
             </div>
 

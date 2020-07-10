@@ -3,18 +3,15 @@
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/7/10
-  Time: 19:12
+  Time: 17:50
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%String path = request.getContextPath();%>
 <%
-    SchoolDao dao = new SchoolDao();
-    String sno = (String) request.getAttribute("sno");
-    Student student = dao.QueryStudent1(sno);
-    request.setAttribute("student",student);
-
+    String sno = request.getParameter("sno");
+    request.setAttribute("sno",sno);
 %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -77,8 +74,10 @@
 <%@page import="com.model.Student" %>
 <%@page import="com.model.Teacher" %>
 <%@ page import="java.util.ArrayList" %>
-<body>
 
+
+
+<body>
 <div class="bt-warp bge6">
     <div id="container" class="container-fluid">
         <div class="sidebar-scroll">
@@ -91,7 +90,6 @@
 
 
                     <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/StudentCoursebyTerm.jsp?sno=<%=sno%>">课程成绩查询</a></li>
-
                 </ul>
             </div>
         </div>
@@ -100,42 +98,61 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/queryAllTeacherServlet">首页</a>>>学生信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/JSP/Student.jsp">首页</a>>>课程成绩</span>
                 </div>
             </div>
+            <div class="pos-box bgw mtb15">
+                <div class="position f14 c9 pull-left">
+                    <form target="hid" style="position:fixed; left: 700px" action="<%=path%>/queryStudentCourseServlet">
+                        <input type="text" name="cterm" class="ser-text pull-left" placeholder="开课学期" />
+                        <input type="text" name="sno" value="<%=sno%>" class="ser-text pull-left" style="display: none" />
+                        <input type="submit" class="ser-sub pull-left" value="">
+                    </form>
 
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
-                    <div class="bgw" style="height:491px">
-                        <div class="title c6 f16 plr15">学生信息</div><br>
-                        <table class="table table-bordered table-condensed" contenteditable="false">
-                            <thead>
-                            <tr>
-                                <th>学号</th>
-                                <th>姓名</th>
-                                <th>班级</th>
-                                <th>性别</th>
-                                <th>操作</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>${student.sno}</td>
-                                <td>${student.sname}</td>
-                                <td>${student.bno}</td>
-                                <td>${student.ssex}</td>
-                                <td>
-                                    <a href="<%=path%>/JSP/ModifyStudentpass.jsp?sno=${student.sno}&sname=${student.sname}&bno=${student.bno}&ssex=${student.ssex}">修改密码</a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div class="bgw" style="height:491px" >
+                        <div class="title c6 f16 plr15">课程信息</div><br>
+                        <div style="overflow:auto">
+                            <table class="table table-bordered table-condensed" contenteditable="false">
+                                <thead>
+                                <tr>
+                                    <th>学期</th>
+                                    <th>姓名</th>
+                                    <th>任课教师</th>
+                                    <th>课程名称</th>
+                                    <th>成绩</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="i" items="${requestScope.studentCourse}"
+                                           varStatus="status">
+                                    <c:if test="${status.count%2==0}">
+                                        <tr style="background: #eeeeff">
+                                    </c:if>
+                                    <c:if test="${status.count%2!=0}">
+                                        <tr style="background: #dedeff">
+                                    </c:if>
+                                    <td>${i.cterm}</td>
+                                    <td>${i.sname}</td>
+                                    <td>${i.tname}</td>
+                                    <td>${i.cname}</td>
+                                    <td>${i.grade}</td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 </body>
+
 </html>

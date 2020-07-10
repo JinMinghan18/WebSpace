@@ -456,7 +456,20 @@ public class SchoolDao extends Basedao {
         }
         return true;
     }
-
+//修改学生密码
+    public boolean modStudentPass(String pass ,String sno){
+        String sql = "UPDATE jinmh_Student03 SET jmh_Spass03=? WHERE jmh_Sno03=?";
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,pass);
+            pstmt.setString(2,sno);
+            pstmt.executeUpdate();
+        }catch (SQLException se){
+            se.printStackTrace();
+            return false;
+        }
+        return true;
+}
 //修改课程信息
     public boolean modCourse(String cno, String cname, String cterm, int ctime, String cway, String ccredit,String cnoold){
         String sql = "UPDATE jinmh_Course03 SET jmh_Cno03=?,jmh_Cname03=?,jmh_Cterm03=?,jmh_Ctime03=?,jmh_Cway03=?,jmh_Ccredit03=? WHERE jmh_Cno03=?";
@@ -673,6 +686,39 @@ public class SchoolDao extends Basedao {
             }
             return avglist;
         } catch (SQLException se) {
+            se.printStackTrace();
+            return null;
+        }
+    }
+//学生按学期查询课程
+    public ArrayList<StudentCourse> queryStudentCourse(String sno,String cterm){
+        String sql="SELECT [学号]" +
+                "      ,[姓名]" +
+                "      ,[开课学期]" +
+                "      ,[课程名称]" +
+                "      ,[成绩]" +
+                "      ,[任课教师]" +
+                "  FROM [jinminghanMIS03].[dbo].[jinmh_Statistic03]" +
+                "  WHERE [开课学期]=? AND [学号]=?";
+        ArrayList<StudentCourse>studentCourseArrayList = new ArrayList<StudentCourse>();
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1,cterm);
+            pstmt.setString(2,sno);
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    StudentCourse studentCourse = new StudentCourse();
+                    studentCourse.setCname(rst.getString("课程名称"));
+                    studentCourse.setSno(rst.getString("学号"));
+                    studentCourse.setSname(rst.getString("姓名"));
+                    studentCourse.setTname(rst.getString("任课教师"));
+                    studentCourse.setCterm(rst.getString("开课学期"));
+                    studentCourse.setGrade(rst.getInt("成绩"));
+                    studentCourseArrayList.add(studentCourse);
+                }
+            }
+            return studentCourseArrayList;
+        }catch (SQLException se){
             se.printStackTrace();
             return null;
         }
