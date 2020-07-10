@@ -91,6 +91,14 @@
 
                     <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp?tno=<%=tno%>">课程成绩查询</a></li>
 
+
+                    <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryTeacherCourseServlet?tno=<%=tno%>">任课查询</a></li>
+
+
+
+                    <li id="memucsite"> <a class="menu_web" href="<%=path%>/queryCourseAVG?tno=<%=tno%>">课程平均分查询</a></li>
+
+
                 </ul>
             </div>
         </div>

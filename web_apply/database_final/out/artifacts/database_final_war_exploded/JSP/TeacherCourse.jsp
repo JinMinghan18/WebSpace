@@ -3,24 +3,22 @@
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/7/10
-  Time: 19:12
+  Time: 17:50
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%String path = request.getContextPath();%>
 <%
-    SchoolDao dao = new SchoolDao();
-    String tno = (String) request.getAttribute("tno");
-    Teacher teacher = dao.QueryTeacher1(tno);
-    request.setAttribute("teacher",teacher);
+    String tno = request.getParameter("tno");
+    request.setAttribute("tno",tno);
 %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referer" content="never" />
     <meta name="renderer" content="webkit">
-    <title>教师管理界面</title>
+    <title>学生管理界面</title>
     <link rel="shortcut icon" href="<%=path%>/static/image/favicon.ico" type="image/x-icon" />
     <link href="<%=path%>/static/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="<%=path%>/static/css/site.css" rel="stylesheet" />
@@ -76,8 +74,10 @@
 <%@page import="com.model.Student" %>
 <%@page import="com.model.Teacher" %>
 <%@ page import="java.util.ArrayList" %>
-<body>
 
+
+
+<body>
 <div class="bt-warp bge6">
     <div id="container" class="container-fluid">
         <div class="sidebar-scroll">
@@ -89,16 +89,12 @@
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp?tno=<%=tno%>">课程成绩查询</a></li>
-
+                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp?tno=<%=tno%>">课程成绩管理</a></li>
 
                     <li id="memuBsite"> <a class="menu_web" href="<%=path%>/queryTeacherCourseServlet?tno=<%=tno%>">任课查询</a></li>
 
 
-
                     <li id="memucsite"> <a class="menu_web" href="<%=path%>/queryCourseAVG?tno=<%=tno%>">课程平均分查询</a></li>
-
-
                 </ul>
             </div>
         </div>
@@ -107,46 +103,54 @@
         <div class="container-fluid" style="padding-bottom: 66px;">
             <div class="pos-box bgw mtb15">
                 <div class="position f14 c9 pull-left">
-                    <a class="plr10 c4" href="<%=path%>/enterTeacherServlet?tno=<%=tno%>">首页</a>>>教师信息管理</span>
+                    <a class="plr10 c4" href="<%=path%>/JSP/allAdministrators2.jsp">首页</a>>>授课详情</span>
                 </div>
             </div>
-
             <div class="col-xs-12 col-sm-12 col-md-12 pull-left pd0">
                 <div class="p17">
-                    <div class="bgw" style="height:491px">
-                        <div class="title c6 f16 plr15">教师信息</div><br>
-                        <table class="table table-bordered table-condensed" contenteditable="false">
-                            <thead>
-                            <tr>
-                                <th>工号</th>
-                                <th>姓名</th>
-                                <th>性别</th>
-                                <th>年龄</th>
-                                <th>职称</th>
-                                <th>电话</th>
-                                <th>操作</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>${teacher.tno}</td>
-                                <td>${teacher.tname}</td>
-                                <td>${teacher.tsex}</td>
-                                <td>${teacher.tage}</td>
-                                <td>${teacher.ttitle}</td>
-                                <td>${teacher.ttel}</td>
-                                <td>
-                                    <a href="<%=path%>/JSP/ModifyTeacherpass.jsp?tno=${teacher.tno}&tname=${teacher.tname}&tsex=${teacher.tsex}&tage=${teacher.tage}&ttitle=${teacher.ttitle}&ttel=${teacher.ttel}&tpass=${teacher.tpass}">修改密码</a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div class="bgw" style="height:491px" >
+                        <div class="title c6 f16 plr15">任课详情</div><br>
+                        <div style="overflow:auto">
+                            <table class="table table-bordered table-condensed" contenteditable="false">
+                                <thead>
+                                <tr>
+                                    <th>课程编号</th>
+                                    <th>课程名称</th>
+                                    <th>任课教师</th>
+                                    <th>教师编号</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="i" items="${requestScope.teacherCourse}"
+                                           varStatus="status">
+                                    <c:if test="${status.count%2==0}">
+                                        <tr style="background: #eeeeff">
+                                    </c:if>
+                                    <c:if test="${status.count%2!=0}">
+                                        <tr style="background: #dedeff">
+                                    </c:if>
+                                    <td>${i.cno}</td>
+                                    <td>${i.cname}</td>
+                                    <td>${i.tname}</td>
+                                    <td>${i.tno}</td>
+                                    </tr>
+                                </c:forEach>
+                                <tr>
+                                    <td>
+                                        <a href="<%=path%>/JSP/addStudentCourseReport.jsp?tno=<%=tno%>">添加成绩</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 </body>
+
 </html>

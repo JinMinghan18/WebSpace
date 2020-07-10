@@ -86,11 +86,11 @@
                 <h3 class="mypcip"><span class="f14 cw">学生界面</span></h3>
                 <ul class="menu">
 
-                    <li id="memuA"> <a class="menu_home" href="<%=path%>/enterTeacherServlet?tno=<%=tno%>">首页</a></li>
+                    <li id="memuA"> <a class="menu_home" href="<%=path%>/enterStudentServlet?sno=<%=sno%>">首页</a></li>
 
 
 
-                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp?tno=<%=tno%>">课程成绩查询</a></li>
+                    <li id="memuAsite"> <a class="menu_web" href="<%=path%>/JSP/queryCourseReport.jsp?sno=<%=sno%>">课程成绩查询</a></li>
 
                 </ul>
             </div>
@@ -125,7 +125,7 @@
                                 <td>${student.bno}</td>
                                 <td>${student.ssex}</td>
                                 <td>
-                                    <a href="<%=path%>/JSP/ModifyTeacherpass.jsp?sno=${student.sno}&sname=${student.sname}&bno=${student.bno}&ssex=${student.ssex}">修改密码</a>
+                                    <a href="<%=path%>/JSP/ModifyStudentpass.jsp?sno=${student.sno}&sname=${student.sname}&bno=${student.bno}&ssex=${student.ssex}">修改密码</a>
                                 </td>
                             </tr>
                             </tbody>

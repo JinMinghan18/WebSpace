@@ -2,9 +2,6 @@ package com.dao;
 
 import com.model.*;
 
-import javax.management.remote.SubjectDelegationPermission;
-import javax.servlet.RequestDispatcher;
-import java.io.SequenceInputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -585,6 +582,7 @@ public class SchoolDao extends Basedao {
             return null;
         }
     }
+//查找课程名称
     public String findCname(String cno){
         String sql = "SELECT jmh_Cname03 FROM jinmh_Course03 WHERE jmh_Cno03=?";
         String cname = "";
@@ -623,6 +621,60 @@ public class SchoolDao extends Basedao {
         } catch (SQLException se) {
             se.printStackTrace();
             return false;
+        }
+    }
+    //教师课表查询
+    public ArrayList<TeacherCourse> queryTeacherCourse(String tno){
+        String sql = "SELECT DISTINCT [课程编号]" +
+                "      ,[课程名称]" +
+                "      ,[教师编号]" +
+                "      ,[任课教师]" +
+                "  FROM [jinminghanMIS03].[dbo].[jinmh_Statistic03]" +
+                "  WHERE [教师编号]=?";
+        try(Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1,tno);
+            ArrayList<TeacherCourse> teacherCourseList = new ArrayList<TeacherCourse>();
+            try(ResultSet rst = pstmt.executeQuery()){
+                while (rst.next()){
+                    TeacherCourse ts = new TeacherCourse();
+                    ts.setCname(rst.getString("课程名称"));
+                    ts.setTname(rst.getString("任课教师"));
+                    ts.setCno(rst.getString("课程编号"));
+                    ts.setTno(rst.getString("教师编号"));
+                    teacherCourseList.add(ts);
+                }
+            }
+            return teacherCourseList;
+        }catch (SQLException se){
+            se.printStackTrace();
+            return  null;
+        }
+
+    }
+    //查AVG成绩
+    public ArrayList<AVG> queryCourseAVG(String cno) {
+        String sql = "SELECT [课程编号]" +
+                "      ,[平均成绩]" +
+                "  FROM [jinminghanMIS03].[dbo].[jinmh_AVG03]" +
+                "  WHERE [课程编号]=?";
+        ArrayList<AVG> avglist = new ArrayList<AVG>();
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, cno);
+            try (ResultSet rst = pstmt.executeQuery()) {
+                while (rst.next()) {
+                    AVG avg = new AVG();
+                    avg.setCno(rst.getString("课程编号"));
+                    avg.setAvg(rst.getInt("平均成绩"));
+                    avglist.add(avg);
+                }
+            }
+            return avglist;
+        } catch (SQLException se) {
+            se.printStackTrace();
+            return null;
         }
     }
 }
