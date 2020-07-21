@@ -135,11 +135,6 @@
                                     <td>${i.tno}</td>
                                     </tr>
                                 </c:forEach>
-                                <tr>
-                                    <td>
-                                        <a href="<%=path%>/JSP/addStudentCourseReport.jsp?tno=<%=tno%>">添加成绩</a>
-                                    </td>
-                                </tr>
                                 </tbody>
                             </table>
                         </div>
