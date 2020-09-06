@@ -5,8 +5,23 @@
     <title>JavaScript能做什么</title>
 </head>
 <body>
-    <p id="js_demo2">JacaScript 能改变HTML内容</p>
+
+    <p id="js_demo2" onclick="document.getElementById('js_demo2').innerText='u777'">JavaScript 能改变HTML内容</p>
     <button type="button" onclick='document.getElementById("js_demo2").innerHTML = "Hello JavaScript!"'>click me!</button>
     <button type="button" onclick="document.getElementById('js_demo2').innerHTML = 'hello JavaScript!'">click me!!</button>
+    <script>document.write(5+6)</script>
+    <button type="button" onclick="document.write(5+6)">write try</button>
+    <button type="button" onclick="myFunction()">function try</button>
+    <div id="demo"></div>
+    <div id="myDIV"></div>
+    <script>
+        console.log(5+6)
+        function myFunction() {
+            document.getElementById('demo').innerHTML = "Hello Kitty.";
+            document.getElementById('myDIV').innerHTML = "How are you?";
+        }
+    </script>
+
+
 </body>
 </html>
