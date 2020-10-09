@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维表</title>
+    <script src="../JS/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 1200px;height: 800px"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+
+        var option = {
+            dataset:{
+                source:[
+                    ['score','amount','product'],
+                    [89.3,58212,'Matca Latte'],
+                    [57.1,78254,'Milk Tea'],
+                    [74.4,41032,'Cheese Cocoa'],
+                    [50.1,12755,'Cheese Brownie'],
+                    [89.7,20145,'Matca Cocoa'],
+                    [68.1,79146,'Tea'],
+                    [19.6,91852,'Orange Juice'],
+                    [10.6,101852,'Lemon Juice'],
+                    [32.7,20112,'Walnut Brownie']
+                ]
+            },
+            grid:{containLabel: true},
+            xAxis:{},
+            yAxis:{type:'category'},
+            series:[
+                {
+
+                    type:'bar',
+                    encode:{
+                        x:'amount',
+                        y:'product'
+                    },
+                    areaStyle:{
+                        normal:{}
+                    }
+                }
+            ]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

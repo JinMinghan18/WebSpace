@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单旭日图</title>
+    <script src="../JS/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 800px;height: 800px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+
+        var option = {
+            series:{
+                type:'sunburst',
+                data:[{
+                    name:'A',
+                    value:10,
+                    children:[{
+                        value:3,
+                        name:'Aa'
+                    },{
+                        value: 5,
+                        name:'Ab',
+                    }]
+                },{
+                    name:'B',
+                    children: [{
+                        name:'Ba',
+                        value: 4
+                    },{
+                        name:'Bb',
+                        value: 2
+                    }]
+                },{
+                    name:'C',
+                    value: 3
+                }],
+                itemStyle:{
+                    color:'#aaa'
+                },
+                levels:[{
+
+                },{
+                    itemStyle:{
+                        color:'blue'
+                    }
+                }]
+            }
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

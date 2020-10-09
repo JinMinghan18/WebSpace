@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25f6f552-e9a0-4e88-8b71-df608bc9bcd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ECharts_demo1_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ECharts_demo1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/EChart_demo1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echart_pie_get_json.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_ajax_data.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_dataset-encode0.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_dataset1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_dataset2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_dataset3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_dataset4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_mouseclick.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_pie-meida.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_pie_highlight.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_scatter-dataZoom-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_scatter-tutorial-dataZoom-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/echarts_sunburst_simple.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/HTML/se_income_calculate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/JS/draggable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/JS/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/JS/jquery-3.5.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/JS/timelineGDP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/file/echarts_test_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/file/wonderland.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../web_front_end/js_demo1/js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../web_demo/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1hJznE8nwCZTSQXIoh67WGnR9Tz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/JS" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyStudySpace\WebSpace\web_apply\ECharts_demo1\web\JS" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.311" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.311" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="ECharts_demo1:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ECharts_demo1_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ECharts_demo1:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25f6f552-e9a0-4e88-8b71-df608bc9bcd3" name="Default Changelist" comment="" />
+      <created>1599744147134</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599744147134</updated>
+      <workItem from="1599744151620" duration="398000" />
+      <workItem from="1599751783533" duration="12185000" />
+      <workItem from="1600092826768" duration="10994000" />
+      <workItem from="1600669020758" duration="14034000" />
+      <workItem from="1600827267422" duration="36380000" />
+      <workItem from="1601103624584" duration="35671000" />
+      <workItem from="1601453868078" duration="4440000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="563" y="218" key="#Web_Browsers" timestamp="1601181140822">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="563" y="218" key="#Web_Browsers/0.0.1536.864@0.0.1536.864" timestamp="1601181140822" />
+    <state x="249" y="6" key="SettingsEditor" timestamp="1601187222712">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="249" y="6" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1601187222712" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1601361622991">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864/-2560.-367.2560.1440@0.0.1536.864" timestamp="1601105115447" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1601361622991" />
+  </component>
+</project>

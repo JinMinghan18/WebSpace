@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>软件行业收入统计</title>
+    <script src="../JS/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 1600px;height: 1000px;left: 300px"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+
+        var option={
+            title: {
+                    text:'近十年软件行业收入'
+            },
+            tooltip:{show:true},
+            legend:{
+                data:['元']
+            },
+            xAxis:{
+                data:['2009','2010','2011','2012','2013','2014','2015','2016','2017','2018']
+            },
+            yAxis: {},
+            series:[{
+                type:'line',
+                smooth:true,
+                areaStyle:{
+                    normal:{}
+                },
+                data:[68067,74178,81005,90839,96618,105724,117076,127198,136988,151050]
+            }]
+        };
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

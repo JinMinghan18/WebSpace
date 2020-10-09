@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        var text = "<ul>";
+        var fruit = ["apple","banana","orange","peer"];
+        var flen = fruit.length;
+        fruit.forEach(myFunction);
+        text += "</ul>";
+
+        document.getElementById("demo").innerHTML = text;
+        function myFunction(value) {
+            text += "<li>"+value+"</li>";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视觉通道的映射</title>
+    <script src="../JS/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 1200px;height: 800px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+
+        var option = {
+            dataset:{
+                source:[
+                    ['score', 'amount', 'product'],
+                    [89.3, 58212, 'Matcha Latte'],
+                    [57.1, 78254, 'Milk Tea'],
+                    [74.4, 41032, 'Cheese Cocoa'],
+                    [50.1, 12755, 'Cheese Brownie'],
+                    [89.7, 20145, 'Matcha Cocoa'],
+                    [68.1, 79146, 'Tea'],
+                    [19.6, 91852, 'Orange Juice'],
+                    [10.6, 101852, 'Lemon Juice'],
+                    [32.7, 20112, 'Walnut Brownie']
+                ]
+            },
+            grid:{containLabel:true},
+            xAxis:{name:'amount'},
+            yAxis:{type:'category'},
+            visualMap:{
+                orient:'horizontal',
+                left:'center',
+                min:10,
+                max:100,
+                text:['High score','Low Score'],
+                dimension:0,
+                inRange:{
+                    color:['#D7DA8B','#E15457']
+                }
+            },
+            series:[
+                {
+                    label:{
+                        formatter:'aaa{@product}bbb{@score}ccc{@[1]ddd}'
+                    },
+                    type: 'bar',
+                    encode:{
+                        x:'amount',
+                        y:'product'
+                    }
+                }
+            ]
+        };
+        var option1 = {    //气泡图
+            dataset: {
+                source: [
+                    [12, 323, 11.2],
+                    [23, 167, 8.3],
+                    [81, 284, 12],
+                    [91, 413, 4.1],
+                    [13, 287, 13.5]
+                ]
+            },
+            visualMap: {
+                show: true,
+                dimension: 2, // 指向第三列（列序号从 0 开始记，所以设置为 2）。
+                min: 2, // 需要给出数值范围，最小数值。
+                max: 15, // 需要给出数值范围，最大数值。
+                inRange: {
+                    // 气泡尺寸：5 像素到 60 像素。
+                    symbolSize: [5, 100]
+                }
+            },
+            xAxis: {},
+            yAxis: {},
+            series: {
+                type: 'scatter',
+                encode:{
+                    x:[0],
+                    y:[2]
+                }
+            }
+        };
+        myChart.setOption(option1);
+    </script>
+</body>
+</html>

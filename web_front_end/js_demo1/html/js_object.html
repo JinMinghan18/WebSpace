@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <script>
+        var person = {
+            firstName:"Bill",
+            lastName:"Gates",
+            id:12345,
+            fullName:function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        document.getElementById("demo").innerHTML =
+            person['firstName'];
+    </script>
+</body>
+</html>
