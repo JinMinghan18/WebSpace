@@ -1,6 +1,7 @@
 package cn.edu.zjut;
 
 import cn.edu.zjut.model.UserBean;
+import cn.edu.zjut.dao.UserDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,9 +19,11 @@ public class LoginController extends HttpServlet {
         PrintWriter out = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String type = request.getParameter("type1");
         UserBean user = new UserBean();
         user.setUsername(username);
         user.setPassword(password);
+        user.setType(type);
         if(checkUser(user)){
             request.setAttribute("USER",user);
             RequestDispatcher rd = request.getRequestDispatcher("/JSP/loginSuccess.jsp");
@@ -31,11 +34,10 @@ public class LoginController extends HttpServlet {
     }
 
     boolean checkUser(UserBean user){
-        if("zjut".equals(user.getUsername()) && "zjut".equals(user.getPassword())) {
+        UserDao ud = new UserDao();
+        if(ud.searchUser(user)){
             return true;
-        }else{
-            return false;
-        }
+        }else return false;
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request,response);

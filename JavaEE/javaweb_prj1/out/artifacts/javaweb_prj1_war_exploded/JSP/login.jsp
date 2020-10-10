@@ -48,7 +48,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <select>
+                    <select name="type1">
                         <option value="普通用户">普通用户</option>
                         <option value="管理员">管理员</option>
                     </select>
