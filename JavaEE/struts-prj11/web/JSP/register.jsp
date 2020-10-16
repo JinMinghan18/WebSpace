@@ -15,6 +15,7 @@
     <sx:head parseContent="true" extraLocales="GBK"/>
 </head>
 <body>
+    <s:i18n name="cn.edu.zjut.local.message">
     <s:form action="register" method="POST">
         <s:textfield name="regUser.account" label="请输入用户名"/>
         <s:password name="regUser.password" label="请输入密码"/>
@@ -24,5 +25,6 @@
         <s:submit value="注册"/>
         <s:reset value="重置"/>
     </s:form>
+    </s:i18n>
 </body>
 </html>

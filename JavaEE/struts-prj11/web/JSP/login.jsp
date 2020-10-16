@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -9,12 +10,19 @@
 <html>
 <head>
     <title>登录</title>
+    <style>
+        .text-left{
+            text-align: right;
+        }
+    </style>
 </head>
 <body>
-<form action="login" method="post">
-    请输入用户名：<input name="loginUser.account" type="text"><BR>
-    请输入密码：<input name="loginUser.password" type="password">
-    <input type="submit" value="登录">
-</form>
+    <s:i18n name="cn.edu.zjut.local.message">
+        <form action="login" method="post">
+            <s:textfield name="loginUser.account" key="login.account.label"/><br>
+            <s:password name="loginUser.password" key="login.password.label"/>
+            <s:submit name="submit" key="login.submit.button" align="left"/>
+        </form>
+    </s:i18n>
 </body>
 </html>
