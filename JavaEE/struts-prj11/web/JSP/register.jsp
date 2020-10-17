@@ -16,15 +16,15 @@
 </head>
 <body>
     <s:i18n name="cn.edu.zjut.local.message">
-    <s:form action="register" method="POST">
-        <s:textfield name="regUser.account" label="请输入用户名"/>
-        <s:password name="regUser.password" label="请输入密码"/>
-        <s:password name="regUser.repassword" label="请再次输入密码"/>
-        <s:radio list="#{1:'男',0:'女'}" label="请输入性别" name="regUser.sex"/>
-        <sx:datetimepicker name="regUser.birthday" displayFormat="yyyy-MM-dd" label="请输入生日" language="en"/>
-        <s:submit value="注册"/>
-        <s:reset value="重置"/>
-    </s:form>
+        <s:form action="register" method="POST">
+            <s:textfield name="regUser.account" key="register.account.label"/>
+            <s:password name="regUser.password" key="register.password.label"/>
+            <s:password name="regUser.repassword" key="register.repassword.label"/>
+            <s:radio list="#{1:'男',0:'女'}" label="register.sex.label" name="regUser.sex"/>
+            <sx:datetimepicker name="regUser.birthday" displayFormat="yyyy-MM-dd" key="register.birthday.label"/>
+            <s:submit name="register.submit.button"/>
+            <s:reset name="register.reset.buttton"/>
+        </s:form>
     </s:i18n>
 </body>
 </html>
