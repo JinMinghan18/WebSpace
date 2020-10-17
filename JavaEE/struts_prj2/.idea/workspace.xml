@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7f532477-f139-4ca5-9971-ebe39e553fd8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/cn/edu/zjut/action/UserAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cn/edu/zjut/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../struts-prj11/out/artifacts/struts_prj11_war_exploded/JSP/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../struts-prj11/out/artifacts/struts_prj11_war_exploded/JSP/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../struts-prj11/src/cn/edu/zjut/action/UserAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../struts-prj11/src/cn/edu/zjut/action/UserAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../struts-prj11/struts-prj11.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../struts-prj11/struts-prj11.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/struts_prj2_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/struts_prj2_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/struts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/struts_prj2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/struts_prj2.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="struts" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1izetZSO1KMa1wLQcZVav6Y31Mm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.proportion" value="0.15429688" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.edu.zjut.action" />
+      <recent name="cn.edu.zjut.service" />
+      <recent name="cn.edu.zjut.bean" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyStudySpace\WebSpace\JavaEE\struts_prj2\web\JSP" />
+      <recent name="D:\MyStudySpace\WebSpace\JavaEE\struts_prj2\web\WEB-INF\lib" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.311" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.311" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="struts_prj2:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/struts_prj2_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_311_struts_prj2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="struts_prj2:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f532477-f139-4ca5-9971-ebe39e553fd8" name="Default Changelist" comment="" />
+      <created>1602915064445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602915064445</updated>
+      <workItem from="1602915083060" duration="2168000" />
+      <workItem from="1602918599827" duration="3328000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="445" y="172" key="FileChooserDialogImpl" timestamp="1602917760047">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="445" y="172" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1602917760047" />
+    <state x="356" y="13" key="SettingsEditor" timestamp="1602919491409">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="356" y="13" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1602919491409" />
+    <state x="542" y="198" key="struts2 file set editor" timestamp="1602919488940">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="542" y="198" key="struts2 file set editor/0.0.1536.864@0.0.1536.864" timestamp="1602919488940" />
+  </component>
+</project>
