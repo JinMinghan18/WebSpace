@@ -23,6 +23,20 @@ public class UserAction {
         this.regUser = regUser;
     }
 
+    public String login(){
+        UserService userService = new UserService();
+        if(userService.login(loginUser)){
+            return "success";
+        }
+        return "fail";
+    }
+    public String register(){
+        UserService userService = new UserService();
+        if(userService.register(regUser)){
+            return "success";
+        }
+        return "fail";
+    }
     public String execute(){
         UserService userService = new UserService();
         if(loginUser !=null){
