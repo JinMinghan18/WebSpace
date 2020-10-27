@@ -17,12 +17,15 @@
     </style>
 </head>
 <body>
+
     <s:i18n name="cn.edu.zjut.local.message">
-        <form action="login" method="post">
-            <s:textfield name="loginUser.account" label="请输入账号" key="login.account.label"/><br>
-            <s:password name="loginUser.password" label="请输入密码" key="login.password.label"/>
-            <s:submit name="submit" key="login.submit.button" label="提交" align="left"/>
-        </form>
+        <s:fielderror/>
+        <s:actionerror/>
+        <s:form action="login" method="post">
+            <s:textfield name="loginUser.account" key="login.account.label"/><br>
+            <s:password name="loginUser.password" key="login.password.label"/>
+            <s:submit name="submit" align="left" key="login.submit.button"/>
+        </s:form>
     </s:i18n>
 </body>
 </html>

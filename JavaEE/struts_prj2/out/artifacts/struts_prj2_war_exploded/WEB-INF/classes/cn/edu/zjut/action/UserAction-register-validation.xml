@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+    <field name="regUser.email">
+        <field-validator type="email">
+            <message>邮箱格式错误</message>
+        </field-validator>
+    </field>
+    <field name="regUser.repassword">
+        <field-validator type="fieldexpression">
+            <param name="expression">(regUser.password eq regUser.repassword)</param>
+            <message>两次输入密码必须相同</message>
+        </field-validator>
+    </field>
+</validators>

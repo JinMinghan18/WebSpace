@@ -22,7 +22,6 @@
             <s:textfield name="loginUser.account" key="login.account.label"/><br>
             <s:password name="loginUser.password" key="login.password.label"/>
             <s:submit name="submit" key="login.submit.button" align="left"/>
-            <s:a href="http://www.baidu.com">666</s:a>
         </form>
     </s:i18n>
 </body>

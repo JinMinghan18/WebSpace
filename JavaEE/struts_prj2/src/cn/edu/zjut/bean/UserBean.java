@@ -1,5 +1,7 @@
 package cn.edu.zjut.bean;
 
+import java.util.Date;
+
 public class UserBean {
     private String account="";
     private String password="";
@@ -7,7 +9,7 @@ public class UserBean {
     private String repassword="";
     private String name="";
     private String sex="";
-    private String birthday="";
+    private Date birthday=null;
     private String address="";
     private String phone="";
     private String email="";
@@ -53,11 +55,11 @@ public class UserBean {
         this.sex = sex;
     }
 
-    public String getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 

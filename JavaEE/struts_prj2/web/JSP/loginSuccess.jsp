@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -11,6 +12,9 @@
     <title>Title</title>
 </head>
 <body>
-登录成功
+<s:i18n name="cn.edu.zjut.local.message">
+    <s:actionmessage name="login" key="login.success.label"/>,<s:text name="login.successtext1.text"/><s:property value="getCount()"/><s:text name="login.successtext2.text"/>
+</s:i18n>
+
 </body>
 </html>

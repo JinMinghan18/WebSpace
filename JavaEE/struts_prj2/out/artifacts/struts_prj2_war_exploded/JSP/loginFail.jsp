@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -11,6 +12,6 @@
     <title>失败</title>
 </head>
 <body>
-登录失败
+<s:text name="login.failtext.text"/>
 </body>
 </html>
