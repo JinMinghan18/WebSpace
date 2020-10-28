@@ -12,8 +12,10 @@
       </configuration>
       <facet type="Struts2" name="Struts 2">
         <configuration>
-          <fileset id="s2fileset" name="Default File Set" removed="false">
+          <fileset id="s2fileset2" name="My Fileset" removed="false">
             <file>file://$MODULE_DIR$/src/struts.xml</file>
+            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-core-2.3.37.jar!/struts-default.xml</file>
+            <file>jar://$MODULE_DIR$/web/WEB-INF/lib/struts2-dojo-plugin-2.3.37.jar!/struts-plugin.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>

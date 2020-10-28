@@ -7,18 +7,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f532477-f139-4ca5-9971-ebe39e553fd8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/lib/commons-fileupload-1.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/lib/commons-io-2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/lib/commons-lang3-3.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/lib/freemarker-2.3.28.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/lib/javassist-3.11.0.GA.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/lib/ognl-3.0.21.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/lib/struts2-core-2.3.37.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/lib/struts2-dojo-plugin-2.3.37.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/lib/xwork-core-2.3.37.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../struts-prj3/.idea/artifacts/struts_prj3_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../struts-prj3/.idea/artifacts/struts_prj3_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/JSP/itemList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/JSP/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/JSP/loginSuccess.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/classes/cn/edu/zjut/action/ItemAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/classes/cn/edu/zjut/action/UserAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/classes/cn/edu/zjut/bean/Item.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/classes/cn/edu/zjut/bean/UserBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/classes/cn/edu/zjut/service/ItemService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/classes/cn/edu/zjut/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/classes/struts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/lib/commons-fileupload-1.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/lib/commons-io-2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/lib/commons-lang3-3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/lib/freemarker-2.3.28.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/lib/javassist-3.11.0.GA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/lib/ognl-3.0.21.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/lib/struts2-core-2.3.37.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/lib/struts2-dojo-plugin-2.3.37.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/lib/xwork-core-2.3.37.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/out/artifacts/struts_prj3_war_exploded/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/src/cn/edu/zjut/action/ItemAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/src/cn/edu/zjut/action/UserAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/src/cn/edu/zjut/bean/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/src/cn/edu/zjut/bean/UserBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/src/cn/edu/zjut/filters/AccessFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/src/cn/edu/zjut/interceptors/AuthorityInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/src/cn/edu/zjut/service/ItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/src/cn/edu/zjut/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/JSP/itemList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/JSP/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/JSP/loginSuccess.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/classes/cn/edu/zjut/action/ItemAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/classes/cn/edu/zjut/action/UserAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/classes/cn/edu/zjut/bean/Item.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/classes/cn/edu/zjut/bean/UserBean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/classes/cn/edu/zjut/filters/AccessFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/classes/cn/edu/zjut/interceptors/AuthorityInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/classes/cn/edu/zjut/service/ItemService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/classes/cn/edu/zjut/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/classes/struts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../struts-prj3/src/struts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../struts-prj3/src/struts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../struts-prj3/struts-prj3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../struts-prj3/struts-prj3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../struts-prj3/web/q.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../struts-prj3/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +187,7 @@
       <workItem from="1603807344491" duration="7322000" />
       <workItem from="1603870055835" duration="3930000" />
       <workItem from="1603886661787" duration="304000" />
+      <workItem from="1603887772261" duration="2109000" />
     </task>
     <servers />
   </component>
