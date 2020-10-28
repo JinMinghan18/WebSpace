@@ -12,9 +12,12 @@
     <title>Title</title>
 </head>
 <body>
-<s:i18n name="cn.edu.zjut.local.message">
-    <s:actionmessage name="login" key="login.success.label"/>,<s:text name="login.successtext1.text"/><s:property value="getCount()"/><s:text name="login.successtext2.text"/>
-</s:i18n>
+<%--<s:i18n name="cn.edu.zjut.local.message">--%>
+    本站访问次数为<s:property value="#application.counter"/><br>
+    <s:property value="#session.user"/>
+    <s:property value="#request.tip"/>
+<%--    <s:actionmessage name="login" key="login.success.label"/>,<s:text name="login.successtext1.text"/><s:property value="getCount()"/><s:text name="login.successtext2.text"/>--%>
+<%--</s:i18n>--%>
 
 </body>
 </html>

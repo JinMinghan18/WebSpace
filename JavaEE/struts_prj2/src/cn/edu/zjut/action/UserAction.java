@@ -5,6 +5,9 @@ import cn.edu.zjut.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter;
+import org.apache.struts2.interceptor.ApplicationAware;
+import org.apache.struts2.interceptor.RequestAware;
+import org.apache.struts2.interceptor.SessionAware;
 
 import javax.servlet.RequestDispatcher;
 import java.util.ArrayList;
@@ -13,7 +16,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
-public class UserAction extends ActionSupport {
+public class UserAction extends ActionSupport
+    implements RequestAware, SessionAware, ApplicationAware {
 
     private static Integer count = 0;
     public UserAction(){
@@ -42,16 +46,26 @@ public class UserAction extends ActionSupport {
     }
 
     private Map request,session,application;
+    public void setRequest(Map<String ,Object>request){
+        this.request=request;
+    }
+    public void setSession(Map<String,Object>session){
+        this.session=session;
+    }
+
+    public void setApplication(Map application) {
+        this.application = application;
+    }
 
     public String login(){
-        count++;
+//        count++;
 
         //获取ActionContext对象
         ActionContext ctx = ActionContext.getContext();
         //通过ActionContext对象获取请求、会话和上下文对象相关联的Map对象
-        request =(Map) ctx.get("request");
-        session =(Map) ctx.getSession();
-        application = (Map) ctx.getApplication();
+//        request =(Map) ctx.get("request");
+//        session =(Map) ctx.getSession();
+//        application = (Map) ctx.getApplication();
         //访问application范围的属性值
         Integer counter = (Integer) application.get("counter");
         if(counter==null)
@@ -62,10 +76,10 @@ public class UserAction extends ActionSupport {
         application.put("counter",counter);
         UserService userService = new UserService();
         if(userService.login(loginUser)){
-            this.addActionMessage(this.getText("login.success.label"));
+            session.put("user",loginUser.getAccount());
+            request.put("tip","您已登录成功");
             return "success";
         }else{
-            this.addActionError(this.getText("login.error"));
             return "fail";
         }
 
