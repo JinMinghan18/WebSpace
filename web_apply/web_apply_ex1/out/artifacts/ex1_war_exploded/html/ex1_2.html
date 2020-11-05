@@ -3,13 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <title>ex1_2</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=1.0">
         <script type="text/javascript" src="../jsp/fill_Check.js"></script>
+        <style>
+            form{
+                margin: 0px auto;background-color: #f2f2f2;
+                width: 373px;height: 1050px;
+            }
+            .healthCodeWelcome{
+                width: 373px;
+            }
+            @media screen and (max-width: 1000px){
+                form{
+                    margin: 0px auto;background-color: #f2f2f2;
+                    width: 100vw;
+                }
+                .healthCodeWelcome{
+                    width: 373px;
+                    /*height: 100vh;*/
+                }
+            }
+        </style>
     </head>
     <body>
-        <form action="welcome.html" method="post" onsubmit="return fillcheck()" style="margin: 0px auto;background-color: #f2f2f2;width: 373px;height: 1050px">
+        <form action="welcome.html" method="post" onsubmit="return fillcheck()">
     <!--        首部图片-->
             <div>
-                <img src="../images/HZ_Health_Code.png" />
+                <img src="../images/HZ_Health_Code.png" name="healthCodeWelcome"/>
             </div>
             <br/>
     <!--        您最近十四天是否离开过杭州或当前所在城市-->

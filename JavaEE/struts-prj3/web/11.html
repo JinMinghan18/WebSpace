@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=1.0">
+    <title>Bootstrap</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=43ef9af9a20fe54f38569321713451e9"></script>
+</head>
+
+<body>
+<div id="container"></div>
+<script>
+    var jsondata = [{
+        "time": "2018-10-03 00:04:51",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 00:07:15",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 00:41:22",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 00:43:19",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 00:48:59",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 00:49:42",
+        "longitude": 123.411911,
+        "latitude": 41.81045914
+    }, {
+        "time": "2018-10-03 01:28:07",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 01:49:07",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 04:25:11",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 04:25:30",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 05:18:44",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 06:40:38",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 07:03:49",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 07:36:40",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 07:39:41",
+        "longitude": 123.4166718,
+        "latitude": 41.8102417
+    }, {
+        "time": "2018-10-03 07:51:12",
+        "longitude": 123.4320221,
+        "latitude": 41.80392075
+    }, {
+        "time": "2018-10-03 07:53:48",
+        "longitude": 123.4372406,
+        "latitude": 41.7996788
+    }, {
+        "time": "2018-10-03 07:54:57",
+        "longitude": 123.4421463,
+        "latitude": 41.8010788
+    }, {
+        "time": "2018-10-03 07:55:23",
+        "longitude": 123.4372406,
+        "latitude": 41.7996788
+    }, {
+        "time": "2018-10-03 08:01:02",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:02:47",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:05:50",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:07:32",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:17:50",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:21:45",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:22:33",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:30:38",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:33:46",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:39:03",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:51:50",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:52:04",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 08:59:34",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 09:26:54",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 09:29:32",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 09:36:26",
+        "longitude": 123.4396362,
+        "latitude": 41.80488968
+    }, {
+        "time": "2018-10-03 09:46:56",
+        "longitude": 123.4359436,
+        "latitude": 41.80569839
+    }, {
+        "time": "2018-10-03 09:54:53",
+        "longitude": 123.4312515,
+        "latitude": 41.80846024
+    }, {
+        "time": "2018-10-03 12:04:23",
+        "longitude": 123.4312515,
+        "latitude": 41.80846024
+    }, {
+        "time": "2018-10-03 13:35:30",
+        "longitude": 123.4312515,
+        "latitude": 41.80846024
+    }, {
+        "time": "2018-10-03 13:55:15",
+        "longitude": 123.4312515,
+        "latitude": 41.80846024
+    }, {
+        "time": "2018-10-03 15:51:01",
+        "longitude": 123.4312515,
+        "latitude": 41.80846024
+    }, {
+        "time": "2018-10-03 18:57:06",
+        "longitude": 123.4312515,
+        "latitude": 41.80846024
+    }, {
+        "time": "2018-10-03 19:24:56",
+        "longitude": 123.4344177,
+        "latitude": 41.81195831
+    }, {
+        "time": "2018-10-03 19:38:08",
+        "longitude": 123.4344177,
+        "latitude": 41.81195831
+    }, {
+        "time": "2018-10-03 19:58:16",
+        "longitude": 123.4344177,
+        "latitude": 41.81195831
+    }, {
+        "time": "2018-10-03 20:18:45",
+        "longitude": 123.4344177,
+        "latitude": 41.81195831
+    }, {
+        "time": "2018-10-03 20:22:49",
+        "longitude": 123.4344177,
+        "latitude": 41.81195831
+    }, {
+        "time": "2018-10-03 20:31:02",
+        "longitude": 123.4262009,
+        "latitude": 41.81328964
+    }, {
+        "time": "2018-10-03 20:32:01",
+        "longitude": 123.4290314,
+        "latitude": 41.81130981
+    }, {
+        "time": "2018-10-03 20:33:50",
+        "longitude": 123.4290314,
+        "latitude": 41.81130981
+    }, {
+        "time": "2018-10-03 20:37:55",
+        "longitude": 123.4290314,
+        "latitude": 41.81130981
+    }, {
+        "time": "2018-10-03 20:43:31",
+        "longitude": 123.4121704,
+        "latitude": 41.8152504
+    }, {
+        "time": "2018-10-03 20:45:26",
+        "longitude": 123.4121704,
+        "latitude": 41.8152504
+    }, {
+        "time": "2018-10-03 21:05:34",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 21:06:12",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 21:57:46",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 22:11:03",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 22:11:28",
+        "longitude": 123.411911,
+        "latitude": 41.81045914
+    }, {
+        "time": "2018-10-03 22:19:55",
+        "longitude": 123.411911,
+        "latitude": 41.81045914
+    }, {
+        "time": "2018-10-03 22:55:53",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 23:01:17",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 23:04:32",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 23:20:55",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 23:22:17",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 23:26:37",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 23:27:25",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 23:35:57",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 23:36:14",
+        "longitude": 123.4159698,
+        "latitude": 41.80778122
+    }, {
+        "time": "2018-10-03 23:51:32",
+        "longitude": 123.4128571,
+        "latitude": 41.80469894
+    }]
+
+    var gps = [jsondata[10].longitude, jsondata[10].latitude];
+    var map = new AMap.Map('container', {
+        zoom: 15, //级别
+        // center: gps, //中心点坐标
+        center: [ 123.427221,41.8093 ],
+        layers:[
+            // new AMap.TileLayer.Satellite(),
+            new AMap.TileLayer.RoadNet()
+        ]
+    });
+
+    // MarkerTime类似于HashMap，key值为经纬度，value为该基站捕获到信号的时间
+    // 具体为key 经度-维度 例如123.426355-41.807557，value 00:04:51  00:07:15  00:41:22  00:43:19  00:48:59
+    var MarkerTime = {};
+    // MarkerList为按照时间排序的点。
+    var MarkerList = [];
+
+    for (let index in jsondata) {
+        MarkerList[index] = [jsondata[index].longitude, jsondata[index].latitude];
+        if (typeof(MarkerTime[String(jsondata[index].longitude) + "-" + String(jsondata[index].latitude)]) == "undefined")
+            MarkerTime[String(jsondata[index].longitude) + "-" + String(jsondata[index].latitude)] = "";
+        MarkerTime[String(jsondata[index].longitude) + "-" + String(jsondata[index].latitude)] += jsondata[index].time.substring(11, 19) + '  ';
+    }
+
+    var icon = new AMap.Icon({
+            size: new AMap.Size(40, 50), // 图标尺寸
+            image: 'https://webapi.amap.com/theme/v1.3/images/newpc/way_btn2.png', // Icon的图像
+            imageOffset: new AMap.Pixel(0, -60), // 图像相对展示区域的偏移量，适于雪碧图等
+            imageSize: new AMap.Size(40,50) // 根据所设置的大小拉伸或压缩图片
+    });
+    //创建信息窗体
+
+
+    // 在地图上标注点，旁边写获得信号的时间
+    for (let key in MarkerTime) {
+        console.log(key);
+        let tmp = key.split('-');
+        map.add(new AMap.Marker({
+            position: [tmp[0], tmp[1]],
+            icon:new AMap.Icon({
+                size: new AMap.Size(40, 50), // 图标尺寸
+                image: 'https://webapi.amap.com/theme/v1.3/images/newpc/way_btn2.png', // Icon的图像
+                imageOffset: new AMap.Pixel(0, 0), // 图像相对展示区域的偏移量，适于雪碧图等
+                imageSize: new AMap.Size(40,50) // 根据所设置的大小拉伸或压缩图片
+            }),
+
+            content: "<div id='icon1'><img src='img/1.png' width='20px' height='36px'/> </div>"+MarkerTime[key]
+        }))
+    }
+    // 按照时间顺序，将各个点连接起来
+    var polyline = new AMap.Polyline({
+        path: MarkerList,
+        showDir: false
+    });
+
+    map.add(polyline);
+
+
+    // 右击可以获取鼠标所在的经纬度
+    var clickHandler = function(e) {
+        alert('您在[ ' + e.lnglat.getLng() + ',' + e.lnglat.getLat() + ' ]的位置点击了地图！');
+    };
+
+    // 绑定事件
+    map.on('rightclick', clickHandler);
+</script>
+</body>
+
+</html>
