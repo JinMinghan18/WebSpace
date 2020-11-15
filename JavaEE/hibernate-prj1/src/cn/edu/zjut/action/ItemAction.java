@@ -7,19 +7,19 @@ import cn.edu.zjut.service.UserService;
 import java.util.List;
 
 public class ItemAction {
-    private Item Items;
+    private List items;
 
-    public Item getItems() {
-        return Items;
+    public List getItems() {
+        return items;
     }
 
-    public void setItems(Item Items) {
-        Items = Items;
+    public void setItems(List items) {
+        this.items = items;
     }
     public String getAllItems(){
         ItemService itemServ = new ItemService();
 
-        List<Item> itemList = itemServ.getAllItems();
+        items= itemServ.getAllItems();
         return "success";
     }
 }

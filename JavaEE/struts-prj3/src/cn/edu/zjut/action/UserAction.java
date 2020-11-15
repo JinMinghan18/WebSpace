@@ -64,7 +64,7 @@ public class UserAction extends ActionSupport {
 //    }
 
     private Map session;
-    public String login(){
+    public String login() throws Exception{
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();
         ServletContext application = ServletActionContext.getServletContext();
@@ -91,14 +91,18 @@ public class UserAction extends ActionSupport {
         //设置application范围的属性
         application.setAttribute("counter",counter);
         UserService userService = new UserService();
-        if(userService.login(loginUser)){
-            session.put("user",loginUser.getAccount());
-            request.setAttribute("tip","您已登录成功");
-            return "success";
-        }else{
-            return "fail";
+        try {
+            if (userService.login(loginUser)) {
+                session.put("user", loginUser.getAccount());
+                request.setAttribute("tip", "您已登录成功");
+                return "success";
+            } else {
+                return "fail";
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
         }
-
 
     }
     public String register(){

@@ -25,7 +25,7 @@
             <td><s:property value="numItems"/> </td>
         </tr>
     </s:iterator>
-    <a href="../allItems">查看所有商品信息</a>
+    <a href="allItems">查看所有商品信息</a>
 </table>
 <%--<s:i18n name="cn.edu.zjut.local.message">--%>
 <%--    本站访问次数为<s:property value="#application.counter"/><br>--%>

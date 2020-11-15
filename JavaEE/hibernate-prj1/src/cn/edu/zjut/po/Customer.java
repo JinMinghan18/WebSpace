@@ -1,5 +1,6 @@
 package cn.edu.zjut.po;
 
+import javax.annotation.Resource;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,7 +37,7 @@ public class Customer {
     public String getAccount() {
         return account;
     }
-
+    @Resource
     public void setAccount(String account) {
         this.account = account;
     }

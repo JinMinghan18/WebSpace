@@ -11,6 +11,6 @@
     <title>登陆成功</title>
 </head>
 <body>
-登陆成功
+<a href="../allItems">查看所有商品信息</a>
 </body>
 </html>
