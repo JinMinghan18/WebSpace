@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <div id="app">
+            {{message}}
+            <h2>{{school.name}} {{school.location}}</h2>
+            <ul>
+                <li>{{campus}} </li>
+            </ul>
+            
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el:"#app",
+                data:{
+                    message:"你好",
+                    school:{
+                        name:"浙江业大学屏峰校区",
+                        location:"留和路288号",
+                    },
+                    campus:["屏峰校区","朝晖校区","莫干山校区"]
+                }
+            })
+        </script>
+    </body>
+</html>
