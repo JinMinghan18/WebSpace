@@ -5,8 +5,10 @@
 <hibernate-mapping>
 
     <class name="cn.edu.zjut.po.Customer" table="customer" schema="hibernatedb">
-        <id name="customerId" type="int"> <column name="customerID" />
-            <generator class="assigned" />
+        <id name="customerId" type="int">
+            <column name="customerID" />
+            <generator class="increment" />
+
         </id>
         <property name="account" type="string">
             <column name="account" length="20" unique="true" />

@@ -37,7 +37,7 @@
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/hibernate-commons-annotations-5.1.0.Final.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/commons-logging-1.2.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-8.0.19.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../mybatis-prj1/web/WEB-INF/lib/mysql-connector-java-8.0.19.jar" />
         </element>
       </element>
     </root>

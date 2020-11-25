@@ -7,13 +7,18 @@
     <property name="connection.url">jdbc:mysql://localhost:3306/hibernatedb?serverTimezone=UTC</property>
     <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+    <property name="connection.autocommit">true</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">123456</property>
     <mapping class="cn.edu.zjut.po.Customer"/>
 
     <mapping resource="cn/edu/zjut/po/Customer.hbm.xml"/>
-    <mapping class="cn.edu.zjut.po.Item"/>
-    <mapping resource="cn/edu/zjut/po/Item.hbm.xml"/>
+<!--    <mapping class="cn.edu.zjut.po.Item"/>-->
+<!--    <mapping resource="cn/edu/zjut/po/Item.hbm.xml"/>-->
+    <mapping class="cn.edu.zjut.po.ItemDetail"/>
+    <mapping resource="cn/edu/zjut/po/ItemDetail.hbm.xml"/>
+    <mapping class="cn.edu.zjut.po.ItemBasic"/>
+    <mapping resource="cn/edu/zjut/po/ItemBasic.hbm.xml"/>
 
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->

@@ -14,7 +14,7 @@ public class Customer {
     private String account;
     private String password;
     private String name;
-    private Byte sex;
+    private Boolean sex;
     private Date birthday;
     private String phone;
     private String email;
@@ -64,11 +64,11 @@ public class Customer {
 
     @Basic
     @Column(name = "Sex")
-    public Byte getSex() {
+    public Boolean getSex() {
         return sex;
     }
 
-    public void setSex(Byte sex) {
+    public void setSex(Boolean sex) {
         this.sex = sex;
     }
 

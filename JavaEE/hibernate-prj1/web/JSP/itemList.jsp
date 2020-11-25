@@ -24,8 +24,8 @@
             <tr>
 <%--                <td><s:property value="isbn"/> </td>--%>
 <%--                <td><s:property value="title"/> </td>--%>
-                <td><s:property value="ipk.isbn"/> </td>
-                <td><s:property value="ipk.title"/> </td>
+                <td><s:property value="isbn"/> </td>
+                <td><s:property value="title"/> </td>
                 <td><s:property value="description"/> </td>
                 <td><s:property value="cost"/> </td>
                 <td><s:property value="image"/> </td>

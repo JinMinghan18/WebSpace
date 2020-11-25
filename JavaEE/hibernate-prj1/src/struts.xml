@@ -9,6 +9,10 @@
         <action name="login" class="cn.edu.zjut.action.UserAction" method="login">
             <result name="success">/JSP/loginSuccess.jsp</result>
             <result name="fail">/JSP/login.jsp</result>
+
+        </action>
+        <action name="register" class="cn.edu.zjut.action.UserAction" method="register">
+            <result name="registerSuccess">/JSP/regSuccess.jsp</result>
         </action>
         <action name="allItems" class="cn.edu.zjut.action.ItemAction" method="getAllItems">
             <result name="login">/JSP/login.jsp</result>
