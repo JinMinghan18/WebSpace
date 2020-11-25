@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//Mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.mapper.UserMapper">
+    <resultMap type="com.pojo.MapUser" id="myResult">
+        <id property="m_uid" column="uid"/>
+        <result property="m_uname" column="uname"/>
+        <result property="m_usex" column="usex"/>
+    </resultMap>
+    <parameterMap id="myParameterMap" type="com.pojo.MapUser">
+        <parameter property="m_uid" resultMap="myResult"/>
+        <parameter property="m_uname" resultMap="myResult"/>
+        <parameter property="m_usex" resultMap="myResult"/>
+    </parameterMap>
+    <select id="selectUserById" parameterType="Integer"
+            resultType="com.mybatis.po.MyUser">
+        Select * from user where uid = #{uid}
+    </select>
+    <select id="selectAllUser" resultType="com.mybatis.po.MyUser" parameterType="com.pojo.SelectUserParam">
+        Select * from user
+        where uname like concat('%',#{u_name},'%')
+        and usex =#{u_sex}
+    </select>
+    <select id="selectAllUser2" resultType="map">
+        SELECT * from user
+    </select>
+    <select id="selectResultMap" resultMap="myResult">
+        SELECT * from user
+    </select>
+    <insert id="addUser" parameterType="com.mybatis.po.MyUser">
+        Insert into user (uid,uname,usex) values(#{uid},#{uname},#{usex})
+    </insert>
+    <insert id="addUser2" parameterMap="myParameterMap">
+        INSERT into user(uid,uname,usex)
+        values(#{m_uid},#{m_uname},#{m_usex})
+    </insert>
+    <update id="updateUser" parameterType="com.mybatis.po.MyUser">
+        update user set uname=#{uname}, usex=#{usex} where uid=#{uid}
+    </update>
+    <update id="updateUser2" parameterMap="myParameterMap">
+        update user set uname=#{m_uname}, usex=#{m_usex} where uid=#{m_uid}
+    </update>
+    <delete id="deleteUser" parameterType="Integer">
+        delete from user where uid = #{uid}
+    </delete>
+
+</mapper>
