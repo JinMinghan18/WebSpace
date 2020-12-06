@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/xsd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.edu.zjut.po.Item" table="item" schema="hibernatedb">
+        <id name="isbn" column="ISBN"/>
+        <property name="title" column="title"/>
+        <property name="description" column="description"/>
+        <property name="cost" column="cost"/>
+        <property name="image" column="image"/>
+    </class>
+</hibernate-mapping>
