@@ -12,6 +12,7 @@
     <title>Title</title>
 </head>
 <body>
+    <a href="./findItems">查看商品信息</a>
     <s:property value="#request.tip"/> 修改个人信息
     <s:form action="Userupdate" method="post">
         <s:hidden name="loginUser.customerId" value="%{#request.loginUser.customerId}"/>

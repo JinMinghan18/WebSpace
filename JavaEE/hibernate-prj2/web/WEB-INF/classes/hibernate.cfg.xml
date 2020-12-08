@@ -10,5 +10,6 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">123456</property>
         <mapping resource="com/edu/zjut/po/Customer.hbm.xml"/>
+        <mapping resource="com/edu/zjut/po/Item.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

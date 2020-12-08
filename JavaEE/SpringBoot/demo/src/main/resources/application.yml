@@ -1,0 +1,15 @@
+#
+#
+#person:
+##    lastname: zhangsan
+#    last-name: zhangsan
+#    age: 19
+#    boss: false
+#    birth: 2017/12/12
+#    maps: {k1: v1,k2: 12}
+#    lists:
+#        - lisi
+#        - zhaoliu
+#    dog:
+#        name: dd
+#        age: 2
