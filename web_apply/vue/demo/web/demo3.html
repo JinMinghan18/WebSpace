@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-show</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="切换显示" @click="toggleIsShow">
+        <p v-if="isShow">陈南好帅</p>
+        <p v-show="isShow2">陈南好帅2</p>
+        <p v-if="temp>20">haore</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                temp:10,
+                isShow:false,
+                isShow2:true,
+            },
+            methods:{
+                toggleIsShow:function () {
+                    this.isShow = !this.isShow;
+                }
+            },
+        })
+    </script>
+</body>
+</html>

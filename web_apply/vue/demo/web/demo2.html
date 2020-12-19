@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="v-on指令" v-on:click="doIt">
+        <input type="button" value="v-on指令" @click="doIt">
+        <h2 @click="changeContent">{{content}}</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                content:"陈南",
+            },
+            methods:{
+                doIt:function (){
+                    alert("做it");
+                },
+                changeContent:function (){
+                    this.content+="好帅"
+                }
+            }
+        })
+    </script>
+</body>
+</html>
