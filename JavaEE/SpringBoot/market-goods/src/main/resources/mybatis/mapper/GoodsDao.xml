@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.crazy18.marketgoods.dao.GoodsDao">
     <resultMap id="BaseResultMap" type="com.crazy18.marketgoods.pojo.entity.Goods">
+<<<<<<< HEAD
         <id column="goods_id" jdbcType="INTEGER" property="goodsId" />
         <result column="title" jdbcType="VARCHAR" property="title" />
         <result column="img" jdbcType="VARCHAR" property="img" />
@@ -10,13 +11,27 @@
         <result column="price" jdbcType="DOUBLE" property="price" />
         <result column="onsale" jdbcType="VARCHAR" property="onsale" />
         <result column="detail" jdbcType="INTEGER" property="detail" />
+=======
+        <id column="goods_id" jdbcType="INTEGER" property="goodsId"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="img" jdbcType="VARCHAR" property="img"/>
+        <result column="good_type_id" jdbcType="INTEGER" property="goodTypeId"/>
+        <result column="old_price" jdbcType="DOUBLE" property="oldPrice"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+        <result column="onsale" jdbcType="VARCHAR" property="onsale"/>
+        <result column="detail" jdbcType="INTEGER" property="detail"/>
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc
     </resultMap>
     <sql id="Base_Column_List">
         goods_id, title, img, good_type_id, old_price, price, onsale, detail
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
+<<<<<<< HEAD
         <include refid="Base_Column_List" />
+=======
+        <include refid="Base_Column_List"/>
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc
         from goods
         where goods_id = #{goodsId,jdbcType=INTEGER}
     </select>
@@ -24,6 +39,7 @@
         delete from goods
         where goods_id = #{goodsId,jdbcType=INTEGER}
     </delete>
+<<<<<<< HEAD
     <insert id="insert" keyColumn="goods_id" keyProperty="goodsId" parameterType="com.crazy18.marketgoods.pojo.entity.Goods" useGeneratedKeys="true">
         insert into goods (title, img, good_type_id,
           old_price, price, onsale,
@@ -79,11 +95,71 @@
           <if test="detail != null">
             #{detail,jdbcType=INTEGER},
           </if>
+=======
+    <insert id="insert" keyColumn="goods_id" keyProperty="goodsId"
+            parameterType="com.crazy18.marketgoods.pojo.entity.Goods" useGeneratedKeys="true">
+        insert into goods (title, img, good_type_id,
+        old_price, price, onsale,
+        detail)
+        values (#{title,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}, #{goodTypeId,jdbcType=INTEGER},
+        #{oldPrice,jdbcType=DOUBLE}, #{price,jdbcType=DOUBLE}, #{onsale,jdbcType=VARCHAR},
+        #{detail,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" keyColumn="goods_id" keyProperty="goodsId"
+            parameterType="com.crazy18.marketgoods.pojo.entity.Goods" useGeneratedKeys="true">
+        insert into goods
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null">
+                title,
+            </if>
+            <if test="img != null">
+                img,
+            </if>
+            <if test="goodTypeId != null">
+                good_type_id,
+            </if>
+            <if test="oldPrice != null">
+                old_price,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="onsale != null">
+                onsale,
+            </if>
+            <if test="detail != null">
+                detail,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="img != null">
+                #{img,jdbcType=VARCHAR},
+            </if>
+            <if test="goodTypeId != null">
+                #{goodTypeId,jdbcType=INTEGER},
+            </if>
+            <if test="oldPrice != null">
+                #{oldPrice,jdbcType=DOUBLE},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="onsale != null">
+                #{onsale,jdbcType=VARCHAR},
+            </if>
+            <if test="detail != null">
+                #{detail,jdbcType=INTEGER},
+            </if>
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.crazy18.marketgoods.pojo.entity.Goods">
         update goods
         <set>
+<<<<<<< HEAD
           <if test="title != null">
             title = #{title,jdbcType=VARCHAR},
           </if>
@@ -105,12 +181,36 @@
           <if test="detail != null">
             detail = #{detail,jdbcType=INTEGER},
           </if>
+=======
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="img != null">
+                img = #{img,jdbcType=VARCHAR},
+            </if>
+            <if test="goodTypeId != null">
+                good_type_id = #{goodTypeId,jdbcType=INTEGER},
+            </if>
+            <if test="oldPrice != null">
+                old_price = #{oldPrice,jdbcType=DOUBLE},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="onsale != null">
+                onsale = #{onsale,jdbcType=VARCHAR},
+            </if>
+            <if test="detail != null">
+                detail = #{detail,jdbcType=INTEGER},
+            </if>
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc
         </set>
         where goods_id = #{goodsId,jdbcType=INTEGER}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.crazy18.marketgoods.pojo.entity.Goods">
         update goods
         set title = #{title,jdbcType=VARCHAR},
+<<<<<<< HEAD
           img = #{img,jdbcType=VARCHAR},
           good_type_id = #{goodTypeId,jdbcType=INTEGER},
           old_price = #{oldPrice,jdbcType=DOUBLE},
@@ -120,3 +220,14 @@
         where goods_id = #{goodsId,jdbcType=INTEGER}
     </update>
 </mapper>
+=======
+        img = #{img,jdbcType=VARCHAR},
+        good_type_id = #{goodTypeId,jdbcType=INTEGER},
+        old_price = #{oldPrice,jdbcType=DOUBLE},
+        price = #{price,jdbcType=DOUBLE},
+        onsale = #{onsale,jdbcType=VARCHAR},
+        detail = #{detail,jdbcType=INTEGER}
+        where goods_id = #{goodsId,jdbcType=INTEGER}
+    </update>
+</mapper>
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc

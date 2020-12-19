@@ -17,7 +17,7 @@ public class DemoController {
     private String name;
 
     @RequestMapping("/sayHello")
-    public String sayHello(){
+    public String sayHello() {
         return "hello" + name;
 
     }

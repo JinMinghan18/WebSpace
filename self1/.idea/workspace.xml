@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="self1:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5500c3e2-2ff3-43dc-a665-7e750fd479db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/controller/CheckHealthCodeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/model/HealthCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/model/MatrixToImageWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/WEB-INF/lib/core-3.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/WEB-INF/lib/zxing3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/AG6_CT)VGM)X$~]55OJK]}D.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex3/CSS/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/.idea/ex4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/CSS/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/html/cart1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/html/contact1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/_notes/bullet.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/_notes/dwsync.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/_notes/mnav-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/_notes/nav-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/_notes/pagebar-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/about.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/ad1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/ad2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/ad3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/adv1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/b-ad1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/b-ad2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/b-ad3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/b-ad4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/blank.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/book-store.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/border.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/box-bottom.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/box-center.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/box-top.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/bullet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/bullet1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/cart.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/center-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/close1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/contact-bt.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/footer-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/header.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/left-menu-bullet.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/mnav-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/nav-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/navbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/new-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/pagebar-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/prod1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/prod2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/prod3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/prod4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/prod5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/promo-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/selling1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/selling2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/selling3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/selling4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/selling5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/valid-xhtml10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex4/images/vcss.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/.idea/ex5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/CSS/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/html/cart1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/html/contact1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/_notes/bullet.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/_notes/dwsync.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/_notes/mnav-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/_notes/nav-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/_notes/pagebar-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/about.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/ad1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/ad2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/ad3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/adv1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/b-ad1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/b-ad2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/b-ad3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/b-ad4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/blank.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/book-store.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/border.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/box-bottom.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/box-center.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/box-top.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/bullet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/bullet1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/cart.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/center-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/close1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/contact-bt.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/footer-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/header.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/left-menu-bullet.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/mnav-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/nav-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/navbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/new-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/pagebar-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/prod1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/prod2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/prod3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/prod4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/prod5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/promo-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/selling1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/selling2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/selling3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/selling4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/selling5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/valid-xhtml10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex5/images/vcss.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/.idea/ex6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/CSS/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/html/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/html/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/html/cart1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/html/category.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/html/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/html/contact1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/html/details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/html/specials.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/_notes/bullet.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/_notes/dwsync.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/_notes/mnav-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/_notes/nav-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/_notes/pagebar-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/about.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/ad1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/ad2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/ad3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/adv1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/b-ad1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/b-ad2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/b-ad3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/b-ad4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/blank.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/book-store.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/border.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/box-bottom.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/box-center.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/box-top.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/bullet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/bullet1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/cart.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/center-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/close1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/contact-bt.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/footer-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/header.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/left-menu-bullet.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/mnav-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/nav-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/navbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/new-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/pagebar-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/prod1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/prod2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/prod3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/prod4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/prod5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/promo-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/selling1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/selling2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/selling3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/selling4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/selling5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/valid-xhtml10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex6/images/vcss.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/.idea/ex7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/CSS/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/html/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/html/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/html/cart1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/html/category.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/html/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/html/contact1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/html/details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/html/specials.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/_notes/bullet.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/_notes/dwsync.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/_notes/mnav-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/_notes/nav-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/_notes/pagebar-bg.png.mno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/about.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/ad1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/ad2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/ad3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/adv1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/b-ad1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/b-ad2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/b-ad3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/b-ad4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/blank.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/book-store.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/border.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/box-bottom.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/box-center.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/box-top.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/bullet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/bullet1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/cart.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/center-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/close1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/contact-bt.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/footer-bg.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/header.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/left-menu-bullet.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/mnav-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/nav-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/navbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/new-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/pagebar-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/prod1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/prod2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/prod3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/prod4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/prod5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/promo-icon.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/selling1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/selling2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/selling3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/selling4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/selling5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/valid-xhtml10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/images/vcss.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/js/contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web_front_end/ex7/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/.idea/artifacts/final_project_design_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/.idea/artifacts/final_project_design_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/HealthCode.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/out/artifacts/final_project_design_war_exploded/JSP/HealthCode.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/dao/HealthCodeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/dao/HealthCodeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/src/com/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/HealthCode.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/final_project_design/web/JSP/HealthCode.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/final_project_design/~$类设计.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/web_apply_ex3/out/artifacts/web_apply_ex3_war_exploded/JSP/displayHealthCode.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/web_apply_ex3/out/artifacts/web_apply_ex3_war_exploded/JSP/displayHealthCode.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/web_apply_ex3/out/artifacts/web_apply_ex3_war_exploded/WEB-INF/classes/bank/com/model/CheckformServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/web_apply_ex3/out/artifacts/web_apply_ex3_war_exploded/WEB-INF/classes/bank/com/model/CheckformServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/web_apply_ex3/out/artifacts/web_apply_ex3_war_exploded/images/test.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/web_apply_ex3/out/artifacts/web_apply_ex3_war_exploded/images/test.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/web_apply_ex3/src/bank/com/model/CheckformServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/web_apply_ex3/src/bank/com/model/CheckformServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/web_apply_ex3/web/JSP/displayHealthCode.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/web_apply_ex3/web/JSP/displayHealthCode.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/web_apply_ex3/web/WEB-INF/classes/bank/com/model/CheckformServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/web_apply_ex3/web/WEB-INF/classes/bank/com/model/CheckformServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_apply/web_apply_ex3/web/images/test.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../web_apply/web_apply_ex3/web/images/test.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_front_end/ex3/html/cart1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web_front_end/ex3/html/cart1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web_front_end/ex3/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../web_front_end/ex3/html/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="self1" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1ZDKEAOwU1N8arRjBPPoQAyVIJL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\idea\self1\web" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.31" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.31" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="self1:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/self1" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_31_self1" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="61479" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="self1:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5500c3e2-2ff3-43dc-a665-7e750fd479db" name="Default Changelist" comment="" />
+      <created>1584368110240</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584368110240</updated>
+      <workItem from="1584368114648" duration="734000" />
+      <workItem from="1584497476189" duration="4659000" />
+      <workItem from="1584511848262" duration="624000" />
+      <workItem from="1584697140159" duration="1635000" />
+      <workItem from="1584698971350" duration="5000" />
+      <workItem from="1584700707094" duration="426000" />
+      <workItem from="1584703189940" duration="683000" />
+      <workItem from="1584712854931" duration="5458000" />
+      <workItem from="1584760245910" duration="9973000" />
+      <workItem from="1584777235784" duration="11205000" />
+      <workItem from="1584797493444" duration="627000" />
+      <workItem from="1584798268804" duration="29000" />
+      <workItem from="1584801709215" duration="880000" />
+      <workItem from="1584842724449" duration="47000" />
+      <workItem from="1584842778922" duration="7174000" />
+      <workItem from="1584850590673" duration="852000" />
+      <workItem from="1584851673045" duration="881000" />
+      <workItem from="1584854492367" duration="1882000" />
+      <workItem from="1584857890242" duration="8630000" />
+      <workItem from="1584881658846" duration="8770000" />
+      <workItem from="1584978636331" duration="11398000" />
+      <workItem from="1592641469126" duration="11000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1584368191406">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1584368191406" />
+    <state x="360" y="73" key="#Web_Browsers" timestamp="1584777969352">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="360" y="70" key="#Web_Browsers/0.0.1536.824@0.0.1536.824" timestamp="1584500093653" />
+    <state x="360" y="73" key="#Web_Browsers/0.0.1536.864@0.0.1536.864" timestamp="1584777969352" />
+    <state x="294" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584777971009">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="294" y="135" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1584512425310" />
+    <state x="294" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1584777971009" />
+    <state x="549" y="175" key="FileChooserDialogImpl" timestamp="1584888696674">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584767175824" />
+    <state x="549" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584888696674" />
+    <state width="1024" height="233" key="GridCell.Tab.0.bottom" timestamp="1584918135425">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584918135425" />
+    <state width="1024" height="233" key="GridCell.Tab.0.center" timestamp="1584918135425">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584918135425" />
+    <state width="1024" height="233" key="GridCell.Tab.0.left" timestamp="1584918135425">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584918135425" />
+    <state width="1024" height="233" key="GridCell.Tab.0.right" timestamp="1584918135425">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584918135425" />
+    <state width="1024" height="233" key="GridCell.Tab.1.bottom" timestamp="1584918135425">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584918135425" />
+    <state width="1024" height="233" key="GridCell.Tab.1.center" timestamp="1584918135425">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1584918135425" />
+    <state width="1024" height="233" key="GridCell.Tab.1.left" timestamp="1584918135425">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1584918135425" />
+    <state width="1024" height="233" key="GridCell.Tab.1.right" timestamp="1584918135425">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1584918135425" />
+    <state width="1024" height="233" key="GridCell.Tab.2.bottom" timestamp="1584918135426">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584918135426" />
+    <state width="1024" height="233" key="GridCell.Tab.2.center" timestamp="1584918135426">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1584918135426" />
+    <state width="1024" height="233" key="GridCell.Tab.2.left" timestamp="1584918135426">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1584918135426" />
+    <state width="1024" height="233" key="GridCell.Tab.2.right" timestamp="1584918135426">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584774451353" />
+    <state width="1024" height="233" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1584918135426" />
+    <state x="-1121" y="220" key="RollbackChangesDialog" timestamp="1585030161168">
+      <screen x="-1280" y="48" width="1280" height="1024" />
+    </state>
+    <state x="-1121" y="220" key="RollbackChangesDialog/0.0.1536.864/-1285.-888.1248.936/-1280.48.1280.1024@-1280.48.1280.1024" timestamp="1585030161168" />
+    <state x="191" y="145" key="RollbackChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1584850637148" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1584842820223">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584700251553" />
+    <state x="-1046" y="138" key="SettingsEditor/0.0.1536.864/-1248.138.1248.936@-1248.138.1248.936" timestamp="1584789755888" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1584842820223" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1584760245033">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584760245033" />
+  </component>
+</project>

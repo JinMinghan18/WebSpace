@@ -16,15 +16,15 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "person")
 @Validated
 public class person {
-//    @Email
+    //    @Email
 //    @Value("${person.lastname}")
     private String lastName;
-//    @Value("#{11*2}")
+    //    @Value("#{11*2}")
     private Integer age;
-//    @Value("true")
+    //    @Value("true")
     private Boolean boss;
     private Date birth;
-    private Map<String,Object> maps;
+    private Map<String, Object> maps;
     private List<Object> lists;
     private Dog dog;
 
