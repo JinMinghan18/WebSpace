@@ -5,12 +5,13 @@ import com.opensymphony.xwork2.ActionSupport;
 import service.UserService;
 
 public class RegisterAction extends ActionSupport {
+
 	private UserService userService;
 
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
-	
+
 	private String username;
 	private String password;
 
@@ -26,7 +27,7 @@ public class RegisterAction extends ActionSupport {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public void validate() {
 		super.clearErrorsAndMessages();
 		if("".equals(username)) {
@@ -36,7 +37,7 @@ public class RegisterAction extends ActionSupport {
 			super.addActionError("密码不能为空！");
 		}
 	}
-	
+
 	public String execute() {
 		if(userService.userRegister(username, password)) {
 			super.addActionMessage("注册成功！");
