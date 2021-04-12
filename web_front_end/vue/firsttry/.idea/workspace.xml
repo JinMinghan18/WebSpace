@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7482c544-c22c-421f-b52e-7d095c732b0e" name="Default Changelist" comment="" />
+    <list default="true" id="7482c544-c22c-421f-b52e-7d095c732b0e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../web_apply/web_apply_ex7/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../web_apply/web_apply_ex7/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../JavaEE/SpringBoot/goodmarket/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../JavaEE/SpringBoot/goodmarket/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../web_apply/web_apply_ex7/web/WEB-INF/classes/META-INF/web_apply_ex7.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +56,7 @@
       <updated>1607519708416</updated>
       <workItem from="1607519710926" duration="112000" />
       <workItem from="1607519833826" duration="5000" />
+      <workItem from="1616846682936" duration="583000" />
     </task>
     <servers />
   </component>
