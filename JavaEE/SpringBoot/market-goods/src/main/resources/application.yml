@@ -1,3 +1,7 @@
 server:
+<<<<<<< HEAD
+    port: 8088
+=======
   port: 8088
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc
 

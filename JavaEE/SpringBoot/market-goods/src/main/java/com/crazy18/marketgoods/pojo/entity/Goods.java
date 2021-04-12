@@ -4,8 +4,12 @@ import java.io.Serializable;
 
 /**
  * goods
+<<<<<<< HEAD
+ * @author 
+=======
  *
  * @author
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc
  */
 public class Goods implements Serializable {
     private Integer goodsId;
@@ -89,4 +93,8 @@ public class Goods implements Serializable {
     public void setDetail(Integer detail) {
         this.detail = detail;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc

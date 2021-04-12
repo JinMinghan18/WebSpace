@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+</head>
+<body>
+    <div id="app">
+        <img :src="imgSrc" alt="">
+        <br>
+        <img :src="imgSrc" alt=""
+             :title="imageTitle+'!!!'" :class="isActive?'active':''" @click="toggleActive">
+        <br>
+        <img :src="imgSrc" alt="" :title="imageTitle+'!!!'" :class="{active:isActive}" @click="toggleActive">
+=======
 <html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +33,7 @@
              v-bind:title="imgTitle+'!!!'" v-bind:class="isActive?'active':''" @click="toggleActive">
         <br>
         <img :src="imgSrc" alt="" :title="imgTitle+'!!!'" :class="{active:isActive}" @click="toggleActive">
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script>
             var app = new Vue({
@@ -39,4 +55,8 @@
 
     </div>
 </body>
+<<<<<<< HEAD
+</html>
+=======
 </html>`
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc

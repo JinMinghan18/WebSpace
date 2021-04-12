@@ -10,7 +10,11 @@ public class IndexController {
 
     @RequestMapping("/")
 //    @ResponseBody
+<<<<<<< HEAD
+    String index(){
+=======
     String index() {
+>>>>>>> 94cbe5bb11ab078f253300ea864bdf1a46ef2afc
         return "index";
     }
 }
