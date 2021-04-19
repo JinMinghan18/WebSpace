@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true">
+    <Resource
+            maxWait="100"
+            maxActive="500"
+            maxIdle="50"
+            username="root"
+            password="123456"
+            url="jdbc:mysql://127.0.0.1:3306/heatmap?useSSL=true&amp;serverTimezone=UTC"
+            driverClassName="com.mysql.cj.jdbc.Driver"
+            type="javax.sql.DataSource"
+            name="jdbc/TrafficData"/>
+</Context>
