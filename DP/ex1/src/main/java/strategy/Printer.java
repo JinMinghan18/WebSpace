@@ -17,7 +17,7 @@ public abstract class Printer {
         return discount;
     }
 
-    public double getPrice() {
-        return price;
+    public double getPrice(double price) {
+        return this.discount.discount(price);
     }
 }

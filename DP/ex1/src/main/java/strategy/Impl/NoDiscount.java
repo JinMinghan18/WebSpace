@@ -3,6 +3,10 @@ package strategy.Impl;
 import strategy.Discount;
 
 public class NoDiscount implements Discount {
+//    public NoDiscount(double price) {
+//        discount(price);
+//    }
+
     @Override
     public double discount(double price) {
         show(price);
