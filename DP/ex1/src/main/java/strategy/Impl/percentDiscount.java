@@ -10,7 +10,8 @@ public class percentDiscount implements Discount {
         show(price);
         return price;
     }
-    void show(double price){
+    @Override
+    public void show(double price){
         System.out.println("此商品折扣5%，总价为"+price);
     }
 }

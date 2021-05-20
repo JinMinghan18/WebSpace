@@ -8,7 +8,9 @@ public class FixedDiscount implements Discount {
         show(price-10);
         return price-10;
     }
-    void show(double price){
+
+    @Override
+    public void show(double price) {
         System.out.println("此商品优惠10元，总价为"+price);
     }
 }
