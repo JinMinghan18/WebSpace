@@ -12,6 +12,7 @@ public class StockData implements subject{
     private float lprice;
     public StockData(){
         observers = new ArrayList();
+        this.price =
     }
     @Override
     public void addObservers(Observer o) {
@@ -33,5 +34,13 @@ public class StockData implements subject{
             o.update(price,hprice,lprice);
         }
     }
-    public 
+
+    @Override
+    public void StockInfoChanged() {
+        notifyObservers();
+    }
+    public void setStockInfo(float nowprice){
+        this.price = nowprice;
+        if()
+    }
 }
