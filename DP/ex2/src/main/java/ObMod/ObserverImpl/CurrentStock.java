@@ -8,16 +8,19 @@ import ObMod.subject;
 public class CurrentStock implements Observer, DisplayElement {
     private subject stockData;
     private double price;
-    private double hprice;
-    private double lprice;
-
-    @Override
-    public void display() {
-
+    public CurrentStock(subject stockData){
+        this.stockData = stockData;
+        stockData.addObservers(this);
     }
 
     @Override
-    public void update(float price, float hprice, float lprice) {
+    public void display() {
+        System.out.println("当前的股票价格为："+price);
+    }
 
+    @Override
+    public void update(double price) {
+        this.price = price;
+        display();
     }
 }

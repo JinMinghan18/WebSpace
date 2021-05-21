@@ -2,17 +2,14 @@ package ObMod.SubjectImpl;
 import ObMod.Observer;
 import ObMod.subject;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+
 
 public class StockData implements subject{
     private ArrayList observers;
-    private float price;
-    private float hprice;
-    private float lprice;
+    private double price;
     public StockData(){
-        observers = new ArrayList();
-        this.price =
+        observers = new ArrayList<Observer>();
     }
     @Override
     public void addObservers(Observer o) {
@@ -31,7 +28,7 @@ public class StockData implements subject{
     public void notifyObservers() {
         for(int i = 0; i < observers.size(); i++){
             Observer o = (Observer) observers.get(i);
-            o.update(price,hprice,lprice);
+            o.update(price);
         }
     }
 
@@ -39,8 +36,8 @@ public class StockData implements subject{
     public void StockInfoChanged() {
         notifyObservers();
     }
-    public void setStockInfo(float nowprice){
+    public void setStockInfo(double nowprice){
         this.price = nowprice;
-        if()
+        StockInfoChanged();
     }
 }
