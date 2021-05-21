@@ -2,11 +2,9 @@ package ObMod.ObserverImpl;
 
 import ObMod.DisplayElement;
 import ObMod.Observer;
-import ObMod.SubjectImpl.StockData;
 import ObMod.subject;
 
-import java.util.ArrayList;
-import java.util.Vector;
+//import ObMod.SubjectImpl.StockData;
 
 public class StatisticStock implements Observer, DisplayElement {
     private subject stockData;
@@ -23,9 +21,11 @@ public class StatisticStock implements Observer, DisplayElement {
 
     @Override
     public void display() {
-        System.out.println("股票均价为：" + avgprice);
-        System.out.println("股票最高价为：" + hprice);
-        System.out.println("股票最低价为：" + lprice);
+        System.out.println("_____________________________");
+        System.out.println("|股票均价为：" + avgprice + "|");
+        System.out.println("|股票最高价为：" + hprice + "|");
+        System.out.println("|股票最低价为：" + lprice + "|");
+        System.out.println("-----------------------------");
     }
 
     @Override

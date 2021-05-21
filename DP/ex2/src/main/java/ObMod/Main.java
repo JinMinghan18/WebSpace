@@ -1,6 +1,7 @@
 package ObMod;
 
 import ObMod.ObserverImpl.CurrentStock;
+import ObMod.ObserverImpl.ForecastStock;
 import ObMod.ObserverImpl.StatisticStock;
 import ObMod.SubjectImpl.StockData;
 
@@ -21,8 +22,9 @@ public class Main {
         double price = random();
         StockData stockData = new StockData();
 
-//        CurrentStock currentStock = new CurrentStock(stockData);
+        CurrentStock currentStock = new CurrentStock(stockData);
         StatisticStock statisticStock = new StatisticStock(stockData);
+        ForecastStock forecastStock = new ForecastStock(stockData);
 
         stockData.setStockInfo(price);
         price = random();
