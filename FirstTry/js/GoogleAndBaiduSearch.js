@@ -1,15 +1,13 @@
 function google() {
+    document.getElementById('in1').name='q';
     var inputs = document.getElementsByTagName('input');
-    var act = "https://www.google.com/search?q="+inputs[0].value;
-    // document.search.action = act;
-
-    // document.search.submit();
-    window.location.href = act;
+    document.search.action = "https://www.google.com/search";
+    document.search.submit();
 }
 
 
 function baidu() {
 
-    document.search.action="https://www.baidu.com/s?wd=";
+    document.search.action="https://www.baidu.com/s";
     document.search.submit();
 }
