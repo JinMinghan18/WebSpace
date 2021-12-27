@@ -43,7 +43,7 @@ p{
 }
 .search{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 .search-button{
     background-color: #3385ff;
@@ -58,4 +58,7 @@ p{
     background-color: transparent;
     color: white;
     border: 1px solid #3385ff;
+}
+input::-webkit-input-placeholder {
+    color: #ffffff;
 }
