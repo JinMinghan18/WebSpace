@@ -16,7 +16,7 @@
   "dependencies": {
     "ajv": "^5.0.0",
     "amap": "^1.0.7",
-    "axios": "^0.21.0",
+    "axios": "^0.21.2",
     "better-scroll": "^2.0.7",
     "echarts": "^5.0.0",
     "element-ui": "^2.14.1",
